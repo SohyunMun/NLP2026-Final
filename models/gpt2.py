@@ -56,7 +56,6 @@ class GPT2Model(GPTPreTrainedModel):
     embeddings = self.embed_dropout(embeddings)
     return embeddings
 
-
   def encode(self, hidden_states, attention_mask):
     """
     hidden_states: 임베딩 층으로부터의 출력 [batch_size, seq_len, hidden_size]
@@ -77,7 +76,7 @@ class GPT2Model(GPTPreTrainedModel):
   def forward(self, input_ids, attention_mask):
     """
     input_ids: [batch_size, seq_len], seq_len은 batch의 최대 길이
-    attention_mask: input_ids 와 크기가 같으며, 1 은 non-padding token을, 0 은 padding token을 나타낸다.  
+    attention_mask: input_ids 와 크기가 같으며, 1 은 non-padding token을, 0 은 padding token을 나타낸다.
     """
     # 각 입렵 토큰에 대한 임베딩 구하기기
     embedding_output = self.embed(input_ids=input_ids)
@@ -97,11 +96,10 @@ class GPT2Model(GPTPreTrainedModel):
     GPT-2 uses weight tying with the input word embeddings. The logits are the dot product between output hidden states
     and the word embedding weights:
     GPT-2는 입력 단어 임베딩과 가중치 공유(weight tying)를 사용한다.
-    로짓(logits)은 출력 은닉 상태와 단어 임베딩 가중치 간의 내적(dot product). 
+    로짓(logits)은 출력 은닉 상태와 단어 임베딩 가중치 간의 내적(dot product).
 
       return hidden_state(s) * E^T
     """
-    # weight tying: 단어 임베딩 가중치와 출력 투영 공유
     return torch.matmul(hidden_state, self.word_embedding.weight.T)
 
   @classmethod

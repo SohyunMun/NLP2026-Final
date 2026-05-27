@@ -46,7 +46,7 @@ class AdamW(Optimizer):
                 alpha = group["lr"]
 
                 '''
-                TODO: AdamW 구현을 완성하시오. 
+                TODO: AdamW 구현을 완성하시오.
                     위의 state 딕셔너리를 사용하여 상태를 읽고 저장하시오.
                     하이퍼파라미터는 `group` 딕셔너리에서 읽을 수 있다(생성자에 저장된 lr, betas, eps, weight_decay).
 
@@ -62,7 +62,6 @@ class AdamW(Optimizer):
                 eps = group["eps"]
                 weight_decay = group["weight_decay"]
 
-                # 상태 초기화 (첫 번째 step)
                 if len(state) == 0:
                     state["step"] = 0
                     state["exp_avg"] = torch.zeros_like(p.data)
@@ -84,11 +83,9 @@ class AdamW(Optimizer):
                 else:
                     step_size = alpha
 
-                # 파라미터 업데이트
                 denom = exp_avg_sq.sqrt().add_(eps)
                 p.data.addcdiv_(exp_avg, denom, value=-step_size)
 
-                # Weight decay (gradient 기반 업데이트 후 적용)
                 if weight_decay > 0.0:
                     p.data.add_(p.data, alpha=-alpha * weight_decay)
 

@@ -56,12 +56,9 @@ class GPT2SentimentClassifier(torch.nn.Module):
     self.dropout = torch.nn.Dropout(config.hidden_dropout_prob)
     self.classifier = torch.nn.Linear(config.hidden_size, config.num_labels)
 
-
   def forward(self, input_ids, attention_mask):
     '''문장들의 batch를 받아서 감정 클래스에 대한 로짓을 반환'''
-
     output = self.gpt(input_ids, attention_mask)
-    # 마지막 토큰의 hidden state를 문장 표현으로 사용
     last_token = output['last_token']
     last_token = self.dropout(last_token)
     logits = self.classifier(last_token)

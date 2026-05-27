@@ -25,8 +25,8 @@ class CausalSelfAttention(nn.Module):
   def transform(self, x, linear_layer):
     # hidden_state (x) 를 사영하기 위해 k, v, q의 해당 linear_layer가 사용된다.
     proj = linear_layer(x)
-    # 다음으로, 프로젝션에 대해 여러 헤드를 생성해야 한다. 
-    # 이는 은닉 상태를 self.num_attention_heads로 분할하며, 
+    # 다음으로, 프로젝션에 대해 여러 헤드를 생성해야 한다.
+    # 이는 은닉 상태를 self.num_attention_heads로 분할하며,
     # 각 헤드는 self.attention_head_size 크기를 갖도록 한다.
     proj = rearrange(proj, 'b t (h d) -> b t h d', h=self.num_attention_heads)
     # 적절히 전치하여 크기 [bs, num_attention_heads, seq_len, attention_head_size]인 프로젝션을 얻는다.
@@ -34,15 +34,13 @@ class CausalSelfAttention(nn.Module):
     return proj
 
   def attention(self, key, query, value, attention_mask):
-    # Scaled dot-product: Q * K^T / sqrt(d_k)
     d_k = query.size(-1)
     scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
 
-    # padding mask를 먼저 더함 (attention_mask: [bs, 1, 1, seq_len], 패딩 위치는 큰 음수)
+    # padding mask 적용 후 causal mask 적용 (수치 안정성)
     if attention_mask is not None:
         scores = scores + attention_mask
 
-    # Causal mask: 미래 토큰 위치를 -inf로 마스킹 (padding mask 이후 적용하여 수치 안정성 확보)
     seq_len = query.size(-2)
     causal_mask = torch.triu(
         torch.ones(seq_len, seq_len, device=query.device, dtype=torch.bool), diagonal=1
@@ -50,14 +48,10 @@ class CausalSelfAttention(nn.Module):
     scores = scores.masked_fill(causal_mask, float('-inf'))
 
     attn_weights = torch.softmax(scores, dim=-1)
-    # all-inf 행(패딩 query)에서 nan 방지
     attn_weights = torch.nan_to_num(attn_weights, nan=0.0)
     attn_weights = self.dropout(attn_weights)
 
-    # 가중합: [bs, num_heads, seq_len, head_size]
     context = torch.matmul(attn_weights, value)
-
-    # 헤드 합치기: [bs, seq_len, all_head_size]
     context = rearrange(context, 'b h t d -> b t (h d)')
     return context
 
@@ -74,7 +68,7 @@ class CausalSelfAttention(nn.Module):
     key_layer = self.transform(hidden_states, self.key)
     value_layer = self.transform(hidden_states, self.value)
     query_layer = self.transform(hidden_states, self.query)
-    
+
     # multi-head attention 계산.
     attn_value = self.attention(key_layer, query_layer, value_layer, attention_mask)
     return attn_value
