@@ -1,3 +1,4 @@
+import math
 import torch
 
 from einops import rearrange
@@ -33,9 +34,32 @@ class CausalSelfAttention(nn.Module):
     return proj
 
   def attention(self, key, query, value, attention_mask):
+    # Scaled dot-product: Q * K^T / sqrt(d_k)
+    d_k = query.size(-1)
+    scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
 
-    ### 완성시켜야 할 빈 코드 블록
-    raise NotImplementedError
+    # padding mask를 먼저 더함 (attention_mask: [bs, 1, 1, seq_len], 패딩 위치는 큰 음수)
+    if attention_mask is not None:
+        scores = scores + attention_mask
+
+    # Causal mask: 미래 토큰 위치를 -inf로 마스킹 (padding mask 이후 적용하여 수치 안정성 확보)
+    seq_len = query.size(-2)
+    causal_mask = torch.triu(
+        torch.ones(seq_len, seq_len, device=query.device, dtype=torch.bool), diagonal=1
+    )
+    scores = scores.masked_fill(causal_mask, float('-inf'))
+
+    attn_weights = torch.softmax(scores, dim=-1)
+    # all-inf 행(패딩 query)에서 nan 방지
+    attn_weights = torch.nan_to_num(attn_weights, nan=0.0)
+    attn_weights = self.dropout(attn_weights)
+
+    # 가중합: [bs, num_heads, seq_len, head_size]
+    context = torch.matmul(attn_weights, value)
+
+    # 헤드 합치기: [bs, seq_len, all_head_size]
+    context = rearrange(context, 'b h t d -> b t (h d)')
+    return context
 
 
   def forward(self, hidden_states, attention_mask):
