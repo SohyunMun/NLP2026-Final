@@ -49,8 +49,7 @@ def seed_everything(seed=11711):
   torch.backends.cudnn.deterministic = True
 
 
-# LoRA: 기존 nn.Linear를 동결하고 저랭크 행렬 A, B만 학습한다. [5]
-# 소규모 데이터셋(131개 소네트)에서 전체 파라미터 학습 시 과적합을 방지한다.
+# 기존 nn.Linear를 동결하고 저랭크 행렬 A, B만 학습하여 소규모 데이터에서 과적합을 방지한다.
 class LoRALinear(nn.Module):
   def __init__(self, linear: nn.Linear, r: int = 8, alpha: int = 16, dropout: float = 0.15):
     super().__init__()
@@ -60,14 +59,14 @@ class LoRALinear(nn.Module):
     self.lora_B = nn.Linear(r, linear.out_features, bias=False)
     self.lora_dropout = nn.Dropout(dropout)
     nn.init.kaiming_uniform_(self.lora_A.weight, a=math.sqrt(5))
-    nn.init.zeros_(self.lora_B.weight)  # B=0으로 초기화: 학습 초기 원본 동작 보존
+    nn.init.zeros_(self.lora_B.weight)
 
   def forward(self, x):
     return self.original(x) + self.scaling * self.lora_B(self.lora_A(self.lora_dropout(x)))
 
 
 def _apply_lora(gpt_model, r=8, alpha=16):
-  # attention projection(query, key, value, dense)에 LoRA 어댑터 삽입
+  # attention projection에 LoRA 어댑터 삽입.
   for layer in gpt_model.gpt_layers:
     sa = layer.self_attention
     sa.query              = LoRALinear(sa.query,          r=r, alpha=alpha)
@@ -99,7 +98,7 @@ class SonnetGPT(nn.Module):
     self.tokenizer.pad_token = self.tokenizer.eos_token
 
     # 기본적으로, 전체 모델을 fine-tuning한다.
-    # Stage 2에서는 LoRA 어댑터 파라미터만 학습하도록 전환한다. [5]
+    # Stage 2에서는 LoRA 어댑터 파라미터만 학습하도록 전환한다.
     _apply_lora(self.gpt,
                 r=getattr(args, 'lora_r', 8),
                 alpha=getattr(args, 'lora_alpha', 16))
@@ -108,11 +107,7 @@ class SonnetGPT(nn.Module):
       param.requires_grad = True
 
   def forward(self, input_ids, attention_mask):
-    """
-    각 토큰 위치에서 다음 토큰에 대한 logit을 반환한다.
-    모델이 소네트를 구성하는 자연어 분포 전체를 학습할 수 있도록
-    마지막 토큰뿐 아니라 시퀀스의 모든 토큰에 대한 logit을 생성한다.
-    """
+    """시퀀스의 모든 토큰 위치에서 다음 토큰에 대한 logit을 반환한다."""
     output = self.gpt(input_ids, attention_mask)
     hidden_states = output['last_hidden_state']
     logits = self.gpt.hidden_state_to_token(hidden_states)
@@ -127,13 +122,7 @@ class SonnetGPT(nn.Module):
                use_rhyme=True):
     """
     소네트 생성. strategy에 따라 세 가지 디코딩 방법 중 하나를 사용한다.
-
-    셰익스피어 소네트는 14행으로 구성되므로, 프롬프트 행 수를 기반으로
-    남은 행만큼 생성 후 종료한다.
-
-    Args:
-      strategy: 'sampling' (top-p) [2], 'top_k' [3], 'beam' [4]
-      use_rhyme: ABAB CDCD EFEF GG 운율 체계 강제 여부
+    셰익스피어 소네트는 14행이므로 프롬프트 행 수를 기반으로 남은 행만큼 생성 후 종료한다.
     """
     if strategy == 'beam':
       return self._beam_search(encoding, num_beams=top_k, max_length=max_length,
@@ -144,7 +133,7 @@ class SonnetGPT(nn.Module):
   @torch.no_grad()
   def _sampling(self, encoding, temperature, top_p, top_k,
                 max_length, repetition_penalty, strategy, use_rhyme):
-    """Top-p nucleus sampling [2] 또는 top-k sampling [3]."""
+    """Top-p nucleus sampling 또는 top-k sampling."""
     token_ids = encoding.to(self.get_device())
     attn_mask = torch.ones(token_ids.shape, dtype=torch.int64).to(self.get_device())
     prompt_len = token_ids.shape[1]
@@ -152,7 +141,7 @@ class SonnetGPT(nn.Module):
     newline_id = self.tokenizer.encode('\n')[0]
     prompt_text = self.tokenizer.decode(token_ids[0].tolist())
     prompt_newlines = prompt_text.count('\n')
-    # 셰익스피어 소네트 = 14행 = \n 13개; 프롬프트 줄바꿈 수를 빼서 남은 행 계산
+    # 소네트 14행 강제: 프롬프트 줄바꿈 수를 빼서 남은 행 계산.
     remaining_lines = max(13 - prompt_newlines, 1)
     generated_newlines = 0
 
@@ -170,7 +159,6 @@ class SonnetGPT(nn.Module):
       logits = self.forward(token_ids, attn_mask)
       logits_last = logits[:, -1, :].clone() / temperature
 
-      # Repetition penalty [6]
       if repetition_penalty != 1.0:
         for tid in set(token_ids[0].tolist()):
           if logits_last[0, tid] < 0:
@@ -181,13 +169,11 @@ class SonnetGPT(nn.Module):
       probs = F.softmax(logits_last, dim=-1)
 
       if strategy == 'top_k':
-        # Top-k sampling [3]
         topk_probs, topk_indices = torch.topk(probs, top_k, dim=-1)
         topk_probs /= topk_probs.sum(dim=-1, keepdim=True)
         sampled_idx = torch.multinomial(topk_probs, 1)
         sampled_token = topk_indices.gather(dim=-1, index=sampled_idx)
       else:
-        # Top-p (nucleus) sampling [2]
         sorted_probs, sorted_indices = torch.sort(probs, descending=True)
         cum_probs = torch.cumsum(sorted_probs, dim=-1)
         mask = cum_probs <= top_p
@@ -218,7 +204,7 @@ class SonnetGPT(nn.Module):
       else:
         current_line_tokens.append(sampled_token.item())
 
-        # 운율 강제: 행 중반 이후 운율 파트너가 있으면 해당 단어로 유도 [8]
+        # 운율 강제: 행 중반 이후 ABAB CDCD EFEF GG 체계에 맞는 단어로 유도.
         partner = RHYME_SCHEME.get(current_line_idx)
         if (use_rhyme and pronouncing and partner is not None
             and partner in line_last_words and len(current_line_tokens) >= 6):
@@ -252,7 +238,7 @@ class SonnetGPT(nn.Module):
   @torch.no_grad()
   def _beam_search(self, encoding, num_beams=5, max_length=300,
                    temperature=1.0, length_penalty=1.0):
-    """Beam search [4]: num_beams개의 가설을 유지하며 누적 log 확률이 가장 높은 시퀀스를 반환."""
+    """num_beams개의 가설을 유지하며 누적 log 확률이 가장 높은 시퀀스를 반환."""
     device = self.get_device()
     token_ids = encoding.to(device)
     prompt_len = token_ids.shape[1]
@@ -335,13 +321,7 @@ def save_checkpoint(model, optimizer, scheduler, args, filepath,
 
 
 def pretrain_shakespeare(args, model, device):
-  """
-  Stage 1: Domain-Adaptive Pre-Training (DAPT) on Shakespeare's complete works [1].
-
-  동일 저자(Shakespeare)의 희곡·장시 전체로 GPT-2를 먼저 적응시켜
-  이후 소네트 fine-tuning의 품질을 높인다.
-  체크포인트에서 이어 학습 가능.
-  """
+  """Stage 1: Shakespeare 전작으로 도메인 적응 사전학습. 체크포인트에서 이어 학습 가능."""
   import os
   ckpt_path = f'stage1_checkpoint_{args.filepath}'
 
@@ -404,14 +384,7 @@ def pretrain_shakespeare(args, model, device):
 
 
 def train(args, model, device):
-  """
-  Stage 2: Fine-tuning on sonnets with LoRA [5].
-
-  Stage 1에서 적응된 모델을 소네트 데이터셋으로 미세조정하여
-  소네트 구조(14행, 운율 체계)를 학습한다.
-  Stage 2에서는 LoRA 어댑터 파라미터만 학습하여 과적합을 방지한다.
-  체크포인트에서 이어 학습 가능.
-  """
+  """Stage 2: 소네트 데이터셋으로 LoRA fine-tuning. 체크포인트에서 이어 학습 가능."""
   import os
   ckpt_path = f'stage2_checkpoint_{args.filepath}'
   best_filepath = f'best_{args.filepath}'
@@ -422,7 +395,7 @@ def train(args, model, device):
   # 학습 중 시각화는 dev set 사용 (test set 오염 방지)
   held_out_sonnet_dataset = SonnetsDataset(args.dev_sonnet_path)
 
-  # LoRA 어댑터만 학습: base 파라미터 동결 [5]
+  # LoRA 어댑터만 학습: base 파라미터 동결.
   for name, param in model.named_parameters():
     param.requires_grad = ('lora_A' in name or 'lora_B' in name)
   trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -512,10 +485,7 @@ def train(args, model, device):
 
 @torch.no_grad()
 def generate_submission_sonnets(args, best_filepath):
-  """
-  학습된 모델로 세 가지 전략의 소네트 생성 후 chrF [8] 비교.
-  최고 성능 전략의 결과를 최종 제출 파일로 저장.
-  """
+  """세 가지 전략으로 소네트 생성 후 chrF 비교, 최고 성능 전략을 최종 제출 파일로 저장."""
   device = torch.device('cuda') if args.use_gpu else torch.device('cpu')
   saved = torch.load(best_filepath, weights_only=False)
 
@@ -557,7 +527,7 @@ def generate_submission_sonnets(args, best_filepath):
       print(f"chrF 계산 오류: {e}")
 
   # 전략 비교 출력
-  print("\n=== Generation Strategy Comparison (chrF) [8] ===")
+  print("\n=== Generation Strategy Comparison (chrF) ===")
   for strategy, score in sorted(results.items(), key=lambda x: x[1], reverse=True):
     print(f"  {strategy:10s}: {score:.4f}")
 
@@ -615,9 +585,9 @@ def get_args():
   parser.add_argument("--resume", action='store_true',
                       help="체크포인트에서 이어 학습")
 
-  # LoRA 설정 [5]
-  parser.add_argument("--lora_r", type=int, default=8, help="LoRA rank")
-  parser.add_argument("--lora_alpha", type=int, default=16, help="LoRA scaling alpha")
+  # LoRA 설정
+  parser.add_argument("--lora_r", type=int, default=8)
+  parser.add_argument("--lora_alpha", type=int, default=16)
 
   args = parser.parse_args()
   return args
@@ -659,7 +629,7 @@ if __name__ == "__main__":
   else:
     model = SonnetGPT(args)
     model = model.to(device)
-    # Stage 1: Shakespeare 전작으로 도메인 적응 사전학습 [1]
+    # Stage 1: Shakespeare 전작으로 도메인 적응 사전학습.
     model = pretrain_shakespeare(args, model, device)
 
   # Stage 2: 소네트 fine-tuning (LoRA)
