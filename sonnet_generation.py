@@ -1,37 +1,10 @@
 '''
-소넷 생성을 위한 코드.
+소넷 생성을 위한 시작 코드.
 
 실행:
   `python sonnet_generation.py --use_gpu`
 
-2단계 학습 전략:
-  Stage 1 — Domain-Adaptive Pre-Training (DAPT): Shakespeare 전작 텍스트로 GPT-2를 먼저
-             셰익스피어 문체에 적응시킨다. [1]
-  Stage 2 — Fine-tuning: 소네트 데이터로 소네트 구조(14행, 운율)에 맞게 미세조정한다.
-             LoRA를 사용하여 소규모 데이터셋에서 과적합을 방지한다. [5]
-
-생성 전략 비교:
-  sampling  : Top-p nucleus sampling [2]
-  top_k     : Top-k sampling [3]
-  beam      : Beam search [4]
-
-References:
- [1] Gururangan et al. (2020) Don't Stop Pretraining: Adapt Language Models to Domains and Tasks.
-     ACL 2020. https://arxiv.org/abs/2004.10964
- [2] Holtzman et al. (2020) The Curious Case of Neural Text Degeneration (nucleus sampling).
-     ICLR 2020. https://arxiv.org/abs/1904.09751
- [3] Fan et al. (2018) Hierarchical Neural Story Generation (top-k sampling).
-     ACL 2018. https://arxiv.org/abs/1805.04833
- [4] Graves (2012) Sequence Transduction with Recurrent Neural Networks (beam search).
-     https://arxiv.org/abs/1211.3711
- [5] Hu et al. (2021) LoRA: Low-Rank Adaptation of Large Language Models.
-     https://arxiv.org/abs/2106.09685
- [6] Keskar et al. (2019) CTRL: A Conditional Transformer Language Model (repetition penalty).
-     https://arxiv.org/abs/1909.05858
- [7] Devlin et al. (2019) BERT: Pre-training of Deep Bidirectional Transformers (warmup schedule).
-     NAACL 2019. https://arxiv.org/abs/1810.04805
- [8] Popovic (2015) chrF: character n-gram F-score for automatic MT evaluation.
-     WMT 2015. https://aclanthology.org/W15-3049/
+SonnetGPT 모델을 훈련하고, 필요한 제출용 파일을 작성한다.
 '''
 
 import argparse
