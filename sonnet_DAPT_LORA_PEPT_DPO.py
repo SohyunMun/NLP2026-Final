@@ -601,22 +601,30 @@ def run_evaluation(args, device):
       f.write(f"{sonnet[1]}\n\n")
 
   # Metrics calculation
-  from evaluation import evaluate_poetic_metrics, test_sonnet
+  from evaluation import evaluate_poetic_metrics, test_sonnet, evaluate_theme_alignment
   try:
-    gold_subset = 'data/TRUE_sonnets_held_out_dev_subset.txt'
-    chrf_score = test_sonnet(test_path=args.sonnet_out, gold_path=gold_subset)
+    gold_path = 'data/TRUE_sonnets_held_out_dev.txt'
+    chrf_score = test_sonnet(test_path=args.sonnet_out, gold_path=gold_path)
   except Exception:
     chrf_score = 0.0
+
+  # Build dict of gold sonnets for theme alignment comparison
+  gold_dataset = SonnetsDataset(gold_path)
+  gold_sonnet_dict = {i: text for i, text in gold_dataset}
 
   all_poetic_metrics = []
   sonnet_or_not_scores = []
   lexical_diversities = []
+  theme_alignments = []
   
-  for sonnet_id, full_sonnet in generated_sonnets:
+  for idx, (sonnet_id, full_sonnet) in enumerate(generated_sonnets):
     m = evaluate_poetic_metrics(full_sonnet)
     all_poetic_metrics.append(m)
     sonnet_or_not_scores.append(compute_sonnet_or_not_bot(full_sonnet, m))
     lexical_diversities.append(compute_lexical_diversity(full_sonnet))
+    
+    gold_text = gold_sonnet_dict.get(idx, "")
+    theme_alignments.append(evaluate_theme_alignment(full_sonnet, gold_text))
 
   avg_syllable_err = sum(m['mean_syllable_error'] for m in all_poetic_metrics) / len(all_poetic_metrics)
   avg_syllable_acc = sum(m['syllable_accuracy'] for m in all_poetic_metrics) / len(all_poetic_metrics)
@@ -625,10 +633,13 @@ def run_evaluation(args, device):
   
   avg_sonnet_or_not = sum(sonnet_or_not_scores) / len(sonnet_or_not_scores)
   avg_lexical_diversity = sum(lexical_diversities) / len(lexical_diversities)
+  avg_theme_alignment = sum(theme_alignments) / len(theme_alignments)
   
   form_accuracy = (avg_syllable_acc + avg_meter_acc + avg_rhyme_acc) / 3.0
   overall_quality = chrf_score / 100.0
-  poe_metric = (form_accuracy * 0.4) + (avg_lexical_diversity * 0.3) + (overall_quality * 0.3)
+  
+  # POEMetric including Theme Alignment (Form: 30%, Lexical: 20%, Quality: 30%, Theme: 20%)
+  poe_metric = (form_accuracy * 0.3) + (avg_lexical_diversity * 0.2) + (overall_quality * 0.3) + (avg_theme_alignment * 0.2)
 
   print("\n=============================================")
   print("Final Evaluation on Fixed Metric Suite (ULTIMATE)")
@@ -639,6 +650,7 @@ def run_evaluation(args, device):
   print(f"   - Form Accuracy: {form_accuracy:.3f}")
   print(f"   - Lexical Diversity: {avg_lexical_diversity:.3f}")
   print(f"   - Overall Quality: {overall_quality:.3f}")
+  print(f"   - Theme Alignment: {avg_theme_alignment:.3f}")
   print("---------------------------------------------")
   print(f"   (Detailed Poetic Specs)")
   print(f"   - Avg Syllable Deviation: {avg_syllable_err:.3f}")
@@ -652,11 +664,25 @@ def run_evaluation(args, device):
 # Main Command CLI
 # =====================================================================
 
+def download_shakespeare_data():
+  dapt_file = "data/shakespeare_plays.txt"
+  if not os.path.exists(dapt_file):
+    print(f"Downloading Shakespeare Plays dataset for DAPT...")
+    import urllib.request
+    url = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
+    try:
+      os.makedirs("data", exist_ok=True)
+      urllib.request.urlretrieve(url, dapt_file)
+      print(f"Successfully downloaded Shakespeare dataset to {dapt_file}")
+    except Exception as e:
+      print(f"Failed to download Shakespeare dataset: {e}")
+
+
 def get_args():
   parser = argparse.ArgumentParser()
   parser.add_argument("--stage", type=str, choices=['all', 'dapt', 'sft', 'dpo', 'eval'], default='all',
                       help="stage to run: dapt, sft, dpo, eval or all sequentially")
-  parser.add_argument("--dapt_path", type=str, default="data/sonnets.txt",
+  parser.add_argument("--dapt_path", type=str, default="data/shakespeare_plays.txt",
                       help="Dataset path for Stage 1 DAPT")
   parser.add_argument("--sonnet_path", type=str, default="data/sonnets.txt",
                       help="Dataset path for Stage 2 & 3 SFT & DPO")
@@ -720,6 +746,10 @@ if __name__ == "__main__":
   args = add_model_dims(args)
   seed_everything(args.seed)
   device = torch.device('cuda') if args.use_gpu else torch.device('cpu')
+
+  # DAPT 데이터셋 미존재시 자동 다운로드 트리거
+  if args.stage in ['all', 'dapt'] and args.dapt_path == "data/shakespeare_plays.txt":
+    download_shakespeare_data()
 
   if args.stage == 'all':
     run_dapt(args, device)

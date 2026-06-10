@@ -130,15 +130,25 @@ class SonnetsDataset(Dataset):
     self.sonnets = self._load_sonnets(file_path)
 
   def _load_sonnets(self, file_path):
-    """Reads the file and extracts individual sonnets."""
+    """Reads the file and extracts individual sonnets or 14-line chunks."""
     with open(file_path, 'r', encoding='utf-8') as f:
       text = f.read()
 
     # Split sonnets based on numbering pattern (e.g., "\n\n1\n\n")
-    sonnets = re.split(r'\n\s*\d+\s*\n', text)[1:]  # Remove header text
+    sonnets = re.split(r'\n\s*\d+\s*\n', text)
+    if len(sonnets) <= 1:
+      # 로마 숫자/숫자 형태가 없는 일반 대본 파일일 때: 14행 단위로 끊어서 시 데이터로 활용
+      lines = [line.strip() for line in text.split('\n') if line.strip()]
+      sonnets = []
+      for i in range(0, len(lines), 14):
+        chunk = "\n".join(lines[i:i+14])
+        if chunk:
+          sonnets.append(chunk)
+    else:
+      sonnets = sonnets[1:]  # Remove header text
 
     # Strip leading/trailing spaces
-    return [s.strip() for s in sonnets]
+    return [s.strip() for s in sonnets if s.strip()]
 
   def __len__(self):
     return len(self.sonnets)

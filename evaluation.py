@@ -219,3 +219,29 @@ def evaluate_poetic_metrics(sonnet_text):
         "meter_accuracy": meter_acc,
         "rhyme_accuracy": rhyme_acc
     }
+
+
+def evaluate_theme_alignment(gen_text, gold_text):
+    """
+    Evaluates how well the generated sonnet aligns with the theme of the gold reference sonnet.
+    Uses vocabulary overlap ratio of content words (excluding stopwords).
+    """
+    if not gold_text:
+        return 0.0
+        
+    stopwords = {
+        'the', 'and', 'to', 'of', 'a', 'in', 'that', 'is', 'was', 'he', 'for', 'it', 
+        'with', 'as', 'his', 'on', 'at', 'by', 'an', 'be', 'this', 'are', 'from', 
+        'my', 'thy', 'thee', 'thou', 'me', 'not', 'but', 'or', 'so', 'if', 'your', 
+        'her', 'their', 'we', 'us', 'our', 'you', 'i', 'shall', 'will', 'dost', 
+        'hath', 'shalt', 'art', 'ye', 'have', 'do', 'does', 'did', 'would', 'should'
+    }
+    
+    gold_words = set(re.findall(r"\b\w+(?:'\w+)?\b", gold_text.lower())) - stopwords
+    gen_words = set(re.findall(r"\b\w+(?:'\w+)?\b", gen_text.lower())) - stopwords
+    
+    if not gold_words:
+        return 0.0
+        
+    overlap = gold_words.intersection(gen_words)
+    return len(overlap) / len(gold_words)

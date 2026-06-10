@@ -275,18 +275,22 @@ def generate_submission_sonnets(args):
       f.write(sonnet[1])
 
   # 생성된 소네트들의 평가 지표 연산
-  from evaluation import evaluate_poetic_metrics, test_sonnet
+  from evaluation import evaluate_poetic_metrics, test_sonnet, evaluate_theme_alignment
   try:
-    gold_subset = 'data/TRUE_sonnets_held_out_dev_subset.txt'
-    chrf_score = test_sonnet(test_path=args.sonnet_out, gold_path=gold_subset)
+    gold_path = 'data/TRUE_sonnets_held_out_dev.txt'
+    chrf_score = test_sonnet(test_path=args.sonnet_out, gold_path=gold_path)
   except Exception as e:
     chrf_score = 0.0
+
+  gold_dataset = SonnetsDataset(gold_path)
+  gold_sonnets = {i: text for i, text in gold_dataset}
 
   all_poetic_metrics = []
   sonnet_or_not_scores = []
   lexical_diversities = []
+  theme_alignments = []
   
-  for sonnet_id, full_sonnet in generated_sonnets:
+  for idx, (sonnet_id, full_sonnet) in enumerate(generated_sonnets):
     m = evaluate_poetic_metrics(full_sonnet)
     all_poetic_metrics.append(m)
     
@@ -296,6 +300,10 @@ def generate_submission_sonnets(args):
     lex_div = compute_lexical_diversity(full_sonnet)
     lexical_diversities.append(lex_div)
 
+    gold_text = gold_sonnets.get(idx, "")
+    theme_align = evaluate_theme_alignment(full_sonnet, gold_text)
+    theme_alignments.append(theme_align)
+
   avg_syllable_err = sum(m['mean_syllable_error'] for m in all_poetic_metrics) / len(all_poetic_metrics)
   avg_syllable_acc = sum(m['syllable_accuracy'] for m in all_poetic_metrics) / len(all_poetic_metrics)
   avg_meter_acc = sum(m['meter_accuracy'] for m in all_poetic_metrics) / len(all_poetic_metrics)
@@ -303,10 +311,11 @@ def generate_submission_sonnets(args):
   
   avg_sonnet_or_not = sum(sonnet_or_not_scores) / len(sonnet_or_not_scores)
   avg_lexical_diversity = sum(lexical_diversities) / len(lexical_diversities)
+  avg_theme_alignment = sum(theme_alignments) / len(theme_alignments)
   
   form_accuracy = (avg_syllable_acc + avg_meter_acc + avg_rhyme_acc) / 3.0
   overall_quality = chrf_score / 100.0
-  poe_metric = (form_accuracy * 0.4) + (avg_lexical_diversity * 0.3) + (overall_quality * 0.3)
+  poe_metric = (form_accuracy * 0.3) + (avg_lexical_diversity * 0.2) + (overall_quality * 0.3) + (avg_theme_alignment * 0.2)
 
   print("\n=============================================")
   print("Final Evaluation on Fixed Metric Suite (BASELINE)")
@@ -317,6 +326,7 @@ def generate_submission_sonnets(args):
   print(f"   - Form Accuracy: {form_accuracy:.3f}")
   print(f"   - Lexical Diversity: {avg_lexical_diversity:.3f}")
   print(f"   - Overall Quality: {overall_quality:.3f}")
+  print(f"   - Theme Alignment: {avg_theme_alignment:.3f}")
   print("---------------------------------------------")
   print(f"   (Detailed Poetic Specs)")
   print(f"   - Avg Syllable Deviation: {avg_syllable_err:.3f}")
