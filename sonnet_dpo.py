@@ -149,6 +149,10 @@ class SonnetGPT(nn.Module):
         current_text = tokenizer.decode(current_line_tokens).strip()
         syllable_count, _ = count_syllables_and_stress(current_text) if current_text else (0, [])
         
+        # 5음절 미만이거나 토큰이 3개 미만인 경우 조기 개행 생성 방지
+        if syllable_count < 5 or len(current_line_tokens) < 3:
+          logits[0, newline_id] -= 100.0
+          
         if 8 <= syllable_count <= 11 and rhyme_token_ids and not rhyme_selected:
           for tid in rhyme_token_ids:
             if tid < logits.shape[-1]:
