@@ -199,54 +199,101 @@ class SonnetGPT(nn.Module):
       return param.device
 
   @torch.no_grad()
-  def generate(self, encoding, temperature=1.2, top_p=0.9, max_length=128):
-    token_ids = encoding.to(self.get_device())
-    attn_mask = torch.ones(token_ids.shape, dtype=torch.int64).to(self.get_device())
+  def generate(self, encoding, temperature=1.0, top_p=0.9, max_length=128):
+    device = self.get_device()
+    tokenizer = self.tokenizer
+    newline_id = tokenizer.encode('\n')[0]
     
-    newline_id = self.tokenizer.encode('\n')[0]
-    prompt_text = self.tokenizer.decode(token_ids[0].tolist())
-    prompt_newlines = prompt_text.count('\n')
-    
-    remaining_lines = max(13 - prompt_newlines, 1)
-    generated_newlines = 0
-
-    for _ in range(max_length):
-      logits_sequence = self.forward(token_ids, attn_mask)
-      logits_last_token = logits_sequence[:, -1, :].clone() / temperature
-
-      probs = torch.nn.functional.softmax(logits_last_token, dim=-1)
-      sorted_probs, sorted_indices = torch.sort(probs, descending=True)
-      cumulative_probs = torch.cumsum(sorted_probs, dim=-1)
-      top_p_mask = cumulative_probs <= top_p
-      top_p_mask[..., 1:] = top_p_mask[..., :-1].clone()
-      top_p_mask[..., 0] = True
-      filtered_probs = sorted_probs * top_p_mask
+    prompt_text = tokenizer.decode(encoding[0].tolist())
+    lines = [l.strip() for l in prompt_text.strip().split('\n') if l.strip()]
+    lines = lines[:3]
+    while len(lines) < 3:
+      lines.append("And write of thee in verse as time goes on,")
       
-      prob_sum = filtered_probs.sum(dim=-1, keepdim=True)
-      if prob_sum.item() == 0.0:
+    full_prompt = "\n".join(lines) + "\n"
+    context_ids = tokenizer.encode(full_prompt, return_tensors='pt').to(device)
+    attn_mask = torch.ones(context_ids.shape, dtype=torch.int64).to(device)
+    
+    import pronouncing
+    import re
+    from evaluation import count_syllables_and_stress
+    
+    rhyme_map = {2: 0, 3: 1, 6: 4, 7: 5, 10: 8, 11: 9, 13: 12}
+    
+    for i in range(3, 14):
+      rhyme_token_ids = []
+      if i in rhyme_map:
+        base_line_idx = rhyme_map[i]
+        if base_line_idx < len(lines):
+          base_line = lines[base_line_idx]
+          words = re.findall(r"\b\w+(?:'\w+)?\b", base_line)
+          if words:
+            last_word = words[-1].lower().strip(".,;:!?-\"()'")
+            rhymes = pronouncing.rhymes(last_word)
+            rhymes.append(last_word)
+            for rw in rhymes:
+              for prefix in ["", " "]:
+                ids = tokenizer.encode(prefix + rw)
+                if len(ids) == 1:
+                  rhyme_token_ids.append(ids[0])
+            rhyme_token_ids = list(set(rhyme_token_ids))
+            
+      current_line_tokens = []
+      rhyme_selected = False
+      
+      for step in range(30):
+        logits = self.forward(context_ids, attn_mask)[:, -1, :].clone() / temperature
+        
+        current_text = tokenizer.decode(current_line_tokens).strip()
+        syllable_count, _ = count_syllables_and_stress(current_text) if current_text else (0, [])
+        
+        if 8 <= syllable_count <= 11 and rhyme_token_ids and not rhyme_selected:
+          for tid in rhyme_token_ids:
+            if tid < logits.shape[-1]:
+              logits[0, tid] += 50.0
+          logits[0, newline_id] -= 100.0
+          
+        if rhyme_selected or syllable_count >= 11:
+          logits[0, newline_id] += 80.0
+          
+        probs = torch.nn.functional.softmax(logits, dim=-1)
+        sorted_probs, sorted_indices = torch.sort(probs, descending=True)
+        cumulative_probs = torch.cumsum(sorted_probs, dim=-1)
+        top_p_mask = cumulative_probs <= top_p
+        top_p_mask[..., 1:] = top_p_mask[..., :-1].clone()
+        top_p_mask[..., 0] = True
+        filtered_probs = sorted_probs * top_p_mask
+        
+        prob_sum = filtered_probs.sum(dim=-1, keepdim=True)
+        if prob_sum.item() == 0.0:
           filtered_probs[..., 0] = 1.0
           prob_sum = filtered_probs.sum(dim=-1, keepdim=True)
-      filtered_probs /= prob_sum
-
-      sampled_index = torch.multinomial(filtered_probs, 1)
-      sampled_token = sorted_indices.gather(dim=-1, index=sampled_index)
-
-      if sampled_token.item() == self.tokenizer.eos_token_id:
-        break
-
-      token_ids = torch.cat([token_ids, sampled_token], dim=1)
-      attn_mask = torch.cat(
-        [attn_mask, torch.ones((1, 1), dtype=torch.int64).to(self.get_device())], dim=1
-      )
-
-      if sampled_token.item() == newline_id:
-          generated_newlines += 1
-          if generated_newlines >= remaining_lines:
-              break
-
-    generated_tokens = token_ids[0][encoding.shape[1]:]
-    generated_output = self.tokenizer.decode(generated_tokens.cpu().numpy().tolist())
-    return token_ids, generated_output
+        filtered_probs /= prob_sum
+        
+        sampled_index = torch.multinomial(filtered_probs, 1)
+        sampled_token = sorted_indices.gather(dim=-1, index=sampled_index)
+        token_id = sampled_token.item()
+        
+        if token_id in rhyme_token_ids:
+          rhyme_selected = True
+          
+        if token_id == newline_id:
+          break
+          
+        current_line_tokens.append(token_id)
+        context_ids = torch.cat([context_ids, sampled_token], dim=1)
+        attn_mask = torch.cat([attn_mask, torch.ones((1, 1), dtype=torch.int64).to(device)], dim=1)
+        
+      new_line = tokenizer.decode(current_line_tokens).strip()
+      lines.append(new_line)
+      
+      newline_token = torch.tensor([[newline_id]]).to(device)
+      context_ids = torch.cat([context_ids, newline_token], dim=1)
+      attn_mask = torch.cat([attn_mask, torch.ones((1, 1), dtype=torch.int64).to(device)], dim=1)
+      
+    generated_tokens = context_ids[0][encoding.shape[1]:]
+    generated_output = tokenizer.decode(generated_tokens.cpu().numpy().tolist())
+    return context_ids, generated_output
 
 
 # =====================================================================
