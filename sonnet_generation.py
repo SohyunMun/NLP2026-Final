@@ -594,6 +594,7 @@ def train(args):
   total_steps = max(1, len(sonnet_dataloader) * args.epochs)
   warmup_steps = int(total_steps * args.warmup_ratio)
   global_step = 0
+  best_train_loss = float('inf')
   best_dev_chrf = -float('inf')
   epochs_without_improvement = 0
   saved_best = False
@@ -628,6 +629,18 @@ def train(args):
 
     train_loss = train_loss / num_batches
     print(f"Epoch {epoch}: train loss :: {train_loss :.3f}.")
+    if args.selection_metric == 'loss':
+      if train_loss < best_train_loss:
+        best_train_loss = train_loss
+        epochs_without_improvement = 0
+        saved_best = True
+        args.best_epoch = epoch
+        args.best_train_loss = train_loss
+        save_model(model, optimizer, args, f'best_{args.filepath}')
+        print(f"Epoch {epoch}: best train loss updated :: {best_train_loss :.3f}.")
+      else:
+        epochs_without_improvement += 1
+
     print('Generating a sample output sonnet...')
     model.eval()
     batch = held_out_sonnet_dataset[0]
@@ -636,7 +649,7 @@ def train(args):
     print(f'{batch[1]}{output[1]}\n\n')
 
     dev_chrf = None
-    if args.eval_every > 0 and (epoch + 1) % args.eval_every == 0:
+    if args.selection_metric == 'dev_chrf' and args.eval_every > 0 and (epoch + 1) % args.eval_every == 0:
       dev_chrf = evaluate_dev_chrf(model, args)
       if dev_chrf is not None:
         print(f"Epoch {epoch}: dev approx chrF :: {dev_chrf :.3f}.")
@@ -644,12 +657,17 @@ def train(args):
           best_dev_chrf = dev_chrf
           epochs_without_improvement = 0
           saved_best = True
+          args.best_epoch = epoch
+          args.best_dev_chrf = dev_chrf
           save_model(model, optimizer, args, f'best_{args.filepath}')
         else:
           epochs_without_improvement += 1
 
     if args.patience > 0 and epochs_without_improvement >= args.patience:
-      print(f"Early stopping at epoch {epoch}; best dev approx chrF :: {best_dev_chrf :.3f}.")
+      if args.selection_metric == 'loss':
+        print(f"Early stopping at epoch {epoch}; best train loss :: {best_train_loss :.3f}.")
+      else:
+        print(f"Early stopping at epoch {epoch}; best dev approx chrF :: {best_dev_chrf :.3f}.")
       break
 
     if epoch == args.epochs - 1 and not saved_best:
@@ -726,6 +744,7 @@ def get_args():
   parser.add_argument("--line_break_loss_weight", type=float, default=1.2)
   parser.add_argument("--eval_every", type=int, default=1)
   parser.add_argument("--patience", type=int, default=3)
+  parser.add_argument("--selection_metric", choices=('loss', 'dev_chrf'), default='loss')
   parser.add_argument("--model_size", type=str, help="The model size as specified on hugging face.",
                       choices=['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl'], default='gpt2')
 

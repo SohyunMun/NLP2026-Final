@@ -1,0 +1,14 @@
+[
+  {
+    "file": "/home/msko021220/nlp2026-final-MSK/experiments/dpo_msk_sft_lora_10epoch/basic/predictions/dev_best_chrf.txt",
+    "count": 12,
+    "chrF": 40.78467512662628,
+    "sonnet_or_not_bot_accuracy": 0.0,
+    "poemetric_form_accuracy": 0.0,
+    "poemetric_form_partial": 3.134672619047619,
+    "poemetric_theme_alignment": 0.9038286172350513,
+    "poemetric_lexical_diversity": 4.5517235308973225,
+    "poemetric_overall_quality": 2.8634082557266645,
+    "cmudict_available": false
+  }
+]

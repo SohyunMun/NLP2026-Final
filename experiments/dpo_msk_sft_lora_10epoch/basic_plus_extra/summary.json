@@ -1,0 +1,94 @@
+{
+  "method": "MSK SFT checkpoint + LoRA-DPO",
+  "sft_checkpoint": "/home/msko021220/nlp2026-final-MSK/experiments/trial10_best_loss_4gpu/basic_plus_extra__msk_sft_weighted_mbr/best_10-1e-05-sonnet.pt",
+  "train_path": "/home/msko021220/nlp2026-final-MSK/trial1_data/basic_plus_extra/sonnets_train_plus_extra_clean.txt",
+  "best_chrf_checkpoint": "/home/msko021220/nlp2026-final-MSK/experiments/dpo_msk_sft_lora_10epoch/basic_plus_extra/best_chrf_lora_dpo.pt",
+  "best_loss_checkpoint": "/home/msko021220/nlp2026-final-MSK/experiments/dpo_msk_sft_lora_10epoch/basic_plus_extra/best_loss_lora_dpo.pt",
+  "best_dev_chrf": 42.53146122612541,
+  "best_chrf_epoch": 3,
+  "best_loss_epoch": 3,
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": 0.6665345871814689,
+      "val_loss": 0.4480869657162464,
+      "dev_chrf": 41.77854605713189,
+      "best_val_loss": 0.4480869657162464,
+      "best_dev_chrf": 41.77854605713189
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.5379079326275266,
+      "val_loss": 0.3848932193535747,
+      "dev_chrf": 41.3282809988262,
+      "best_val_loss": 0.3848932193535747,
+      "best_dev_chrf": 41.77854605713189
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.48853924555812067,
+      "val_loss": 0.36382714771863184,
+      "dev_chrf": 42.18390755465654,
+      "best_val_loss": 0.36382714771863184,
+      "best_dev_chrf": 42.18390755465654
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.4454990452097462,
+      "val_loss": 0.3285809021556016,
+      "dev_chrf": 42.53146122612541,
+      "best_val_loss": 0.3285809021556016,
+      "best_dev_chrf": 42.53146122612541
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.4368429830736471,
+      "val_loss": 0.3487384616199768,
+      "dev_chrf": 41.587251729135524,
+      "best_val_loss": 0.3285809021556016,
+      "best_dev_chrf": 42.53146122612541
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.4302666861327117,
+      "val_loss": 0.3435710279383894,
+      "dev_chrf": 41.40152931468325,
+      "best_val_loss": 0.3285809021556016,
+      "best_dev_chrf": 42.53146122612541
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.4371451951746921,
+      "val_loss": 0.3341543292485629,
+      "dev_chrf": 41.34104251984761,
+      "best_val_loss": 0.3285809021556016,
+      "best_dev_chrf": 42.53146122612541
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.4062613129755641,
+      "val_loss": 0.3322321757617773,
+      "dev_chrf": 41.464679553979686,
+      "best_val_loss": 0.3285809021556016,
+      "best_dev_chrf": 42.53146122612541
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.4033775170057147,
+      "val_loss": 0.33856001321339246,
+      "dev_chrf": 41.230416611456775,
+      "best_val_loss": 0.3285809021556016,
+      "best_dev_chrf": 42.53146122612541
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.41038346028355915,
+      "val_loss": 0.332441641857396,
+      "dev_chrf": 42.165529830270465,
+      "best_val_loss": 0.3285809021556016,
+      "best_dev_chrf": 42.53146122612541
+    }
+  ],
+  "dev_prediction": "/home/msko021220/nlp2026-final-MSK/experiments/dpo_msk_sft_lora_10epoch/basic_plus_extra/predictions/dev_best_chrf.txt",
+  "test_prediction": "/home/msko021220/nlp2026-final-MSK/experiments/dpo_msk_sft_lora_10epoch/basic_plus_extra/predictions/test_best_chrf.txt"
+}
