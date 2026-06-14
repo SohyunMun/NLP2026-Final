@@ -189,15 +189,3 @@ dev set 평가 결과는 다음과 같다.
 | 데이터 설명 | `sonnet_project/data/README.md` |
 | 평가 지표 설명 | `sonnet_project/docs/EVALUATION_METRICS_GUIDE.md` |
 | 과제 흐름별 실행법 | `task_scripts/README_KO.md` |
-
-## 10. 제출 시 확인 사항
-
-제출 전 다음 항목을 확인한다.
-
-- `optimizer_test.py`가 통과하는지 확인
-- `sanity_check.py`가 통과하는지 확인
-- 루트 `sonnet_generation.py`가 baseline entry로 실행되는지 확인
-- 개선 실험 코드가 `sonnet_project/`에 분리되어 있는지 확인
-- 사용 데이터와 leakage 제거 과정이 문서화되어 있는지 확인
-- `chrF`, Sonnet-or-Not proxy, POEMetric proxy 결과가 표로 정리되어 있는지 확인
-- 최종 보고서에서 모델별 차이와 결과 해석이 포함되어 있는지 확인
