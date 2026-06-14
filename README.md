@@ -133,6 +133,8 @@ sonnet generation 개선을 위해 아래 여섯 가지 설정을 비교했다.
 
 추가 후처리 실험으로는 `dapt_sft_lora_dpo_best_chrf` 모델에 대해 candidate reranking을 수행했다. 이 실험은 새 학습 없이 prompt당 여러 후보를 생성하고, reference-free form/rhyme/theme/repetition 점수로 최종 후보를 선택한다.
 
+또한 dev set에서만 `chrF` 기준 reranking 분석을 수행했다. 이 분석은 test gold를 사용하지 않으며, `oracle` 결과는 최종 성능이 아니라 후보군 상한선을 확인하기 위한 diagnostic으로만 해석한다.
+
 실험 실행 코드는 `sonnet_project/scripts/run_sixway_sonnet_ablation.py`에 정리되어 있다.
 
 ## 7. 평가 지표
@@ -180,6 +182,7 @@ dev set 평가 결과는 다음과 같다.
 - DPO는 reference similarity와 form score를 개선했지만, lexical diversity와 overall quality proxy는 낮아지는 경향을 보였다.
 - 엄격한 Sonnet-or-Not pass rate는 대부분 0에 가까웠기 때문에, rhyme과 line structure를 직접 제어하는 추가 개선이 필요하다.
 - 추가 실험인 `DPO + reranking`은 dev `chrF`를 `42.7768`에서 `42.0672`로 약간 낮췄지만, dev `POEMetric`을 `0.5971`에서 `0.6359`로, test `POEMetric`을 `0.6105`에서 `0.6496`으로 높였다.
+- dev-only `chrF oracle reranking`은 chrF를 `43.1516`까지 올렸지만 gold reference를 직접 사용한 upper-bound이므로 최종 모델 성능으로 보지 않는다. Leave-one-out chrF-tuned reranking은 `41.8480`으로, 현재 후보군에서는 chrF를 안정적으로 예측하는 reference-free 선택 규칙을 찾기 어렵다는 결과를 보였다.
 
 전체 dev/test 결과와 세부 해석은 `sonnet_project/experiments/sixway_ablation/SUMMARY.md`와 `sonnet_project/reports/SONNET_GENERATION_PROJECT_REPORT_KO.md`에 정리했다.
 
@@ -189,6 +192,7 @@ dev set 평가 결과는 다음과 같다.
 |---|---|
 | 최종 결과 요약 | `sonnet_project/experiments/sixway_ablation/SUMMARY.md` |
 | DPO + reranking 결과 | `sonnet_project/experiments/dpo_reranking/SUMMARY.md` |
+| dev-only chrF reranking 분석 | `sonnet_project/experiments/chrf_reranking_dev/SUMMARY.md` |
 | 최종 보고서 | `sonnet_project/reports/SONNET_GENERATION_PROJECT_REPORT_KO.md` |
 | 데이터 설명 | `sonnet_project/data/README.md` |
 | 평가 지표 설명 | `sonnet_project/docs/EVALUATION_METRICS_GUIDE.md` |

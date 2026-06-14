@@ -1,0 +1,103 @@
+{
+  "method": "dev-only chrF reranking analysis",
+  "candidates": "sonnet_project/experiments/dpo_reranking/candidate_metrics/dev_candidates.csv",
+  "gold": "sonnet_project/data/strict_497/dev_gold_12.txt",
+  "notes": [
+    "oracle_chrf uses each dev prompt's gold reference and is only an upper-bound diagnostic.",
+    "leave_one_out_chrf_tuned does not use the held-out prompt's gold when selecting its candidate.",
+    "No test gold is used and no test chrF reranking is performed."
+  ],
+  "oracle_prediction": "sonnet_project/experiments/chrf_reranking_dev/predictions/dev_oracle_chrf.txt",
+  "loo_prediction": "sonnet_project/experiments/chrf_reranking_dev/predictions/dev_loo_chrf_tuned.txt",
+  "best_full_dev_recipe_by_chrf": {
+    "recipe": "lexical_only",
+    "dev_corpus_chrf": 42.28887775393837,
+    "mean_candidate_chrf": 42.2738951304754
+  },
+  "folds": [
+    {
+      "heldout_row_index": 0,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.26222492853212,
+      "heldout_candidate_index": 4,
+      "heldout_candidate_chrf": 42.58692383058893
+    },
+    {
+      "heldout_row_index": 1,
+      "selected_recipe": "balanced_proxy",
+      "train_chrf": 42.34546536458535,
+      "heldout_candidate_index": 2,
+      "heldout_candidate_chrf": 40.573076213222066
+    },
+    {
+      "heldout_row_index": 2,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.36619901277812,
+      "heldout_candidate_index": 3,
+      "heldout_candidate_chrf": 41.37693911577166
+    },
+    {
+      "heldout_row_index": 3,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.502896055405905,
+      "heldout_candidate_index": 5,
+      "heldout_candidate_chrf": 39.86938153991793
+    },
+    {
+      "heldout_row_index": 4,
+      "selected_recipe": "candidate_4",
+      "train_chrf": 42.435843339677994,
+      "heldout_candidate_index": 4,
+      "heldout_candidate_chrf": 40.00560214663873
+    },
+    {
+      "heldout_row_index": 5,
+      "selected_recipe": "candidate_4",
+      "train_chrf": 42.19043230317712,
+      "heldout_candidate_index": 4,
+      "heldout_candidate_chrf": 42.715505313776696
+    },
+    {
+      "heldout_row_index": 6,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.03014465126243,
+      "heldout_candidate_index": 4,
+      "heldout_candidate_chrf": 45.089516803170504
+    },
+    {
+      "heldout_row_index": 7,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.37005707340252,
+      "heldout_candidate_index": 2,
+      "heldout_candidate_chrf": 41.41364326672991
+    },
+    {
+      "heldout_row_index": 8,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.23377999309367,
+      "heldout_candidate_index": 0,
+      "heldout_candidate_chrf": 42.89130349207103
+    },
+    {
+      "heldout_row_index": 9,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.335755545529814,
+      "heldout_candidate_index": 4,
+      "heldout_candidate_chrf": 41.77814859281722
+    },
+    {
+      "heldout_row_index": 10,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.29478300779756,
+      "heldout_candidate_index": 3,
+      "heldout_candidate_chrf": 42.22356097727833
+    },
+    {
+      "heldout_row_index": 11,
+      "selected_recipe": "lexical_only",
+      "train_chrf": 42.35898656742773,
+      "heldout_candidate_index": 3,
+      "heldout_candidate_chrf": 41.532616484296824
+    }
+  ]
+}
