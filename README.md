@@ -1,5 +1,17 @@
 # 자연어처리 2026-1 지정주제 기말 프로젝트: GPT-2 구축
 
+## MSK Sonnet Generation Project
+
+이 브랜치의 최종 sonnet generation 실험 정리는 아래 파일에서 시작한다.
+
+- 프로젝트 빠른 안내: `PROJECT_README_KO.md`
+- 최종 보고서: `reports/SONNET_GENERATION_PROJECT_REPORT_KO.md`
+- 최종 결과표: `experiments/sixway_ablation/SUMMARY.md`
+- 데이터 설명: `sonnet_data/README.md`
+- 파일 안내: `docs/PROJECT_FILE_GUIDE_KO.md`
+
+기본 과제 코드는 유지하고, sonnet generation 비교 실험에 필요한 데이터, 평가 스크립트, 실험 runner, 최종 결과만 추가했다.
+
 ## PART-I:
 
 #### 다음 각 모듈에서 누락된 코드 블록을 완성해야 한다.

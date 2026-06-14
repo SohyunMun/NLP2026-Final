@@ -1,150 +1,0 @@
-=== Variation: baseline | Model: gpt2 | Epochs: 10 ===
-[baseline] 학습 파라미터: 125,030,400 / 125,030,400 (100.00%)
-
-=== Stage 2: fine-tuning [baseline] — 131소네트, max 10epoch ===
-train-0:   0%|          | 0/17 [00:00<?, ?it/s]train-0:   6%|▌         | 1/17 [00:00<00:08,  1.88it/s]train-0:  12%|█▏        | 2/17 [00:00<00:04,  3.32it/s]train-0:  18%|█▊        | 3/17 [00:00<00:03,  3.90it/s]train-0:  24%|██▎       | 4/17 [00:01<00:03,  4.23it/s]train-0:  29%|██▉       | 5/17 [00:01<00:02,  4.38it/s]train-0:  35%|███▌      | 6/17 [00:01<00:02,  4.52it/s]train-0:  41%|████      | 7/17 [00:01<00:02,  4.69it/s]train-0:  47%|████▋     | 8/17 [00:01<00:01,  4.78it/s]train-0:  53%|█████▎    | 9/17 [00:02<00:01,  4.84it/s]train-0:  59%|█████▉    | 10/17 [00:02<00:01,  4.90it/s]train-0:  65%|██████▍   | 11/17 [00:02<00:01,  4.84it/s]train-0:  71%|███████   | 12/17 [00:02<00:01,  4.89it/s]train-0:  76%|███████▋  | 13/17 [00:02<00:00,  4.76it/s]train-0:  82%|████████▏ | 14/17 [00:03<00:00,  4.83it/s]train-0:  88%|████████▊ | 15/17 [00:03<00:00,  4.79it/s]train-0:  94%|█████████▍| 16/17 [00:03<00:00,  4.86it/s]train-0: 100%|██████████| 17/17 [00:03<00:00,  5.53it/s]train-0: 100%|██████████| 17/17 [00:03<00:00,  4.63it/s]
-Epoch 0: train loss = 4.936
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be, my silent cloak;
-
-Best model saved (loss=4.936)
-train-1:   0%|          | 0/17 [00:00<?, ?it/s]train-1:   6%|▌         | 1/17 [00:00<00:01,  9.37it/s]train-1:  12%|█▏        | 2/17 [00:00<00:01,  9.45it/s]train-1:  18%|█▊        | 3/17 [00:00<00:01,  9.51it/s]train-1:  24%|██▎       | 4/17 [00:00<00:01,  9.47it/s]train-1:  29%|██▉       | 5/17 [00:00<00:01,  9.44it/s]train-1:  35%|███▌      | 6/17 [00:00<00:01,  9.41it/s]train-1:  41%|████      | 7/17 [00:00<00:01,  9.48it/s]train-1:  47%|████▋     | 8/17 [00:00<00:00,  9.52it/s]train-1:  53%|█████▎    | 9/17 [00:00<00:00,  9.55it/s]train-1:  59%|█████▉    | 10/17 [00:01<00:00,  9.39it/s]train-1:  65%|██████▍   | 11/17 [00:01<00:00,  9.24it/s]train-1:  71%|███████   | 12/17 [00:01<00:00,  9.22it/s]train-1:  76%|███████▋  | 13/17 [00:01<00:00,  9.14it/s]train-1:  82%|████████▏ | 14/17 [00:01<00:00,  9.31it/s]train-1:  88%|████████▊ | 15/17 [00:01<00:00,  9.30it/s]train-1:  94%|█████████▍| 16/17 [00:01<00:00,  9.14it/s]train-1: 100%|██████████| 17/17 [00:01<00:00,  9.52it/s]
-Epoch 1: train loss = 4.395
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-And sorrows of the ill to find.
-
-Best model saved (loss=4.395)
-train-2:   0%|          | 0/17 [00:00<?, ?it/s]train-2:   6%|▌         | 1/17 [00:00<00:01,  9.06it/s]train-2:  12%|█▏        | 2/17 [00:00<00:01,  9.30it/s]train-2:  18%|█▊        | 3/17 [00:00<00:01,  9.48it/s]train-2:  24%|██▎       | 4/17 [00:00<00:01,  9.24it/s]train-2:  29%|██▉       | 5/17 [00:00<00:01,  9.28it/s]train-2:  35%|███▌      | 6/17 [00:00<00:01,  9.47it/s]train-2:  41%|████      | 7/17 [00:00<00:01,  9.57it/s]train-2:  47%|████▋     | 8/17 [00:00<00:00,  9.43it/s]train-2:  53%|█████▎    | 9/17 [00:00<00:00,  9.39it/s]train-2:  59%|█████▉    | 10/17 [00:01<00:00,  9.29it/s]train-2:  65%|██████▍   | 11/17 [00:01<00:00,  9.31it/s]train-2:  71%|███████   | 12/17 [00:01<00:00,  9.45it/s]train-2:  76%|███████▋  | 13/17 [00:01<00:00,  9.46it/s]train-2:  82%|████████▏ | 14/17 [00:01<00:00,  9.34it/s]train-2:  88%|████████▊ | 15/17 [00:01<00:00,  9.36it/s]train-2:  94%|█████████▍| 16/17 [00:01<00:00,  9.26it/s]train-2: 100%|██████████| 17/17 [00:01<00:00,  9.62it/s]
-Epoch 2: train loss = 4.158
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be, then deny thee.
-My grace shall see you more from now than thou canst bear; but my blood must not change: it is no longer that of the world's birth to mine same age.[4]
-
-Best model saved (loss=4.158)
-train-3:   0%|          | 0/17 [00:00<?, ?it/s]train-3:   6%|▌         | 1/17 [00:00<00:01,  8.66it/s]train-3:  12%|█▏        | 2/17 [00:00<00:01,  8.73it/s]train-3:  18%|█▊        | 3/17 [00:00<00:01,  8.96it/s]train-3:  24%|██▎       | 4/17 [00:00<00:01,  9.09it/s]train-3:  29%|██▉       | 5/17 [00:00<00:01,  9.04it/s]train-3:  35%|███▌      | 6/17 [00:00<00:01,  9.13it/s]train-3:  41%|████      | 7/17 [00:00<00:01,  9.21it/s]train-3:  47%|████▋     | 8/17 [00:00<00:00,  9.06it/s]train-3:  53%|█████▎    | 9/17 [00:00<00:00,  9.04it/s]train-3:  59%|█████▉    | 10/17 [00:01<00:00,  9.04it/s]train-3:  65%|██████▍   | 11/17 [00:01<00:00,  9.21it/s]train-3:  71%|███████   | 12/17 [00:01<00:00,  9.24it/s]train-3:  76%|███████▋  | 13/17 [00:01<00:00,  9.27it/s]train-3:  82%|████████▏ | 14/17 [00:01<00:00,  9.35it/s]train-3:  88%|████████▊ | 15/17 [00:01<00:00,  9.41it/s]train-3:  94%|█████████▍| 16/17 [00:01<00:00,  9.56it/s]train-3: 100%|██████████| 17/17 [00:01<00:00,  9.39it/s]
-Epoch 3: train loss = 4.029
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be, {173} but the sight of them is so hideous.
-Each wise shall in a fairest way feel this scorn;
-And every blessed one to whom sorrow means honors my life?
-
-Best model saved (loss=4.029)
-train-4:   0%|          | 0/17 [00:00<?, ?it/s]train-4:   6%|▌         | 1/17 [00:00<00:01,  8.68it/s]train-4:  12%|█▏        | 2/17 [00:00<00:01,  8.78it/s]train-4:  18%|█▊        | 3/17 [00:00<00:01,  8.87it/s]train-4:  24%|██▎       | 4/17 [00:00<00:01,  9.17it/s]train-4:  29%|██▉       | 5/17 [00:00<00:01,  9.22it/s]train-4:  35%|███▌      | 6/17 [00:00<00:01,  9.36it/s]train-4:  41%|████      | 7/17 [00:00<00:01,  9.36it/s]train-4:  47%|████▋     | 8/17 [00:00<00:00,  9.36it/s]train-4:  53%|█████▎    | 9/17 [00:00<00:00,  9.44it/s]train-4:  59%|█████▉    | 10/17 [00:01<00:00,  8.78it/s]train-4:  65%|██████▍   | 11/17 [00:01<00:00,  8.12it/s]train-4:  71%|███████   | 12/17 [00:01<00:00,  7.90it/s]train-4:  76%|███████▋  | 13/17 [00:01<00:00,  7.70it/s]train-4:  82%|████████▏ | 14/17 [00:01<00:00,  7.47it/s]train-4:  88%|████████▊ | 15/17 [00:01<00:00,  7.31it/s]train-4:  94%|█████████▍| 16/17 [00:01<00:00,  7.18it/s]train-4: 100%|██████████| 17/17 [00:02<00:00,  8.36it/s]
-Epoch 4: train loss = 3.945
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be, doth imitate.
-
-Best model saved (loss=3.945)
-train-5:   0%|          | 0/17 [00:00<?, ?it/s]train-5:   6%|▌         | 1/17 [00:00<00:01,  8.49it/s]train-5:  12%|█▏        | 2/17 [00:00<00:01,  9.01it/s]train-5:  18%|█▊        | 3/17 [00:00<00:01,  9.19it/s]train-5:  24%|██▎       | 4/17 [00:00<00:01,  9.37it/s]train-5:  29%|██▉       | 5/17 [00:00<00:01,  9.36it/s]train-5:  35%|███▌      | 6/17 [00:00<00:01,  9.26it/s]train-5:  41%|████      | 7/17 [00:00<00:01,  9.09it/s]train-5:  47%|████▋     | 8/17 [00:00<00:00,  9.30it/s]train-5:  53%|█████▎    | 9/17 [00:00<00:00,  9.23it/s]train-5:  59%|█████▉    | 10/17 [00:01<00:00,  9.14it/s]train-5:  65%|██████▍   | 11/17 [00:01<00:00,  9.08it/s]train-5:  71%|███████   | 12/17 [00:01<00:00,  9.17it/s]train-5:  76%|███████▋  | 13/17 [00:01<00:00,  9.12it/s]train-5:  82%|████████▏ | 14/17 [00:01<00:00,  9.26it/s]train-5:  88%|████████▊ | 15/17 [00:01<00:00,  9.39it/s]train-5:  94%|█████████▍| 16/17 [00:01<00:00,  9.37it/s]train-5: 100%|██████████| 17/17 [00:01<00:00,  9.44it/s]
-Epoch 5: train loss = 3.900
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-My lost mistress's fault. And yet this thou art; these wretched things draw thee away.—Hath not there such some stain in th' sight?  My gutter is perfumed of roses!
-
-Best model saved (loss=3.900)
-train-6:   0%|          | 0/17 [00:00<?, ?it/s]train-6:   6%|▌         | 1/17 [00:00<00:01,  8.68it/s]train-6:  12%|█▏        | 2/17 [00:00<00:01,  9.03it/s]train-6:  18%|█▊        | 3/17 [00:00<00:01,  9.19it/s]train-6:  24%|██▎       | 4/17 [00:00<00:01,  9.17it/s]train-6:  29%|██▉       | 5/17 [00:00<00:01,  9.39it/s]train-6:  35%|███▌      | 6/17 [00:00<00:01,  9.30it/s]train-6:  41%|████      | 7/17 [00:00<00:01,  9.36it/s]train-6:  47%|████▋     | 8/17 [00:00<00:00,  9.31it/s]train-6:  53%|█████▎    | 9/17 [00:00<00:00,  9.16it/s]train-6:  59%|█████▉    | 10/17 [00:01<00:00,  9.22it/s]train-6:  65%|██████▍   | 11/17 [00:01<00:00,  9.10it/s]train-6:  71%|███████   | 12/17 [00:01<00:00,  9.26it/s]train-6:  76%|███████▋  | 13/17 [00:01<00:00,  9.14it/s]train-6:  82%|████████▏ | 14/17 [00:01<00:00,  9.21it/s]train-6:  88%|████████▊ | 15/17 [00:01<00:00,  9.16it/s]train-6:  94%|█████████▍| 16/17 [00:01<00:00,  9.14it/s]train-6: 100%|██████████| 17/17 [00:01<00:00,  9.39it/s]
-Epoch 6: train loss = 3.861
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-Which then will not live nor die; yet thou wilt make th' two stars work. The hatred of an eye shall mine life worthless!
-
-Best model saved (loss=3.861)
-train-7:   0%|          | 0/17 [00:00<?, ?it/s]train-7:   6%|▌         | 1/17 [00:00<00:02,  7.70it/s]train-7:  12%|█▏        | 2/17 [00:00<00:01,  8.05it/s]train-7:  18%|█▊        | 3/17 [00:00<00:01,  7.99it/s]train-7:  24%|██▎       | 4/17 [00:00<00:01,  8.10it/s]train-7:  29%|██▉       | 5/17 [00:00<00:01,  8.11it/s]train-7:  35%|███▌      | 6/17 [00:00<00:01,  8.29it/s]train-7:  41%|████      | 7/17 [00:00<00:01,  8.30it/s]train-7:  47%|████▋     | 8/17 [00:00<00:01,  8.33it/s]train-7:  53%|█████▎    | 9/17 [00:01<00:00,  8.44it/s]train-7:  59%|█████▉    | 10/17 [00:01<00:00,  8.39it/s]train-7:  65%|██████▍   | 11/17 [00:01<00:00,  8.39it/s]train-7:  71%|███████   | 12/17 [00:01<00:00,  8.47it/s]train-7:  76%|███████▋  | 13/17 [00:01<00:00,  8.34it/s]train-7:  82%|████████▏ | 14/17 [00:01<00:00,  6.02it/s]train-7:  88%|████████▊ | 15/17 [00:01<00:00,  6.63it/s]train-7:  94%|█████████▍| 16/17 [00:02<00:00,  7.04it/s]train-7: 100%|██████████| 17/17 [00:02<00:00,  7.92it/s]
-Epoch 7: train loss = 3.835
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-With smiles of heavenly thoughts in their beds.
-
-Best model saved (loss=3.835)
-train-8:   0%|          | 0/17 [00:00<?, ?it/s]train-8:   6%|▌         | 1/17 [00:00<00:02,  7.02it/s]train-8:  12%|█▏        | 2/17 [00:00<00:02,  7.45it/s]train-8:  18%|█▊        | 3/17 [00:00<00:01,  7.84it/s]train-8:  24%|██▎       | 4/17 [00:00<00:01,  8.05it/s]train-8:  29%|██▉       | 5/17 [00:00<00:01,  8.11it/s]train-8:  35%|███▌      | 6/17 [00:00<00:01,  8.11it/s]train-8:  41%|████      | 7/17 [00:00<00:01,  7.95it/s]train-8:  47%|████▋     | 8/17 [00:01<00:01,  8.09it/s]train-8:  53%|█████▎    | 9/17 [00:01<00:00,  8.15it/s]train-8:  59%|█████▉    | 10/17 [00:01<00:00,  8.00it/s]train-8:  65%|██████▍   | 11/17 [00:01<00:00,  8.11it/s]train-8:  71%|███████   | 12/17 [00:01<00:00,  8.01it/s]train-8:  76%|███████▋  | 13/17 [00:01<00:00,  7.97it/s]train-8:  82%|████████▏ | 14/17 [00:01<00:00,  8.07it/s]train-8:  88%|████████▊ | 15/17 [00:01<00:00,  8.01it/s]train-8:  94%|█████████▍| 16/17 [00:01<00:00,  8.16it/s]train-8: 100%|██████████| 17/17 [00:02<00:00,  8.21it/s]
-Epoch 8: train loss = 3.823
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-And cause many to look away from thee.
-But all your cheeks shall give you every stain; but thou art worthy of my memory: yet this do not kill nor find what is left-to see yours bright!
-
-Best model saved (loss=3.823)
-train-9:   0%|          | 0/17 [00:00<?, ?it/s]train-9:   6%|▌         | 1/17 [00:00<00:01,  8.41it/s]train-9:  12%|█▏        | 2/17 [00:00<00:01,  9.00it/s]train-9:  18%|█▊        | 3/17 [00:00<00:01,  9.39it/s]train-9:  24%|██▎       | 4/17 [00:00<00:01,  9.27it/s]train-9:  29%|██▉       | 5/17 [00:00<00:01,  9.45it/s]train-9:  35%|███▌      | 6/17 [00:00<00:01,  9.58it/s]train-9:  41%|████      | 7/17 [00:00<00:01,  9.43it/s]train-9:  47%|████▋     | 8/17 [00:00<00:00,  9.42it/s]train-9:  53%|█████▎    | 9/17 [00:00<00:00,  9.24it/s]train-9:  59%|█████▉    | 10/17 [00:01<00:00,  9.31it/s]train-9:  65%|██████▍   | 11/17 [00:01<00:00,  9.22it/s]train-9:  71%|███████   | 12/17 [00:01<00:00,  9.26it/s]train-9:  76%|███████▋  | 13/17 [00:01<00:00,  9.29it/s]train-9:  82%|████████▏ | 14/17 [00:01<00:00,  9.24it/s]train-9:  88%|████████▊ | 15/17 [00:01<00:00,  9.39it/s]train-9:  94%|█████████▍| 16/17 [00:01<00:00,  9.39it/s]train-9: 100%|██████████| 17/17 [00:01<00:00,  9.52it/s]
-Epoch 9: train loss = 3.815
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-And laugh all that to hell's not yet brought.
-
-Best model saved (loss=3.815)
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-With those that were less attractive; yet the light doth pay.
-My fair face keeps mine sorrows covered from thee: it smother'st away all things better than yours."
-
-Beshrew that heart that makes my heart to groan
-For that deep wound it gives my friend and me.
-Is 't not enough to torture me alone, but more is desired?  I should igh his words out with the tender cry of love; an unkillable blundering sun or cold cloud doth sweeten mine eyes' eye so resound.* So when two galleys see him rumble as though put on fire itself alive from their sepulchre without soul's aid--a distant traveler he all this time turns up like shadows in livid gloom - plastered by ruiners everywhere! For death leaves no imprint upon life here where none lived before nor yet forgot us any one: which place shall you live ? To take into your hand some fatherland worth loved forever above those old afterage since they are passed away evading destruction at last for evermore barren ; let them weep then come back thine eternal loves whose sight hath waxed rich a moan hearst
-
-- The sad tale telleth dead hearts sing Then die well (my dear friends ) Be glad again
-
-So, now I have confessed that he is thine
-And I myself am mortgaged to thy will,
-Myself I'll forfeit, so that other mine might be spent.
-
-
-
-Whoever hath her wish, thou hast thy will,
-And will to boot, and will in overplus.
-More than enough am I that vex thee still, you see; "tis clear why a child's look must be doth love." But now when she fears for his needs most fearless of him who supposes them? For think me ill can any more dread my vengeful the freedom soon given away wherefore art he trusted--done it what if not by which every man was happy with alms though once so barren! So much is mine nature hated myself after these false loves have made no use but idle mouths worth speaking: yet  neither do thine heed stop from seeing at all their cunning how pleased they themselves are upon nothing else except our own kind home welfare on this earth one world under another ! And leave those gifts behind whence should ever stand before such thoughts as delights us each day henceforth come too many days again night unto morning , till there begins an end ? You know better rich or poor others die alone lives spent lamenting then did anyone hell proud remember yours lines live here true old 'till we shall give breath o'er your moan times told long ago .
-
-If thy soul check thee that I come so near,
-Swear to thy blind soul that I was thy will,
-And will, thy soul knows, is admitted there.
-
-Thou blind fool, Love, what dost thou to mine eyes
-That they behold and see not what they see?
-They know what beauty is, see where it lies, but do none harm. And yet you must give praise; for that self-pity of your heart should call no answer! Give true love the respect in which truth lives
-
-When my love swears that she is made of truth
-I do believe her though I know she lies,
-That she might think me some untutored youth, ere this fade may come;
-
-But all must be for nothing but what hath knowledge.
-
-O, call not me to justify the wrong
-That thy unkindness lays upon my heart;
-Wound me not with thine eye but with thy tongue; he is a cruel play-man!
-
-Be wise as thou art cruel; do not press
-My tongue-tied patience with too much disdain,
-Lest sorrow lend me words, and words express the vice of love. In thine opinion my thoughts are pretty blanched: let them be witless in mock! If they have doth kiss your hand live up you say 'Yours husband's kingly soul was even thy true beauty!' And what more can that youth weep than if his lover wished thee a child? Give him an heir whom mine shall want so hard he will become mad by it to look upon such this son nor countenance another poor fellow.' To deserve these things I give none but myself—as often we sing for ever full on
-
-A verse before war finds itself once vengeful then filled out again You all grown men were born right back when lovers first married A sweetness growing strong puts their minds at ease every time  Taste would keep'ing how rich our hearts desired Our graces till nothing may yet lie abroad Beware wherest foes come Where tyrants blind us down Though yearning flowers fade like stars tilled Then five suns now play away The banners might make fire grow fiery White beyond winter night red This heart which loves miscegenation destroys praise From fear is yours All eternity gives second thought hold Your riches silent ere God sings Oh long never forsake Mine eye Time shows dark faces How fair those days had themselves roved By fierce ennui scents
-
-In faith, I do not love thee with mine eyes,
-For they in thee a thousand errors note;
-But 'tis my heart that loves what they despise,
-And tells me at least the truth of their sayings. It seems to surprise it when thou hast said these things: for behold how God hath given one such as hisself very high praise—-the best thing seen thereof! To make him bring up like new contentment he shows itself most useless too much by many reasons mixed together,—he has all this under false form again well expressed and incorporated--it's unbroken beauty is none but an echo doth live till we have read its words . But while here profane woe spends time there continues now old folly spent on myself chattering forth those lies even though from henceforth grace shall seem sweetness subdued therein ; so no more are thy thoughts filled out ever thought clearer or better than before because both were yet overburdened themselves."
-
-Love is my sin, and thy dear virtue hate,
-Hate of my sin, grounded on sinful loving.
-O, but with mine compare thou thine own state, which wert as if in praise;
-From thee defiled are the many stars rivalled by me:—
-
-"But forgive both yourself thus," says he to his friend's widow-child above him aloud, "and let us look still upon our former fault."
-
-Lo, as a careful huswife runs to catch
-One of her feathered creatures broke away,
-Sets down her babe, and makes all swift dispatch;
-
-
-[baseline] chrF = 33.7047
-$ /home/msko021220/.conda/envs/busi2/bin/python /home/msko021220/nlp2026-final-SHM/sonnet_generation.py --variation baseline --epochs 10 --batch_size 8 --lr 2e-5 --patience 10 --sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_train.txt --held_out_sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_held_out_dev.txt --sonnet_out /home/msko021220/nlp2026-final-MSK/experiments/trial10_best_loss_4gpu/basic__shm_baseline_full_ft/predictions/dev_generated_sonnets.txt --model_size gpt2 --use_gpu --dev_sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_held_out_dev.txt --run_name basic__shm_baseline_full_ft --milestone_model_dir /home/msko021220/nlp2026-final-MSK/experiments/trial10_best_loss_4gpu/basic__shm_baseline_full_ft/models --milestone_pred_dir /home/msko021220/nlp2026-final-MSK/experiments/trial10_best_loss_4gpu/basic__shm_baseline_full_ft/predictions
-

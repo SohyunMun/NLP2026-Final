@@ -1,444 +1,0 @@
-train-0:   0%|          | 0/17 [00:00<?, ?it/s]train-0:   6%|▌         | 1/17 [00:00<00:09,  1.72it/s]train-0:  12%|█▏        | 2/17 [00:00<00:05,  2.76it/s]train-0:  18%|█▊        | 3/17 [00:01<00:04,  3.36it/s]train-0:  24%|██▎       | 4/17 [00:01<00:03,  3.80it/s]train-0:  29%|██▉       | 5/17 [00:01<00:02,  4.00it/s]train-0:  35%|███▌      | 6/17 [00:01<00:02,  4.21it/s]train-0:  41%|████      | 7/17 [00:01<00:02,  4.41it/s]train-0:  47%|████▋     | 8/17 [00:02<00:01,  4.55it/s]train-0:  53%|█████▎    | 9/17 [00:02<00:01,  4.62it/s]train-0:  59%|█████▉    | 10/17 [00:02<00:01,  4.65it/s]train-0:  65%|██████▍   | 11/17 [00:02<00:01,  4.60it/s]train-0:  71%|███████   | 12/17 [00:02<00:01,  4.69it/s]train-0:  76%|███████▋  | 13/17 [00:03<00:00,  4.62it/s]train-0:  82%|████████▏ | 14/17 [00:03<00:00,  4.69it/s]train-0:  88%|████████▊ | 15/17 [00:03<00:00,  4.68it/s]train-0:  94%|█████████▍| 16/17 [00:03<00:00,  5.42it/s]train-0: 100%|██████████| 17/17 [00:03<00:00,  4.52it/s]
-Epoch 0: train loss :: 4.901.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 0: best train loss updated :: 4.901.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-My and mine, to scour all night.
-This I feel and love I have, and am,
-That I will never, nor will I stop,
-But mine long and weary life be.
-I doth not find my memory in vain,
-Nor am I to hear a loss so strong,
-Though still my soul mine though with sorrow,
-So long to be so in silence.
-And now, seeing, I beheld
-Like a moon so sweet,
-And so dull, so with deep sorrow,
-Such as I am now, if thou seeest thee;
-And the griefs
-
-
-train-1:   0%|          | 0/17 [00:00<?, ?it/s]train-1:   6%|▌         | 1/17 [00:00<00:01,  9.58it/s]train-1:  12%|█▏        | 2/17 [00:00<00:01,  9.60it/s]train-1:  18%|█▊        | 3/17 [00:00<00:01,  9.63it/s]train-1:  24%|██▎       | 4/17 [00:00<00:01,  9.54it/s]train-1:  29%|██▉       | 5/17 [00:00<00:01,  9.47it/s]train-1:  35%|███▌      | 6/17 [00:00<00:01,  9.45it/s]train-1:  41%|████      | 7/17 [00:00<00:01,  9.53it/s]train-1:  47%|████▋     | 8/17 [00:00<00:00,  9.54it/s]train-1:  53%|█████▎    | 9/17 [00:00<00:00,  9.59it/s]train-1:  59%|█████▉    | 10/17 [00:01<00:00,  9.41it/s]train-1:  65%|██████▍   | 11/17 [00:01<00:00,  9.27it/s]train-1:  71%|███████   | 12/17 [00:01<00:00,  9.29it/s]train-1:  76%|███████▋  | 13/17 [00:01<00:00,  9.22it/s]train-1:  82%|████████▏ | 14/17 [00:01<00:00,  9.34it/s]train-1:  88%|████████▊ | 15/17 [00:01<00:00,  9.35it/s]train-1:  94%|█████████▍| 16/17 [00:01<00:00,  9.17it/s]train-1: 100%|██████████| 17/17 [00:01<00:00,  9.57it/s]
-Epoch 1: train loss :: 4.670.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 1: best train loss updated :: 4.670.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
- O tears of those mine who have blind,
- Who hast so discerning eyes,
-Lest they be their own, they are truly his.
-I pity thee, and weep in thy sorrows,
-And may not be silent in thy misery,
-Dost not I think thou repose my grief?
-And mayest it never come, when thou art utterly alone,
-That I am to the cross, and be to thy grief.
-O that will I mourn with thee, and mayst thou forgive me,
- O sorrowless man, and gain thy sorrow
-And thou in thy grief, whom thou
-
-
-train-2:   0%|          | 0/17 [00:00<?, ?it/s]train-2:   6%|▌         | 1/17 [00:00<00:01,  9.49it/s]train-2:  12%|█▏        | 2/17 [00:00<00:01,  9.68it/s]train-2:  18%|█▊        | 3/17 [00:00<00:01,  9.69it/s]train-2:  24%|██▎       | 4/17 [00:00<00:01,  9.33it/s]train-2:  29%|██▉       | 5/17 [00:00<00:01,  9.38it/s]train-2:  35%|███▌      | 6/17 [00:00<00:01,  9.52it/s]train-2:  41%|████      | 7/17 [00:00<00:01,  9.60it/s]train-2:  47%|████▋     | 8/17 [00:00<00:00,  9.43it/s]train-2:  53%|█████▎    | 9/17 [00:00<00:00,  9.42it/s]train-2:  59%|█████▉    | 10/17 [00:01<00:00,  9.30it/s]train-2:  65%|██████▍   | 11/17 [00:01<00:00,  9.32it/s]train-2:  71%|███████   | 12/17 [00:01<00:00,  9.44it/s]train-2:  76%|███████▋  | 13/17 [00:01<00:00,  9.40it/s]train-2:  82%|████████▏ | 14/17 [00:01<00:00,  9.26it/s]train-2:  88%|████████▊ | 15/17 [00:01<00:00,  9.28it/s]train-2:  94%|█████████▍| 16/17 [00:01<00:00,  9.17it/s]train-2: 100%|██████████| 17/17 [00:01<00:00,  9.59it/s]
-Epoch 2: train loss :: 4.518.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 2: best train loss updated :: 4.518.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-In order to forget me, and make me forget my father's name.
-When, too, I come to hear them,
-To see the joy they present,
-In sorrow in the remembrance of their father's name.
-I can be silent, no wonder, no wonder;
-But, when my mind hears these things,
-
-That to tell it, I pity its name,
- Shall, in order to praise their praise,
-
-Be silent, for I am not ashamed of this mine;
- Nor should I be, for by their words,
-Nor can I see their pity,
-Nor, as
-
-
-train-3:   0%|          | 0/17 [00:00<?, ?it/s]train-3:   6%|▌         | 1/17 [00:00<00:01,  9.29it/s]train-3:  12%|█▏        | 2/17 [00:00<00:01,  9.04it/s]train-3:  18%|█▊        | 3/17 [00:00<00:01,  9.16it/s]train-3:  24%|██▎       | 4/17 [00:00<00:01,  9.19it/s]train-3:  29%|██▉       | 5/17 [00:00<00:01,  9.08it/s]train-3:  35%|███▌      | 6/17 [00:00<00:01,  9.12it/s]train-3:  41%|████      | 7/17 [00:00<00:01,  9.18it/s]train-3:  47%|████▋     | 8/17 [00:00<00:00,  9.03it/s]train-3:  53%|█████▎    | 9/17 [00:00<00:00,  9.04it/s]train-3:  59%|█████▉    | 10/17 [00:01<00:00,  9.04it/s]train-3:  65%|██████▍   | 11/17 [00:01<00:00,  9.23it/s]train-3:  71%|███████   | 12/17 [00:01<00:00,  9.27it/s]train-3:  76%|███████▋  | 13/17 [00:01<00:00,  9.27it/s]train-3:  82%|████████▏ | 14/17 [00:01<00:00,  9.32it/s]train-3:  88%|████████▊ | 15/17 [00:01<00:00,  9.42it/s]train-3:  94%|█████████▍| 16/17 [00:01<00:00,  9.58it/s]train-3: 100%|██████████| 17/17 [00:01<00:00,  9.48it/s]
-Epoch 3: train loss :: 4.438.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 3: best train loss updated :: 4.438.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-And on them give, to me give it;
-For shame is sorrow, and every day it stinks,
-And for it to die, and to be slain;
-And it's not to all that I despise thee.
-So I hate thee not, because thy mother had me grow.
-For ever since thy days,
-That woman did not see thee born,
- That so many joys of life had I in vain.
-And thou, my sorrowful son,
-Who makes my brother weep in the midst of thy sorrows;
-Nor did I love thee, but by thy smile thou hast done
-
-
-train-4:   0%|          | 0/17 [00:00<?, ?it/s]train-4:   6%|▌         | 1/17 [00:00<00:01,  9.29it/s]train-4:  12%|█▏        | 2/17 [00:00<00:01,  8.96it/s]train-4:  18%|█▊        | 3/17 [00:00<00:01,  8.83it/s]train-4:  24%|██▎       | 4/17 [00:00<00:01,  9.13it/s]train-4:  29%|██▉       | 5/17 [00:00<00:01,  9.18it/s]train-4:  35%|███▌      | 6/17 [00:00<00:01,  9.27it/s]train-4:  41%|████      | 7/17 [00:00<00:01,  9.27it/s]train-4:  47%|████▋     | 8/17 [00:00<00:00,  9.27it/s]train-4:  53%|█████▎    | 9/17 [00:00<00:00,  9.35it/s]train-4:  59%|█████▉    | 10/17 [00:01<00:00,  9.22it/s]train-4:  65%|██████▍   | 11/17 [00:01<00:00,  9.14it/s]train-4:  71%|███████   | 12/17 [00:01<00:00,  9.31it/s]train-4:  76%|███████▋  | 13/17 [00:01<00:00,  9.38it/s]train-4:  82%|████████▏ | 14/17 [00:01<00:00,  9.34it/s]train-4:  88%|████████▊ | 15/17 [00:01<00:00,  9.34it/s]train-4:  94%|█████████▍| 16/17 [00:01<00:00,  9.30it/s]train-4: 100%|██████████| 17/17 [00:01<00:00,  9.45it/s]
-Epoch 4: train loss :: 4.372.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 4: best train loss updated :: 4.372.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-And what thine, dost scorn, doth conceal thee.
-A terrible sight of myself and all thy fellows,
-And with thy thoughts that inspire,
-I am destroyed in all this--
-I am sprawled on a shrivelled body,
-And I fear lest such a death,
-Would bring me to grief;
- That which doth be so desired,
-With what I am worth's sake,
- And what I may be love's sorrow,
-Who, being well adorned,
- Tender to all thy remembrance,
- Makes me, not with mine own self,
- But with thee,
-
-
-train-5:   0%|          | 0/17 [00:00<?, ?it/s]train-5:   6%|▌         | 1/17 [00:00<00:01,  9.31it/s]train-5:  12%|█▏        | 2/17 [00:00<00:01,  9.30it/s]train-5:  18%|█▊        | 3/17 [00:00<00:01,  9.21it/s]train-5:  24%|██▎       | 4/17 [00:00<00:01,  9.35it/s]train-5:  29%|██▉       | 5/17 [00:00<00:01,  9.30it/s]train-5:  35%|███▌      | 6/17 [00:00<00:01,  9.18it/s]train-5:  41%|████      | 7/17 [00:00<00:01,  9.03it/s]train-5:  47%|████▋     | 8/17 [00:00<00:00,  9.24it/s]train-5:  53%|█████▎    | 9/17 [00:00<00:00,  9.14it/s]train-5:  59%|█████▉    | 10/17 [00:01<00:00,  9.07it/s]train-5:  65%|██████▍   | 11/17 [00:01<00:00,  9.20it/s]train-5:  71%|███████   | 12/17 [00:01<00:00,  9.22it/s]train-5:  76%|███████▋  | 13/17 [00:01<00:00,  9.13it/s]train-5:  82%|████████▏ | 14/17 [00:01<00:00,  9.24it/s]train-5:  88%|████████▊ | 15/17 [00:01<00:00,  9.35it/s]train-5:  94%|█████████▍| 16/17 [00:01<00:00,  9.30it/s]train-5: 100%|██████████| 17/17 [00:01<00:00,  9.44it/s]
-Epoch 5: train loss :: 4.338.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 5: best train loss updated :: 4.338.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-Thou art so coldly shut away
-That I cannot see;
-My eyes, though it doth stare from so far,
-My thoughts, though it looses me from this world,
-Nor do I now seek for an escape.
-Yet I am truly vexed,
-Thy body that doth weary me to give me their grace,
-Though my eyes shall always guard thee,
-  So that if I see my own sad face,
-  There the most tender lips of love may,
-  My love be what is hid and for a moment,
-  To serve thee, to be for
-
-
-train-6:   0%|          | 0/17 [00:00<?, ?it/s]train-6:   6%|▌         | 1/17 [00:00<00:01,  9.33it/s]train-6:  12%|█▏        | 2/17 [00:00<00:01,  9.49it/s]train-6:  18%|█▊        | 3/17 [00:00<00:01,  9.51it/s]train-6:  24%|██▎       | 4/17 [00:00<00:01,  9.43it/s]train-6:  29%|██▉       | 5/17 [00:00<00:01,  9.55it/s]train-6:  35%|███▌      | 6/17 [00:00<00:01,  9.44it/s]train-6:  41%|████      | 7/17 [00:00<00:01,  9.47it/s]train-6:  47%|████▋     | 8/17 [00:00<00:00,  9.43it/s]train-6:  53%|█████▎    | 9/17 [00:00<00:00,  9.28it/s]train-6:  59%|█████▉    | 10/17 [00:01<00:00,  9.31it/s]train-6:  65%|██████▍   | 11/17 [00:01<00:00,  9.15it/s]train-6:  71%|███████   | 12/17 [00:01<00:00,  9.30it/s]train-6:  76%|███████▋  | 13/17 [00:01<00:00,  9.21it/s]train-6:  82%|████████▏ | 14/17 [00:01<00:00,  9.21it/s]train-6:  88%|████████▊ | 15/17 [00:01<00:00,  9.14it/s]train-6:  94%|█████████▍| 16/17 [00:01<00:00,  9.08it/s]train-6: 100%|██████████| 17/17 [00:01<00:00,  9.46it/s]
-Epoch 6: train loss :: 4.304.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 6: best train loss updated :: 4.304.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-Their weary love to my dying love.
-They kill, as I am, and the dead do them,
-How much have I missed thee, for I am worthy
-To call thee my own friend.
-And yet, on the last day, my loving cries
-If my love is so, will thou wilt meet me?
-Thy love, which by thy nakedness devours
-As thy white eyes, I shall think of thee no more,
-  My love, which, if mine heart were so,
- Would love me not.
-  This, therefore, it was, to punish me that gave
-
-
-train-7:   0%|          | 0/17 [00:00<?, ?it/s]train-7:   6%|▌         | 1/17 [00:00<00:01,  8.80it/s]train-7:  12%|█▏        | 2/17 [00:00<00:01,  9.09it/s]train-7:  18%|█▊        | 3/17 [00:00<00:01,  9.01it/s]train-7:  24%|██▎       | 4/17 [00:00<00:01,  9.10it/s]train-7:  29%|██▉       | 5/17 [00:00<00:01,  9.02it/s]train-7:  35%|███▌      | 6/17 [00:00<00:01,  9.20it/s]train-7:  41%|████      | 7/17 [00:00<00:01,  9.18it/s]train-7:  47%|████▋     | 8/17 [00:00<00:00,  9.24it/s]train-7:  53%|█████▎    | 9/17 [00:00<00:00,  9.37it/s]train-7:  59%|█████▉    | 10/17 [00:01<00:00,  9.30it/s]train-7:  65%|██████▍   | 11/17 [00:01<00:00,  9.29it/s]train-7:  71%|███████   | 12/17 [00:01<00:00,  9.36it/s]train-7:  76%|███████▋  | 13/17 [00:01<00:00,  9.20it/s]train-7:  82%|████████▏ | 14/17 [00:01<00:00,  9.12it/s]train-7:  88%|████████▊ | 15/17 [00:01<00:00,  9.27it/s]train-7:  94%|█████████▍| 16/17 [00:01<00:00,  9.27it/s]train-7: 100%|██████████| 17/17 [00:01<00:00,  9.41it/s]
-Epoch 7: train loss :: 4.298.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 7: best train loss updated :: 4.298.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-And scornful as a bird before thy eyes.
-For I shall never see thy thought,
-Nor shall I feel thy laughter, nor thy charms;
-Nor will I be afraid of my heart's near gaze,
-Nor shall I be able to hear thy roar,
-Nor dare I feel thy sighs, nor its sighs' voices
-And will ever never hear your cries.
-And for that which I love,
-Will I not love thee, my mother's,
-Nor be happy in thee nor in thy silence,
-Nor do you spend your days in my service,
-  That I may give you
-
-
-train-8:   0%|          | 0/17 [00:00<?, ?it/s]train-8:   6%|▌         | 1/17 [00:00<00:01,  9.71it/s]train-8:  12%|█▏        | 2/17 [00:00<00:01,  9.46it/s]train-8:  18%|█▊        | 3/17 [00:00<00:01,  9.50it/s]train-8:  24%|██▎       | 4/17 [00:00<00:01,  9.54it/s]train-8:  29%|██▉       | 5/17 [00:00<00:01,  9.45it/s]train-8:  35%|███▌      | 6/17 [00:00<00:01,  9.37it/s]train-8:  41%|████      | 7/17 [00:00<00:01,  9.21it/s]train-8:  47%|████▋     | 8/17 [00:00<00:00,  9.36it/s]train-8:  53%|█████▎    | 9/17 [00:00<00:00,  9.40it/s]train-8:  59%|█████▉    | 10/17 [00:01<00:00,  9.19it/s]train-8:  65%|██████▍   | 11/17 [00:01<00:00,  9.26it/s]train-8:  71%|███████   | 12/17 [00:01<00:00,  9.16it/s]train-8:  76%|███████▋  | 13/17 [00:01<00:00,  9.07it/s]train-8:  82%|████████▏ | 14/17 [00:01<00:00,  9.12it/s]train-8:  88%|████████▊ | 15/17 [00:01<00:00,  9.06it/s]train-8:  94%|█████████▍| 16/17 [00:01<00:00,  9.22it/s]train-8: 100%|██████████| 17/17 [00:01<00:00,  9.46it/s]
-Epoch 8: train loss :: 4.254.
-save the model to best_10-1e-05-sonnet.pt
-Epoch 8: best train loss updated :: 4.254.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-And whither thy rage may keep me.
-If thee couldst know how much I loved thee,
-Thou wouldst live my pain on my bosom,
-Thy rage, though, when I set thee to reproach,
-Thou wouldst burn my soul to my doom.
-Mine anger would be so cruel, that I might drown,
-Like him so short a murderer and never love.
-  Thou, thy rage, now with me,
-  And with thee in mine wicked eyes,
-   So art thou to thy shame and mine shame,
-  Which thou must I blame myself
-
-
-train-9:   0%|          | 0/17 [00:00<?, ?it/s]train-9:   6%|▌         | 1/17 [00:00<00:01,  9.61it/s]train-9:  12%|█▏        | 2/17 [00:00<00:01,  9.43it/s]train-9:  18%|█▊        | 3/17 [00:00<00:01,  9.59it/s]train-9:  24%|██▎       | 4/17 [00:00<00:01,  9.34it/s]train-9:  29%|██▉       | 5/17 [00:00<00:01,  9.47it/s]train-9:  35%|███▌      | 6/17 [00:00<00:01,  9.55it/s]train-9:  41%|████      | 7/17 [00:00<00:01,  9.38it/s]train-9:  47%|████▋     | 8/17 [00:00<00:00,  9.35it/s]train-9:  53%|█████▎    | 9/17 [00:00<00:00,  9.17it/s]train-9:  59%|█████▉    | 10/17 [00:01<00:00,  9.20it/s]train-9:  65%|██████▍   | 11/17 [00:01<00:00,  9.12it/s]train-9:  71%|███████   | 12/17 [00:01<00:00,  9.15it/s]train-9:  76%|███████▋  | 13/17 [00:01<00:00,  9.20it/s]train-9:  82%|████████▏ | 14/17 [00:01<00:00,  9.13it/s]train-9:  88%|████████▊ | 15/17 [00:01<00:00,  9.28it/s]train-9:  94%|█████████▍| 16/17 [00:01<00:00,  9.26it/s]train-9: 100%|██████████| 17/17 [00:01<00:00,  9.50it/s]
-Epoch 9: train loss :: 4.260.
-Generating a sample output sonnet...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,ne eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-They take me by their charms to their place
-As my flesh in their beauty,
-And I leave them my first sleep and their sweet,
-Whose soft bright love, my most holy, is but that I may be
-Or want; but this is not the age of love,
-And which I love; but it is those eyes of mine,
-Which shade my frame, and where my love shines
-I stand, in the shadows where my love is bliss.
-Thou are my grace, and in whom this dear love,
-Thy love is my tears; but this my heart.
-I will
-
-
-candidate score: -27.536
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-With mourning a little more.
-But their sorrow do not go away;
-Whose gaze is drawn back from the dead to heaven,
-For what thou hast done can never be undone.
-For it was that thou mightst see my state,
-That when an eye of mine shall find thee again,
-And then may no shadow remain upon any face nor
-hear thee.
-Therefore this sad day did pass by,
-Or sometimes even in dreams come out such happy words.
-Yet once in memory have I seen so many joys
-
-
-candidate score: -41.832
-Beshrew that heart that makes my heart to groan
-For that deep wound it gives my friend and me.
-Is 't not enough to torture me alone,
-I'll do your cruel form;
-And when this thing is done you shall see her
-flesh with wounds on both cheeks.
-Cain may have death or hate but well be true
-love's aid.
-Time loves men so intimately together in their old ways:
-But sometimes some time needs pain for good!
-Therefore now am I loved as if she were dead.
-If ever should the future beckon thee from thy soul,
-Bringing back thine eyes thou shalt never saw them burn
-green before.
-
-
-candidate score: -34.774
-So, now I have confessed that he is thine
-And I myself am mortgaged to thy will,
-Myself I'll forfeit, so that other mine
-shall inherit.
-But where then do we see all this good fortune?
-We only notice how much ill they think of thee!
-They find no short-term gain in impiety and thirst;
-As thou art wretched yet by them's hand:
-They love the hypocrite out of these less than their
-fair age.
-O my mind hath cried for a recompense from those
-who was at liberty when they were wronged,
-Though not ever writing virtue away like it ought,
-To give me with whatever reward may be best paid
-
-
-candidate score: -30.831
-Whoever hath her wish, thou hast thy will,
-And will to boot, and will in overplus.
-More than enough am I that vex thee still,
-For fear never shall my day live;
-Thy soul cannot bear the restless shadow of old age;
-Or if it should not love me now, it doth
-so forsake me,
-That on what tender days is she wont to lie:
-Her countenance no longer bleeds with fresh beauty;
-Nor does her true virtue die out for life.
-But by this time there are other women's souls round,
-And many who have more children then th' youth would
-give.
-Their husbands do all these things themselves, To make their
-
-
-candidate score: -30.604
-If thy soul check thee that I come so near,
-Swear to thy blind soul that I was thy will,
-And will, thy soul knows, is admitted there.
-For in me thou goest where the light shines;
-Though mine dwelling on thee haply ill-ordered,
-Or woe how couldst I be left without it?
-But then let my mind dwell not alone,
-To gaze well upon thee if needed:
-In this true love do
-no man esteem but his
-own self.
-A pity and a favour
-ever shall prove yourself better.
-Till time itself forgets to steal thy name.
-
-
-candidate score: -30.094
-Thou blind fool, Love, what dost thou to mine eyes
-That they behold and see not what they see?
-They know what beauty is, see where it lies,
-and do much more.
-But if I find love in thee that showst me
-thyself so good;
-And my heart thinketh thee well at all, but pitying
-him who maketh them such ill-will.
-But when thine eye hath seen this folly, how poor
-your mind could be!
-All these are signs of their faults: the true man
-can never fail his time on his own account.
-Or as he says unto a jealous thing which he
-saw with one's eye,
-
-
-candidate score: -33.317
-When my love swears that she is made of truth
-I do believe her though I know she lies,
-That she might think me some untutored youth,
-And tell her beauty with such sober cunning
-As will bring up even the stars' rent.
-You are a fool and perhaps your voice may say
-it;
-But if you call myself free from blame--
-To this point alone can come shame but not pain;
-For no subject hath more loosed sin than thou!
-Then doth he thy true enemy trample on thee?
-Surely mine conscience shall be deceived when it hears his
-woes boastful;
-O prey of lust's eyes thou wilt prove man to
-
-
-candidate score: -41.848
-O, call not me to justify the wrong
-That thy unkindness lays upon my heart;
-Wound me not with thine eye but with thy tongue;
-Nor shall his name be mine again. The day comes
-when thou wilt go on your way;
-And never shouldst I have a better hand at work
-than that of thee. If then there was no need
-of it,
-Thy head could hold more strength in this world's strife
-and decay.
-Or even for some reason you are so fond of
-making war against one another that
-You may well lose all hope for those who do
-what others want. But if they would return unto life
-
-
-candidate score: -26.257
-Be wise as thou art cruel; do not press
-My tongue-tied patience with too much disdain,
-Lest sorrow lend me words, and words express
-my feelings.
-But if no hint of vain pride shall dwell here
-In unfettered talent's music be findered
-Upon some wretched song or rhyme,
-He is soon looked upon as his friend, for he
-at once takes him by the hand.
-Alas! to thee, heaven are mine eternal pleasure,
-When I sing thy praises into your ear."
-As a flower groweth in our eyes, so does that
-spring doth it bloom?
-And from time to year we fall against each other—from
-
-
-candidate score: -41.994
-In faith, I do not love thee with mine eyes,
-For they in thee a thousand errors note;
-But 'tis my heart that loves what they despise,
-And knoweth best of their impurity.
-Easily shall all days deny me this liberty,
-As for shame or grief how thy great husband's lives
-can be praised?
-You would say I am ill-forgotten as he was sick,
-Or worse than his greatest crimes so far passed away,
-Yet when thou art once come to such death (that
-will stay forever),
-Then shalt these him who is dead find more pleasures
-but less deaths!
-If then by those without honor were no pain heard,
-
-
-candidate score: -34.937
-Love is my sin, and thy dear virtue hate,
-Hate of my sin, grounded on sinful loving.
-O, but with mine compare thou thine own state,
-This I bear only to thee in love;
-Thy name never has forsaken me:
-For for you have loved the world that hewn not
-him,
-And so alone am I beloved.
-Now there are two things which cannot be said both
-together.
-Take away your sins from me while we live,
-Then pardon each other's guilt by his death?
-For such no man shall ever repent except after it!
-If any woman do find a husband who loves her
-
-
-candidate score: -40.489
-Lo, as a careful huswife runs to catch
-One of her feathered creatures broke away,
-Sets down her babe, and makes all swift dispatch
-;
-Now then what shall she be? And from thence will
-we leave thee.
-Doth not this last thy soul dost fear you: but
-he that loves me can never help thee
-To love more than his beauty doeth him well.
-I have given unto thee so much praise because thou
-art right in my eyes.
-Nor did I say with scorn the praises which they
-bore thee above them alone;
-But most beloved are these things done by one or
-
-
-$ /home/msko021220/.conda/envs/busi2/bin/python /home/msko021220/nlp2026-final-MSK/sonnet_generation.py --epochs 10 --batch_size 8 --lr 1e-5 --weight_decay 0.01 --eval_every 1 --patience 10 --selection_metric loss --num_candidates 2 --dev_num_candidates 1 --max_generation_tokens 120 --model_score_weight 2.0 --mbr_weight 4.0 --sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_train.txt --held_out_sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_held_out_dev.txt --sonnet_out /home/msko021220/nlp2026-final-MSK/experiments/trial10_best_loss_4gpu/basic__msk_sft_weighted_mbr/predictions/dev_generated_sonnets.txt --model_size gpt2 --use_gpu --dev_sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_held_out_dev.txt --dev_gold_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/TRUE_sonnets_held_out_dev.txt
-

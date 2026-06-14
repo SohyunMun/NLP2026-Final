@@ -368,13 +368,21 @@ def train(args):
         )
         (out_dir / "history.json").write_text(json.dumps(history, indent=2) + "\n", encoding="utf-8")
 
-    best_policy, best_base_args = load_policy_from_dpo(best_chrf_path, Path(args.sft_checkpoint), device, args)
-    final_dev = out_dir / "predictions" / "dev_best_chrf.txt"
-    final_test = out_dir / "predictions" / "test_best_chrf.txt"
-    best_epoch = max(history, key=lambda item: item["dev_chrf"])["epoch"]
-    generate_file(best_policy, best_base_args, args, Path(args.dev_prompt_path), final_dev, seed=args.seed + best_epoch)
-    generate_file(best_policy, best_base_args, args, Path(args.test_prompt_path), final_test, seed=args.seed + 10_000 + best_epoch)
-    final_chrf = chrf_score(final_dev, Path(args.dev_gold_path))
+    best_chrf_policy, best_chrf_base_args = load_policy_from_dpo(best_chrf_path, Path(args.sft_checkpoint), device, args)
+    best_chrf_dev = out_dir / "predictions" / "dev_best_chrf.txt"
+    best_chrf_test = out_dir / "predictions" / "test_best_chrf.txt"
+    best_chrf_epoch = max(history, key=lambda item: item["dev_chrf"])["epoch"]
+    generate_file(best_chrf_policy, best_chrf_base_args, args, Path(args.dev_prompt_path), best_chrf_dev, seed=args.seed + best_chrf_epoch)
+    generate_file(best_chrf_policy, best_chrf_base_args, args, Path(args.test_prompt_path), best_chrf_test, seed=args.seed + 10_000 + best_chrf_epoch)
+    best_chrf_score = chrf_score(best_chrf_dev, Path(args.dev_gold_path))
+
+    best_loss_policy, best_loss_base_args = load_policy_from_dpo(best_loss_path, Path(args.sft_checkpoint), device, args)
+    best_loss_dev = out_dir / "predictions" / "dev_best_loss.txt"
+    best_loss_test = out_dir / "predictions" / "test_best_loss.txt"
+    best_loss_epoch = min(history, key=lambda item: item["val_loss"])["epoch"]
+    generate_file(best_loss_policy, best_loss_base_args, args, Path(args.dev_prompt_path), best_loss_dev, seed=args.seed + best_loss_epoch)
+    generate_file(best_loss_policy, best_loss_base_args, args, Path(args.test_prompt_path), best_loss_test, seed=args.seed + 10_000 + best_loss_epoch)
+    best_loss_score = chrf_score(best_loss_dev, Path(args.dev_gold_path))
 
     summary = {
         "method": "MSK SFT checkpoint + LoRA-DPO",
@@ -382,12 +390,17 @@ def train(args):
         "train_path": str(args.train_path),
         "best_chrf_checkpoint": str(best_chrf_path),
         "best_loss_checkpoint": str(best_loss_path),
-        "best_dev_chrf": final_chrf,
-        "best_chrf_epoch": best_epoch,
-        "best_loss_epoch": min(history, key=lambda item: item["val_loss"])["epoch"],
+        "best_dev_chrf": best_chrf_score,
+        "best_loss_dev_chrf": best_loss_score,
+        "best_chrf_epoch": best_chrf_epoch,
+        "best_loss_epoch": best_loss_epoch,
         "history": history,
-        "dev_prediction": str(final_dev),
-        "test_prediction": str(final_test),
+        "dev_prediction": str(best_loss_dev),
+        "test_prediction": str(best_loss_test),
+        "best_chrf_dev_prediction": str(best_chrf_dev),
+        "best_chrf_test_prediction": str(best_chrf_test),
+        "best_loss_dev_prediction": str(best_loss_dev),
+        "best_loss_test_prediction": str(best_loss_test),
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -396,11 +409,14 @@ def train(args):
         "",
         f"- SFT checkpoint: `{args.sft_checkpoint}`",
         f"- train data: `{args.train_path}`",
-        f"- best dev chrF: `{final_chrf:.4f}`",
+        f"- best-chrF dev chrF: `{best_chrf_score:.4f}`",
+        f"- best-loss dev chrF: `{best_loss_score:.4f}`",
         f"- best chrF epoch: `{summary['best_chrf_epoch']}`",
         f"- best DPO val-loss epoch: `{summary['best_loss_epoch']}`",
-        f"- dev prediction: `{final_dev}`",
-        f"- test prediction: `{final_test}`",
+        f"- best-loss dev prediction: `{best_loss_dev}`",
+        f"- best-loss test prediction: `{best_loss_test}`",
+        f"- best-chrF dev prediction: `{best_chrf_dev}`",
+        f"- best-chrF test prediction: `{best_chrf_test}`",
         "",
         "| epoch | train loss | val loss | dev chrF |",
         "|---:|---:|---:|---:|",

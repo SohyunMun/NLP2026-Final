@@ -1,256 +1,0 @@
-train-0:   0%|          | 0/15 [00:00<?, ?it/s]train-0:   7%|▋         | 1/15 [00:00<00:06,  2.26it/s]train-0:  13%|█▎        | 2/15 [00:00<00:04,  3.19it/s]train-0:  20%|██        | 3/15 [00:00<00:03,  3.72it/s]train-0:  27%|██▋       | 4/15 [00:01<00:02,  4.07it/s]train-0:  33%|███▎      | 5/15 [00:01<00:02,  4.24it/s]train-0:  40%|████      | 6/15 [00:01<00:02,  4.25it/s]train-0:  47%|████▋     | 7/15 [00:01<00:01,  4.35it/s]train-0:  53%|█████▎    | 8/15 [00:01<00:01,  4.39it/s]train-0:  60%|██████    | 9/15 [00:02<00:01,  4.42it/s]train-0:  67%|██████▋   | 10/15 [00:02<00:01,  4.49it/s]train-0:  73%|███████▎  | 11/15 [00:02<00:00,  4.48it/s]train-0:  80%|████████  | 12/15 [00:02<00:00,  4.45it/s]train-0:  87%|████████▋ | 13/15 [00:03<00:00,  4.57it/s]train-0:  93%|█████████▎| 14/15 [00:03<00:00,  4.49it/s]train-0: 100%|██████████| 15/15 [00:03<00:00,  4.85it/s]train-0: 100%|██████████| 15/15 [00:03<00:00,  4.31it/s]
-Epoch 0: train loss :: 4.738 | val loss :: 4.493
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-1:   0%|          | 0/15 [00:00<?, ?it/s]train-1:   7%|▋         | 1/15 [00:00<00:03,  4.04it/s]train-1:  13%|█▎        | 2/15 [00:00<00:02,  4.47it/s]train-1:  20%|██        | 3/15 [00:00<00:02,  4.68it/s]train-1:  27%|██▋       | 4/15 [00:00<00:02,  4.59it/s]train-1:  33%|███▎      | 5/15 [00:01<00:02,  4.70it/s]train-1:  40%|████      | 6/15 [00:01<00:01,  4.66it/s]train-1:  47%|████▋     | 7/15 [00:01<00:01,  4.75it/s]train-1:  53%|█████▎    | 8/15 [00:01<00:01,  4.69it/s]train-1:  60%|██████    | 9/15 [00:01<00:01,  4.65it/s]train-1:  67%|██████▋   | 10/15 [00:02<00:01,  4.57it/s]train-1:  73%|███████▎  | 11/15 [00:02<00:00,  4.66it/s]train-1:  80%|████████  | 12/15 [00:02<00:00,  4.63it/s]train-1:  87%|████████▋ | 13/15 [00:02<00:00,  4.66it/s]train-1:  93%|█████████▎| 14/15 [00:03<00:00,  4.69it/s]train-1: 100%|██████████| 15/15 [00:03<00:00,  4.98it/s]train-1: 100%|██████████| 15/15 [00:03<00:00,  4.70it/s]
-Epoch 1: train loss :: 4.416 | val loss :: 4.343
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-2:   0%|          | 0/15 [00:00<?, ?it/s]train-2:   7%|▋         | 1/15 [00:00<00:01,  8.62it/s]train-2:  13%|█▎        | 2/15 [00:00<00:02,  5.38it/s]train-2:  20%|██        | 3/15 [00:00<00:02,  4.95it/s]train-2:  27%|██▋       | 4/15 [00:00<00:02,  4.79it/s]train-2:  33%|███▎      | 5/15 [00:01<00:02,  4.66it/s]train-2:  40%|████      | 6/15 [00:01<00:01,  4.67it/s]train-2:  47%|████▋     | 7/15 [00:01<00:01,  4.71it/s]train-2:  53%|█████▎    | 8/15 [00:01<00:01,  4.80it/s]train-2:  60%|██████    | 9/15 [00:01<00:01,  4.70it/s]train-2:  67%|██████▋   | 10/15 [00:02<00:01,  4.71it/s]train-2:  73%|███████▎  | 11/15 [00:02<00:00,  4.73it/s]train-2:  80%|████████  | 12/15 [00:02<00:00,  4.65it/s]train-2:  87%|████████▋ | 13/15 [00:02<00:00,  4.70it/s]train-2:  93%|█████████▎| 14/15 [00:02<00:00,  4.66it/s]train-2: 100%|██████████| 15/15 [00:03<00:00,  4.92it/s]train-2: 100%|██████████| 15/15 [00:03<00:00,  4.83it/s]
-Epoch 2: train loss :: 4.285 | val loss :: 4.272
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-3:   0%|          | 0/15 [00:00<?, ?it/s]train-3:   7%|▋         | 1/15 [00:00<00:03,  4.35it/s]train-3:  13%|█▎        | 2/15 [00:00<00:02,  4.73it/s]train-3:  20%|██        | 3/15 [00:00<00:02,  4.85it/s]train-3:  33%|███▎      | 5/15 [00:00<00:01,  5.52it/s]train-3:  40%|████      | 6/15 [00:01<00:01,  5.73it/s]train-3:  47%|████▋     | 7/15 [00:01<00:01,  6.52it/s]train-3:  53%|█████▎    | 8/15 [00:01<00:00,  7.19it/s]train-3:  60%|██████    | 9/15 [00:01<00:00,  6.12it/s]train-3:  67%|██████▋   | 10/15 [00:01<00:00,  5.71it/s]train-3:  73%|███████▎  | 11/15 [00:01<00:00,  5.40it/s]train-3:  80%|████████  | 12/15 [00:02<00:00,  5.23it/s]train-3:  87%|████████▋ | 13/15 [00:02<00:00,  5.00it/s]train-3:  93%|█████████▎| 14/15 [00:02<00:00,  4.81it/s]train-3: 100%|██████████| 15/15 [00:02<00:00,  5.03it/s]train-3: 100%|██████████| 15/15 [00:02<00:00,  5.39it/s]
-Epoch 3: train loss :: 4.211 | val loss :: 4.219
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-4:   0%|          | 0/15 [00:00<?, ?it/s]train-4:   7%|▋         | 1/15 [00:00<00:03,  4.64it/s]train-4:  13%|█▎        | 2/15 [00:00<00:02,  4.70it/s]train-4:  20%|██        | 3/15 [00:00<00:02,  4.64it/s]train-4:  27%|██▋       | 4/15 [00:00<00:02,  4.66it/s]train-4:  33%|███▎      | 5/15 [00:01<00:02,  4.69it/s]train-4:  40%|████      | 6/15 [00:01<00:01,  4.66it/s]train-4:  47%|████▋     | 7/15 [00:01<00:01,  4.73it/s]train-4:  53%|█████▎    | 8/15 [00:01<00:01,  4.72it/s]train-4:  60%|██████    | 9/15 [00:01<00:01,  4.78it/s]train-4:  67%|██████▋   | 10/15 [00:02<00:01,  4.66it/s]train-4:  73%|███████▎  | 11/15 [00:02<00:00,  4.74it/s]train-4:  80%|████████  | 12/15 [00:02<00:00,  4.59it/s]train-4:  87%|████████▋ | 13/15 [00:02<00:00,  4.59it/s]train-4:  93%|█████████▎| 14/15 [00:02<00:00,  4.68it/s]train-4: 100%|██████████| 15/15 [00:03<00:00,  4.96it/s]train-4: 100%|██████████| 15/15 [00:03<00:00,  4.74it/s]
-Epoch 4: train loss :: 4.175 | val loss :: 4.189
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-5:   0%|          | 0/15 [00:00<?, ?it/s]train-5:   7%|▋         | 1/15 [00:00<00:02,  4.83it/s]train-5:  13%|█▎        | 2/15 [00:00<00:02,  4.56it/s]train-5:  20%|██        | 3/15 [00:00<00:02,  4.54it/s]train-5:  27%|██▋       | 4/15 [00:00<00:02,  4.69it/s]train-5:  33%|███▎      | 5/15 [00:01<00:02,  4.60it/s]train-5:  40%|████      | 6/15 [00:01<00:01,  4.52it/s]train-5:  47%|████▋     | 7/15 [00:01<00:01,  4.56it/s]train-5:  53%|█████▎    | 8/15 [00:01<00:01,  4.47it/s]train-5:  60%|██████    | 9/15 [00:01<00:01,  4.56it/s]train-5:  67%|██████▋   | 10/15 [00:02<00:01,  4.54it/s]train-5:  73%|███████▎  | 11/15 [00:02<00:00,  4.53it/s]train-5:  80%|████████  | 12/15 [00:02<00:00,  4.62it/s]train-5:  87%|████████▋ | 13/15 [00:02<00:00,  4.64it/s]train-5:  93%|█████████▎| 14/15 [00:03<00:00,  4.59it/s]train-5: 100%|██████████| 15/15 [00:03<00:00,  4.94it/s]train-5: 100%|██████████| 15/15 [00:03<00:00,  4.65it/s]
-Epoch 5: train loss :: 4.066 | val loss :: 4.163
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-6:   0%|          | 0/15 [00:00<?, ?it/s]train-6:   7%|▋         | 1/15 [00:00<00:03,  4.55it/s]train-6:  13%|█▎        | 2/15 [00:00<00:02,  4.64it/s]train-6:  20%|██        | 3/15 [00:00<00:02,  4.57it/s]train-6:  27%|██▋       | 4/15 [00:00<00:02,  4.64it/s]train-6:  33%|███▎      | 5/15 [00:01<00:02,  4.61it/s]train-6:  40%|████      | 6/15 [00:01<00:01,  4.57it/s]train-6:  47%|████▋     | 7/15 [00:01<00:01,  4.67it/s]train-6:  53%|█████▎    | 8/15 [00:01<00:01,  4.58it/s]train-6:  60%|██████    | 9/15 [00:01<00:01,  4.53it/s]train-6:  67%|██████▋   | 10/15 [00:02<00:01,  4.62it/s]train-6:  73%|███████▎  | 11/15 [00:02<00:00,  4.50it/s]train-6:  80%|████████  | 12/15 [00:02<00:00,  4.55it/s]train-6:  87%|████████▋ | 13/15 [00:02<00:00,  4.61it/s]train-6:  93%|█████████▎| 14/15 [00:03<00:00,  4.53it/s]train-6: 100%|██████████| 15/15 [00:03<00:00,  4.86it/s]train-6: 100%|██████████| 15/15 [00:03<00:00,  4.64it/s]
-Epoch 6: train loss :: 3.997 | val loss :: 4.144
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-7:   0%|          | 0/15 [00:00<?, ?it/s]train-7:   7%|▋         | 1/15 [00:00<00:03,  4.65it/s]train-7:  13%|█▎        | 2/15 [00:00<00:02,  4.54it/s]train-7:  20%|██        | 3/15 [00:00<00:02,  4.52it/s]train-7:  27%|██▋       | 4/15 [00:00<00:02,  4.63it/s]train-7:  33%|███▎      | 5/15 [00:01<00:02,  4.58it/s]train-7:  40%|████      | 6/15 [00:01<00:01,  4.61it/s]train-7:  47%|████▋     | 7/15 [00:01<00:01,  4.55it/s]train-7:  53%|█████▎    | 8/15 [00:01<00:01,  4.59it/s]train-7:  60%|██████    | 9/15 [00:01<00:01,  4.59it/s]train-7:  67%|██████▋   | 10/15 [00:02<00:01,  4.47it/s]train-7:  73%|███████▎  | 11/15 [00:02<00:00,  4.45it/s]train-7:  80%|████████  | 12/15 [00:02<00:00,  4.57it/s]train-7:  87%|████████▋ | 13/15 [00:02<00:00,  4.50it/s]train-7:  93%|█████████▎| 14/15 [00:03<00:00,  4.54it/s]train-7: 100%|██████████| 15/15 [00:03<00:00,  4.79it/s]train-7: 100%|██████████| 15/15 [00:03<00:00,  4.60it/s]
-Epoch 7: train loss :: 3.926 | val loss :: 4.133
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-8:   0%|          | 0/15 [00:00<?, ?it/s]train-8:   7%|▋         | 1/15 [00:00<00:02,  4.78it/s]train-8:  13%|█▎        | 2/15 [00:00<00:02,  4.58it/s]train-8:  20%|██        | 3/15 [00:00<00:02,  4.46it/s]train-8:  27%|██▋       | 4/15 [00:00<00:02,  4.53it/s]train-8:  33%|███▎      | 5/15 [00:01<00:02,  4.56it/s]train-8:  40%|████      | 6/15 [00:01<00:01,  4.60it/s]train-8:  47%|████▋     | 7/15 [00:01<00:01,  4.69it/s]train-8:  53%|█████▎    | 8/15 [00:01<00:01,  4.54it/s]train-8:  60%|██████    | 9/15 [00:01<00:01,  4.58it/s]train-8:  67%|██████▋   | 10/15 [00:02<00:01,  4.55it/s]train-8:  73%|███████▎  | 11/15 [00:02<00:00,  4.54it/s]train-8:  80%|████████  | 12/15 [00:02<00:00,  4.59it/s]train-8:  87%|████████▋ | 13/15 [00:02<00:00,  4.61it/s]train-8:  93%|█████████▎| 14/15 [00:03<00:00,  4.64it/s]train-8: 100%|██████████| 15/15 [00:03<00:00,  4.88it/s]train-8: 100%|██████████| 15/15 [00:03<00:00,  4.64it/s]
-Epoch 8: train loss :: 3.904 | val loss :: 4.119
-saved the model to best_10-1e-05-sonnet-baseline.pt
-train-9:   0%|          | 0/15 [00:00<?, ?it/s]train-9:   7%|▋         | 1/15 [00:00<00:03,  4.10it/s]train-9:  13%|█▎        | 2/15 [00:00<00:03,  4.28it/s]train-9:  20%|██        | 3/15 [00:00<00:02,  4.35it/s]train-9:  27%|██▋       | 4/15 [00:00<00:02,  4.39it/s]train-9:  33%|███▎      | 5/15 [00:01<00:02,  4.36it/s]train-9:  40%|████      | 6/15 [00:01<00:02,  4.43it/s]train-9:  47%|████▋     | 7/15 [00:01<00:01,  4.51it/s]train-9:  53%|█████▎    | 8/15 [00:01<00:01,  4.62it/s]train-9:  60%|██████    | 9/15 [00:02<00:01,  4.60it/s]train-9:  67%|██████▋   | 10/15 [00:02<00:01,  4.57it/s]train-9:  73%|███████▎  | 11/15 [00:02<00:00,  4.56it/s]train-9:  80%|████████  | 12/15 [00:02<00:00,  4.53it/s]train-9:  87%|████████▋ | 13/15 [00:02<00:00,  4.52it/s]train-9:  93%|█████████▎| 14/15 [00:03<00:00,  4.60it/s]train-9: 100%|██████████| 15/15 [00:03<00:00,  4.86it/s]train-9: 100%|██████████| 15/15 [00:03<00:00,  4.57it/s]
-Epoch 9: train loss :: 3.842 | val loss :: 4.112
-saved the model to best_10-1e-05-sonnet-baseline.pt
-Loading best model checkpoint from best_10-1e-05-sonnet-baseline.pt for generation...
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-Howling that youth whom thou wane
-To those gentlest face thine.
-And also if envy being w
-The eyes be be gazed from afar mine
-Thy king bears—look thither then
-Like a mother napping her sweet little child
-What art recompense, canst thou endure
-Nor with shameful deed wear father child
-Cull on their roof of fair lords,
-Not but with patient shame filth better.
-  Then thence shalt neither love, nor scorn better
-
-
-
-Beshrew that heart that makes my heart to groan
-For that deep wound it gives my friend and me.
-Is 't not enough to torture me alone,
-Or I lend her aloe to repair me
-Distilled, blessed of place in woe these beauty bore
-And quick to paint away the indigest clothes
-And seem sad in love, alone and more
-Is it worth to render her appearance those
-Nor have time to undergo 'twill scarce thee affect
-Even so poorly there-self bred on you again
-Quout bad loves, die virtuous, live perfect
-For 'twill do love, woman appear again
-And be imitated with those next twink,
-'Ay, o overst thou art the love drink
-
-
-
-So, now I have confessed that he is thine
-And I myself am mortgaged to thy will,
-Myself I'll forfeit, so that other mine
-For keeping me from stealing upon will
-Seize mine hundred and fifty more articles
-Since I was reproached;
-For and all future salvation articles
-Are his precious heapes that clothe me
-Nor worthed whereon ever thy liberty
-Destands me to thy disgrace in divorce.
-Now when thee ass due, sting
-But not my serfs, methinks I need force
-And give still more repay it all;
-Then in next my works doth be forthcoming all
-
-
-
-Whoever hath her wish, thou hast thy will,
-And will to boot, and will in overplus.
-More than enough am I that vex thee still,
-Nor do my art render her absent.
-'Saith I again this wondrous title without
-Because I learn, I besought thee, to let life
-Want her jealous tears field off the out
-And to flatter her loved one's endless life
-Doth she choose another source;
-When, unparity seduces myself,
-What will I say within widowed divorce
-Surely much of fear recurs.
-Though men's eye sight shall show this away,
-And thou shalt exalt this heap for a
-
-
-
-If thy soul check thee that I come so near,
-Swear to thy blind soul that I was thy will,
-And will, thy soul knows, is admitted there.
-Thy promise before thy fortieth will
-Thou look after nature's plan;
-But, within your wonts, maim again."
-And, taking contrary counsel than
-For beauty, attributed thn
-From thn will collection true posterity
-And on thn hast become son of thymes.
-  That none knowing art thou my husband rarity
-  Whilst which content thee, never put me one name
-  Departed of thee with flowers from thy grave
-  The world's condition with food's insgrave
-
-
-
-Thou blind fool, Love, what dost thou to mine eyes
-That they behold and see not what they see?
-They know what beauty is, see where it lies,
-And consequently can they continue see
-That which caress each [maiden's] modesty might
-Save them of lose thought?
-They see now hid lies from their lovers sight
-But inward gloom would jolting naked thought
-So soon blind veil might himself find rest
-Though prevent, or enye, prove im'scation
-Whilst he dwells bidden into their nest
-Or younger day shadows, so revenged and
-Upon her hope and his stone shame.
-  But what a joy ! amazement, blame
-
-
-
-When my love swears that she is made of truth
-I do believe her though I know she lies,
-That she might think me some untutored youth,
-Still affording memory pretty eyes
-And not fearing takers of truth of my art
-O in every spoken which lies together
-I to deaden color render part
-In their long movement or their beautiful weather
-In finding with crystal breasts the glory,
-Which I strive most love love to blossom in die
-To naked bounds between mad-red glory
-And great storm clouds are his race betty
-Than they, in wishful necessity bearing
-That know this true from some in unfbearing
-
-
-
-O, call not me to justify the wrong
-That thy unkindness lays upon my heart;
-Wound me not with thine eye but with thy tongue;
-Love arrest your love; put thart
-When thy hurt, thy lady be left;
-She leaves her fight over her the broiler,
-As perjured might an old sword put deft
-Into the clothes upon his time boiler
-As thou, in right: for if thou say thou couldst remain
-Thou dost rage daily still
-To banish that rage by me; and again
-The weeds take care of what turns wind will
-Oh right thy limbs, those was a shame
-To stay the hair upon a certain frame
-
-
-
-Be wise as thou art cruel; do not press
-My tongue-tied patience with too much disdain,
-Lest sorrow lend me words, and words express
-My thoughts like slandering lands' water again
-That which the plan would engender beside again
-Or men pine uneducated to be cruel
-Thy wild view idly impelled north again
-Which nothing bears to lay slow still cool
-And shows fickle note which doth plunge into or
-Hits nerves that live murmuring before dawn.
-Make my voice dwell well where thin air or
-Dig heart-broken boy is delivered on
-Nor my friend of true thoughts prove
-Your call on thoughts nothing weak; err prove
-
-
-
-In faith, I do not love thee with mine eyes,
-For they in thee a thousand errors note;
-But 'tis my heart that loves what they despise,
-That I read upon; and if any note
-Ought that I scarce more ineth this supposition
-Uught me to love thee wrong,
-Take away the first hurt; but make suspicion
-Of mischief slight; again, guess
-Within his bearing of rude o'er' timber
-That he with dull cheek fared
-With thine. In the presence
-But seeing in woe him cause, I spared
-The most wicked brutes,
-Which in Christ's betrayal
-
-
-
-Love is my sin, and thy dear virtue hate,
-Hate of my sin, grounded on sinful loving.
-O, but with mine compare thou thine own state,
-That from thy chief love, you gain them loving
-Which My head tires just as ragged, th
-It like mine fear where any right possession
-Can sometimes in access express th
-Feast that mine gates perhaps through which question
-Add where stealth thus dwell;
-Yet sweet irony away, 
- That from those human sweet incision fell
-Thy drink reminds them
-Before thy voice was warmer then my own eyes
-Of sin where morass vices flow guise
-
-
-
-Lo, as a careful huswife runs to catch
-One of her feathered creatures broke away,
-Sets down her babe, and makes all swift dispatch
-Since falsehood and disgrace ensues a
-Great man begins to stir; oft
-To ransom him was committed, but many
-When I fasted cried into a soft
-Bared abode beneath your tree,
-Of which, to of thy crops every cent toll
-Struck thy wish, time and time again looking!
-Which joy thou, quiet Gavrills her whole
-So thoroughly sweeteth her breast looking
-Sarcelled soft imperfections in burdens
-And streams rushing in under the burdens
-
-
-
-
-=============================================
-Final Evaluation on Fixed Metric Suite (BASELINE)
-=============================================
-1. chrF Score: 40.997
-2. Sonnet or Not, Bot? (Pass Rate): 100.0%
-3. POEMetric Score: 0.478
-   - Form Accuracy: 0.482
-   - Lexical Diversity: 0.776
-   - Overall Quality: 0.410
-   - Theme Alignment: 0.274
----------------------------------------------
-   (Detailed Poetic Specs)
-   - Avg Syllable Deviation: 1.071
-   - Avg Syllable Accuracy: 39.3%
-   - Avg Meter Accuracy: 38.7%
-   - Avg Rhyme Accuracy: 66.7%
-=============================================
-
-$ /home/msko021220/.conda/envs/busi2/bin/python /home/msko021220/nlp2026-final-HUJ/sonnet_baseline.py --epochs 10 --batch_size 8 --lr 1e-5 --patience 10 --sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_train.txt --held_out_sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/sonnets_held_out_dev.txt --sonnet_out /home/msko021220/nlp2026-final-MSK/experiments/trial10_best_loss_4gpu/basic__huj_baseline_guided/predictions/dev_generated_sonnets.txt --model_size gpt2 --use_gpu --gold_sonnet_path /home/msko021220/nlp2026-final-MSK/trial1_data/basic/TRUE_sonnets_held_out_dev.txt
-

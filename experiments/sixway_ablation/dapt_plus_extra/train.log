@@ -1,0 +1,218 @@
+$ /home/msko021220/.conda/envs/busi2/bin/python /home/msko021220/nlp2026-final-MSK/sonnet_generation.py --epochs 3 --batch_size 8 --lr 5e-06 --weight_decay 0.01 --eval_every 1 --patience 3 --selection_metric loss --skip_epoch_sample --num_candidates 2 --dev_num_candidates 1 --max_generation_tokens 120 --model_score_weight 1.0 --mbr_weight 2.0 --prompt_loss_weight 1.0 --line_break_loss_weight 1.0 --sonnet_path /home/msko021220/nlp2026-final-MSK/sonnet_data/strict_497/train_official_131_plus_extra_497_total_628.txt --held_out_sonnet_path /home/msko021220/nlp2026-final-MSK/sonnet_data/strict_497/dev_prompts_12.txt --sonnet_out /home/msko021220/nlp2026-final-MSK/experiments/sixway_ablation/dapt_plus_extra/predictions/dev.txt --model_size gpt2 --use_gpu --dev_sonnet_path /home/msko021220/nlp2026-final-MSK/sonnet_data/strict_497/dev_prompts_12.txt --dev_gold_path /home/msko021220/nlp2026-final-MSK/sonnet_data/strict_497/dev_gold_12.txt
+
+train-0:   0%|          | 0/79 [00:00<?, ?it/s]train-0:   1%|▏         | 1/79 [00:00<00:26,  2.90it/s]train-0:   3%|▎         | 2/79 [00:00<00:16,  4.80it/s]train-0:   4%|▍         | 3/79 [00:00<00:12,  6.06it/s]train-0:   5%|▌         | 4/79 [00:00<00:10,  6.90it/s]train-0:   6%|▋         | 5/79 [00:00<00:09,  7.45it/s]train-0:   8%|▊         | 6/79 [00:00<00:09,  7.96it/s]train-0:   9%|▉         | 7/79 [00:01<00:08,  8.26it/s]train-0:  10%|█         | 8/79 [00:01<00:08,  8.38it/s]train-0:  11%|█▏        | 9/79 [00:01<00:08,  8.42it/s]train-0:  13%|█▎        | 10/79 [00:01<00:07,  8.63it/s]train-0:  14%|█▍        | 11/79 [00:01<00:08,  8.43it/s]train-0:  15%|█▌        | 12/79 [00:01<00:08,  8.20it/s]train-0:  16%|█▋        | 13/79 [00:01<00:07,  8.44it/s]train-0:  18%|█▊        | 14/79 [00:01<00:07,  8.57it/s]train-0:  19%|█▉        | 15/79 [00:01<00:07,  8.60it/s]train-0:  20%|██        | 16/79 [00:02<00:07,  8.78it/s]train-0:  22%|██▏       | 17/79 [00:02<00:07,  8.76it/s]train-0:  23%|██▎       | 18/79 [00:02<00:06,  8.74it/s]train-0:  24%|██▍       | 19/79 [00:02<00:06,  8.74it/s]train-0:  25%|██▌       | 20/79 [00:02<00:06,  8.75it/s]train-0:  27%|██▋       | 21/79 [00:02<00:06,  8.82it/s]train-0:  28%|██▊       | 22/79 [00:02<00:06,  8.81it/s]train-0:  29%|██▉       | 23/79 [00:02<00:06,  8.68it/s]train-0:  30%|███       | 24/79 [00:02<00:06,  8.76it/s]train-0:  32%|███▏      | 25/79 [00:03<00:06,  8.75it/s]train-0:  33%|███▎      | 26/79 [00:03<00:06,  8.74it/s]train-0:  34%|███▍      | 27/79 [00:03<00:05,  8.77it/s]train-0:  35%|███▌      | 28/79 [00:03<00:05,  8.73it/s]train-0:  37%|███▋      | 29/79 [00:03<00:05,  8.61it/s]train-0:  38%|███▊      | 30/79 [00:03<00:05,  8.78it/s]train-0:  39%|███▉      | 31/79 [00:03<00:05,  8.79it/s]train-0:  41%|████      | 32/79 [00:03<00:05,  8.76it/s]train-0:  42%|████▏     | 33/79 [00:04<00:05,  8.86it/s]train-0:  43%|████▎     | 34/79 [00:04<00:05,  8.82it/s]train-0:  44%|████▍     | 35/79 [00:04<00:04,  8.85it/s]train-0:  46%|████▌     | 36/79 [00:04<00:04,  8.92it/s]train-0:  47%|████▋     | 37/79 [00:04<00:04,  8.73it/s]train-0:  48%|████▊     | 38/79 [00:04<00:04,  8.76it/s]train-0:  49%|████▉     | 39/79 [00:04<00:04,  8.82it/s]train-0:  51%|█████     | 40/79 [00:04<00:04,  8.61it/s]train-0:  52%|█████▏    | 41/79 [00:04<00:04,  8.50it/s]train-0:  53%|█████▎    | 42/79 [00:05<00:04,  8.55it/s]train-0:  54%|█████▍    | 43/79 [00:05<00:04,  8.59it/s]train-0:  56%|█████▌    | 44/79 [00:05<00:04,  8.67it/s]train-0:  57%|█████▋    | 45/79 [00:05<00:03,  8.78it/s]train-0:  58%|█████▊    | 46/79 [00:05<00:03,  8.91it/s]train-0:  59%|█████▉    | 47/79 [00:05<00:03,  8.85it/s]train-0:  61%|██████    | 48/79 [00:05<00:03,  8.85it/s]train-0:  62%|██████▏   | 49/79 [00:05<00:03,  8.85it/s]train-0:  63%|██████▎   | 50/79 [00:05<00:03,  8.98it/s]train-0:  65%|██████▍   | 51/79 [00:06<00:03,  8.97it/s]train-0:  66%|██████▌   | 52/79 [00:06<00:02,  9.06it/s]train-0:  67%|██████▋   | 53/79 [00:06<00:02,  8.98it/s]train-0:  68%|██████▊   | 54/79 [00:06<00:02,  8.93it/s]train-0:  70%|██████▉   | 55/79 [00:06<00:03,  7.95it/s]train-0:  71%|███████   | 56/79 [00:06<00:02,  8.31it/s]train-0:  72%|███████▏  | 57/79 [00:06<00:02,  8.66it/s]train-0:  73%|███████▎  | 58/79 [00:06<00:02,  8.73it/s]train-0:  75%|███████▍  | 59/79 [00:06<00:02,  8.78it/s]train-0:  76%|███████▌  | 60/79 [00:07<00:02,  8.80it/s]train-0:  77%|███████▋  | 61/79 [00:07<00:02,  8.27it/s]train-0:  78%|███████▊  | 62/79 [00:07<00:02,  8.16it/s]train-0:  80%|███████▉  | 63/79 [00:07<00:01,  8.48it/s]train-0:  81%|████████  | 64/79 [00:07<00:01,  7.56it/s]train-0:  82%|████████▏ | 65/79 [00:07<00:01,  7.93it/s]train-0:  84%|████████▎ | 66/79 [00:07<00:01,  8.24it/s]train-0:  85%|████████▍ | 67/79 [00:07<00:01,  8.51it/s]train-0:  86%|████████▌ | 68/79 [00:08<00:01,  8.45it/s]train-0:  87%|████████▋ | 69/79 [00:08<00:01,  8.58it/s]train-0:  89%|████████▊ | 70/79 [00:08<00:01,  8.73it/s]train-0:  90%|████████▉ | 71/79 [00:08<00:00,  8.73it/s]train-0:  91%|█████████ | 72/79 [00:08<00:00,  8.80it/s]train-0:  92%|█████████▏| 73/79 [00:08<00:00,  8.86it/s]train-0:  94%|█████████▎| 74/79 [00:08<00:00,  8.84it/s]train-0:  95%|█████████▍| 75/79 [00:08<00:00,  8.68it/s]train-0:  96%|█████████▌| 76/79 [00:08<00:00,  8.84it/s]train-0:  97%|█████████▋| 77/79 [00:09<00:00,  8.84it/s]train-0:  99%|█████████▊| 78/79 [00:09<00:00,  8.88it/s]train-0: 100%|██████████| 79/79 [00:09<00:00,  8.51it/s]
+Epoch 0: train loss :: 4.861.
+save the model to best_3-5e-06-sonnet.pt
+Epoch 0: best train loss updated :: 4.861.
+train-1:   0%|          | 0/79 [00:00<?, ?it/s]train-1:   1%|▏         | 1/79 [00:00<00:09,  8.64it/s]train-1:   3%|▎         | 2/79 [00:00<00:08,  8.69it/s]train-1:   4%|▍         | 3/79 [00:00<00:08,  8.60it/s]train-1:   5%|▌         | 4/79 [00:00<00:08,  8.58it/s]train-1:   6%|▋         | 5/79 [00:00<00:08,  8.77it/s]train-1:   8%|▊         | 6/79 [00:00<00:08,  9.01it/s]train-1:   9%|▉         | 7/79 [00:00<00:08,  8.96it/s]train-1:  10%|█         | 8/79 [00:00<00:07,  8.93it/s]train-1:  11%|█▏        | 9/79 [00:01<00:07,  9.02it/s]train-1:  13%|█▎        | 10/79 [00:01<00:07,  8.85it/s]train-1:  14%|█▍        | 11/79 [00:01<00:07,  8.86it/s]train-1:  15%|█▌        | 12/79 [00:01<00:07,  8.86it/s]train-1:  16%|█▋        | 13/79 [00:01<00:08,  7.89it/s]train-1:  18%|█▊        | 14/79 [00:01<00:08,  8.06it/s]train-1:  19%|█▉        | 15/79 [00:01<00:07,  8.40it/s]train-1:  20%|██        | 16/79 [00:01<00:07,  8.51it/s]train-1:  22%|██▏       | 17/79 [00:01<00:07,  8.56it/s]train-1:  23%|██▎       | 18/79 [00:02<00:07,  8.68it/s]train-1:  24%|██▍       | 19/79 [00:02<00:06,  8.71it/s]train-1:  25%|██▌       | 20/79 [00:02<00:06,  8.58it/s]train-1:  27%|██▋       | 21/79 [00:02<00:06,  8.74it/s]train-1:  28%|██▊       | 22/79 [00:02<00:06,  8.84it/s]train-1:  29%|██▉       | 23/79 [00:02<00:06,  9.02it/s]train-1:  30%|███       | 24/79 [00:02<00:06,  9.05it/s]train-1:  32%|███▏      | 25/79 [00:02<00:05,  9.12it/s]train-1:  33%|███▎      | 26/79 [00:02<00:05,  9.07it/s]train-1:  34%|███▍      | 27/79 [00:03<00:05,  9.12it/s]train-1:  35%|███▌      | 28/79 [00:03<00:05,  9.04it/s]train-1:  37%|███▋      | 29/79 [00:03<00:05,  9.03it/s]train-1:  38%|███▊      | 30/79 [00:03<00:05,  8.97it/s]train-1:  39%|███▉      | 31/79 [00:03<00:05,  8.91it/s]train-1:  41%|████      | 32/79 [00:03<00:05,  8.95it/s]train-1:  42%|████▏     | 33/79 [00:03<00:05,  8.73it/s]train-1:  43%|████▎     | 34/79 [00:03<00:05,  8.84it/s]train-1:  44%|████▍     | 35/79 [00:03<00:04,  8.99it/s]train-1:  46%|████▌     | 36/79 [00:04<00:05,  8.39it/s]train-1:  47%|████▋     | 37/79 [00:04<00:04,  8.53it/s]train-1:  48%|████▊     | 38/79 [00:04<00:04,  8.68it/s]train-1:  49%|████▉     | 39/79 [00:04<00:04,  8.79it/s]train-1:  51%|█████     | 40/79 [00:04<00:04,  8.90it/s]train-1:  52%|█████▏    | 41/79 [00:04<00:04,  8.72it/s]train-1:  53%|█████▎    | 42/79 [00:04<00:04,  8.80it/s]train-1:  54%|█████▍    | 43/79 [00:04<00:04,  8.89it/s]train-1:  56%|█████▌    | 44/79 [00:05<00:03,  9.02it/s]train-1:  57%|█████▋    | 45/79 [00:05<00:03,  8.84it/s]train-1:  58%|█████▊    | 46/79 [00:05<00:03,  8.61it/s]train-1:  59%|█████▉    | 47/79 [00:05<00:03,  8.93it/s]train-1:  61%|██████    | 48/79 [00:05<00:03,  9.10it/s]train-1:  62%|██████▏   | 49/79 [00:05<00:03,  9.08it/s]train-1:  63%|██████▎   | 50/79 [00:05<00:03,  9.12it/s]train-1:  65%|██████▍   | 51/79 [00:05<00:03,  9.16it/s]train-1:  66%|██████▌   | 52/79 [00:05<00:02,  9.18it/s]train-1:  67%|██████▋   | 53/79 [00:05<00:02,  9.26it/s]train-1:  68%|██████▊   | 54/79 [00:06<00:02,  9.22it/s]train-1:  70%|██████▉   | 55/79 [00:06<00:02,  9.40it/s]train-1:  71%|███████   | 56/79 [00:06<00:02,  9.44it/s]train-1:  72%|███████▏  | 57/79 [00:06<00:02,  9.29it/s]train-1:  73%|███████▎  | 58/79 [00:06<00:02,  9.34it/s]train-1:  75%|███████▍  | 59/79 [00:06<00:02,  9.26it/s]train-1:  76%|███████▌  | 60/79 [00:06<00:02,  9.20it/s]train-1:  77%|███████▋  | 61/79 [00:06<00:01,  9.28it/s]train-1:  78%|███████▊  | 62/79 [00:06<00:01,  9.32it/s]train-1:  80%|███████▉  | 63/79 [00:07<00:01,  9.28it/s]train-1:  81%|████████  | 64/79 [00:07<00:01,  9.46it/s]train-1:  82%|████████▏ | 65/79 [00:07<00:01,  9.32it/s]train-1:  84%|████████▎ | 66/79 [00:07<00:01,  9.34it/s]train-1:  85%|████████▍ | 67/79 [00:07<00:01,  9.30it/s]train-1:  86%|████████▌ | 68/79 [00:07<00:01,  9.33it/s]train-1:  87%|████████▋ | 69/79 [00:07<00:01,  9.26it/s]train-1:  89%|████████▊ | 70/79 [00:07<00:01,  8.06it/s]train-1:  90%|████████▉ | 71/79 [00:07<00:00,  8.45it/s]train-1:  91%|█████████ | 72/79 [00:08<00:00,  8.34it/s]train-1:  92%|█████████▏| 73/79 [00:08<00:00,  8.49it/s]train-1:  94%|█████████▎| 74/79 [00:08<00:00,  8.65it/s]train-1:  95%|█████████▍| 75/79 [00:08<00:00,  8.77it/s]train-1:  96%|█████████▌| 76/79 [00:08<00:00,  8.72it/s]train-1:  97%|█████████▋| 77/79 [00:08<00:00,  8.93it/s]train-1:  99%|█████████▊| 78/79 [00:08<00:00,  9.09it/s]train-1: 100%|██████████| 79/79 [00:08<00:00,  8.94it/s]
+Epoch 1: train loss :: 4.679.
+save the model to best_3-5e-06-sonnet.pt
+Epoch 1: best train loss updated :: 4.679.
+train-2:   0%|          | 0/79 [00:00<?, ?it/s]train-2:   1%|▏         | 1/79 [00:00<00:08,  8.87it/s]train-2:   3%|▎         | 2/79 [00:00<00:08,  9.36it/s]train-2:   4%|▍         | 3/79 [00:00<00:09,  7.74it/s]train-2:   5%|▌         | 4/79 [00:00<00:09,  8.31it/s]train-2:   6%|▋         | 5/79 [00:00<00:08,  8.72it/s]train-2:   8%|▊         | 6/79 [00:00<00:08,  8.79it/s]train-2:   9%|▉         | 7/79 [00:00<00:08,  8.87it/s]train-2:  10%|█         | 8/79 [00:00<00:07,  9.02it/s]train-2:  11%|█▏        | 9/79 [00:01<00:07,  9.10it/s]train-2:  13%|█▎        | 10/79 [00:01<00:07,  8.88it/s]train-2:  14%|█▍        | 11/79 [00:01<00:07,  8.79it/s]train-2:  15%|█▌        | 12/79 [00:01<00:07,  8.80it/s]train-2:  16%|█▋        | 13/79 [00:01<00:07,  8.86it/s]train-2:  18%|█▊        | 14/79 [00:01<00:07,  8.87it/s]train-2:  19%|█▉        | 15/79 [00:01<00:07,  8.92it/s]train-2:  20%|██        | 16/79 [00:01<00:07,  8.98it/s]train-2:  22%|██▏       | 17/79 [00:01<00:07,  8.78it/s]train-2:  23%|██▎       | 18/79 [00:02<00:06,  8.72it/s]train-2:  24%|██▍       | 19/79 [00:02<00:06,  8.76it/s]train-2:  25%|██▌       | 20/79 [00:02<00:06,  8.92it/s]train-2:  27%|██▋       | 21/79 [00:02<00:06,  9.06it/s]train-2:  28%|██▊       | 22/79 [00:02<00:06,  9.11it/s]train-2:  29%|██▉       | 23/79 [00:02<00:06,  9.10it/s]train-2:  30%|███       | 24/79 [00:02<00:06,  9.13it/s]train-2:  32%|███▏      | 25/79 [00:02<00:05,  9.06it/s]train-2:  33%|███▎      | 26/79 [00:02<00:05,  9.20it/s]train-2:  34%|███▍      | 27/79 [00:03<00:05,  9.13it/s]train-2:  35%|███▌      | 28/79 [00:03<00:05,  8.83it/s]train-2:  37%|███▋      | 29/79 [00:03<00:05,  8.88it/s]train-2:  38%|███▊      | 30/79 [00:03<00:05,  9.17it/s]train-2:  39%|███▉      | 31/79 [00:03<00:05,  9.10it/s]train-2:  41%|████      | 32/79 [00:03<00:05,  9.14it/s]train-2:  42%|████▏     | 33/79 [00:03<00:05,  9.15it/s]train-2:  43%|████▎     | 34/79 [00:03<00:05,  8.75it/s]train-2:  44%|████▍     | 35/79 [00:03<00:04,  8.83it/s]train-2:  46%|████▌     | 36/79 [00:04<00:04,  8.85it/s]train-2:  47%|████▋     | 37/79 [00:04<00:04,  8.99it/s]train-2:  48%|████▊     | 38/79 [00:04<00:04,  9.10it/s]train-2:  49%|████▉     | 39/79 [00:04<00:04,  9.18it/s]train-2:  51%|█████     | 40/79 [00:04<00:04,  9.17it/s]train-2:  52%|█████▏    | 41/79 [00:04<00:04,  8.80it/s]train-2:  53%|█████▎    | 42/79 [00:04<00:04,  8.90it/s]train-2:  54%|█████▍    | 43/79 [00:04<00:04,  8.96it/s]train-2:  56%|█████▌    | 44/79 [00:04<00:03,  8.98it/s]train-2:  57%|█████▋    | 45/79 [00:05<00:03,  9.20it/s]train-2:  58%|█████▊    | 46/79 [00:05<00:03,  9.28it/s]train-2:  59%|█████▉    | 47/79 [00:05<00:03,  9.28it/s]train-2:  61%|██████    | 48/79 [00:05<00:03,  9.34it/s]train-2:  62%|██████▏   | 49/79 [00:05<00:03,  9.25it/s]train-2:  63%|██████▎   | 50/79 [00:05<00:03,  9.13it/s]train-2:  65%|██████▍   | 51/79 [00:05<00:03,  9.10it/s]train-2:  66%|██████▌   | 52/79 [00:05<00:03,  7.94it/s]train-2:  67%|██████▋   | 53/79 [00:05<00:03,  8.27it/s]train-2:  68%|██████▊   | 54/79 [00:06<00:02,  8.56it/s]train-2:  70%|██████▉   | 55/79 [00:06<00:02,  8.68it/s]train-2:  71%|███████   | 56/79 [00:06<00:02,  8.67it/s]train-2:  72%|███████▏  | 57/79 [00:06<00:02,  8.20it/s]train-2:  73%|███████▎  | 58/79 [00:06<00:02,  8.44it/s]train-2:  75%|███████▍  | 59/79 [00:06<00:02,  8.63it/s]train-2:  76%|███████▌  | 60/79 [00:06<00:02,  8.75it/s]train-2:  77%|███████▋  | 61/79 [00:06<00:02,  8.83it/s]train-2:  78%|███████▊  | 62/79 [00:06<00:01,  8.80it/s]train-2:  80%|███████▉  | 63/79 [00:07<00:01,  8.91it/s]train-2:  81%|████████  | 64/79 [00:07<00:01,  8.92it/s]train-2:  82%|████████▏ | 65/79 [00:07<00:01,  9.06it/s]train-2:  84%|████████▎ | 66/79 [00:07<00:01,  9.03it/s]train-2:  85%|████████▍ | 67/79 [00:07<00:01,  9.15it/s]train-2:  86%|████████▌ | 68/79 [00:07<00:01,  9.21it/s]train-2:  87%|████████▋ | 69/79 [00:07<00:01,  9.13it/s]train-2:  89%|████████▊ | 70/79 [00:07<00:00,  9.21it/s]train-2:  90%|████████▉ | 71/79 [00:07<00:00,  9.26it/s]train-2:  91%|█████████ | 72/79 [00:08<00:00,  9.16it/s]train-2:  92%|█████████▏| 73/79 [00:08<00:00,  9.13it/s]train-2:  94%|█████████▎| 74/79 [00:08<00:00,  9.22it/s]train-2:  95%|█████████▍| 75/79 [00:08<00:00,  9.17it/s]train-2:  96%|█████████▌| 76/79 [00:08<00:00,  9.25it/s]train-2:  97%|█████████▋| 77/79 [00:08<00:00,  9.24it/s]train-2:  99%|█████████▊| 78/79 [00:08<00:00,  9.17it/s]train-2: 100%|██████████| 79/79 [00:08<00:00,  8.98it/s]
+Epoch 2: train loss :: 4.631.
+save the model to best_3-5e-06-sonnet.pt
+Epoch 2: best train loss updated :: 4.631.
+candidate score: -34.457
+Thine eyes I love, and they, as pitying me,
+Knowing thy heart torment me with disdain,
+Have put on black, and loving mourners be,
+Till my bones come alive: who shall deny thee art
+thou that he is?
+Which a man's soul makes of the same soil
+Who brings him into harmony to his neighbour;
+And by giving your own life what others so lovingly
+gave,
+That one day in which you may have peace,
+Satisfy mine eye's gaze, or render it yours.
+For whose hand wouldst thou leave thy head save!
+Blessed are these words which call us together our lovers'
+friends;
+
+
+candidate score: -29.407
+Beshrew that heart that makes my heart to groan
+For that deep wound it gives my friend and me.
+Is 't not enough to torture me alone,
+where pain is always more painful?
+—O who doth so love the world, how many things
+can I lose; what can we do?'
+A voice of pity from Heaven in a strange mountain
+sighs with trembling lips.
+'Why,' said O dear angel-worshipped Lord! How sweet his grief
+for us must be!'—My loving mind may weep, but as
+there was no weeping on either side, she will sob
+at once: when he has been found out, her anguish
+is long gone. And then despair seizes upon him again:
+all you desire shall
+
+
+candidate score: -36.345
+So, now I have confessed that he is thine
+And I myself am mortgaged to thy will,
+Myself I'll forfeit, so that other mine
+may be lost.
+But my father's sake was great and far-more worthy:
+That in my own life I still had many years
+of happiness for thee;
+Let me take care not to lose it! For, if
+this chance does come to pass,
+I should soon find myself very much under the curse
+Of a poor boy with whom fate never fails us;
+To him who has brought his children out when they
+were young—
+Who by those mean words could think them guilty—wherein despair?
+
+
+candidate score: -32.042
+Whoever hath her wish, thou hast thy will,
+And will to boot, and will in overplus.
+More than enough am I that vex thee still,
+Thy heart may be shaken from me;
+But if thou wilt see the truth, let me stay
+with you till aught can come
+Of what is best: which while time goes on,
+The next hour after noon's day shall be wasted away.
+Let an angel do all things well for us,
+Or make our way more short indeed, since he thinks
+no longer
+To know how God gave him power so great
+Nor why we leave them undone, or yet find something
+wrong.'
+
+
+candidate score: -43.229
+If thy soul check thee that I come so near,
+Swear to thy blind soul that I was thy will,
+And will, thy soul knows, is admitted there.
+O thou art now like
+a stone in the lake:
+Thy eyes want truth with clear and fathomless brightness,
+Not your garments yet mind but mine glimmering line.
+I walk not by night or day nor sleep by
+morning:
+Yet despite me you tremble on my side—
+But if through heaven any of these things it came
+too late
+To be met o'er; hear also how thine own name
+comes upon me.
+
+
+candidate score: -43.394
+Thou blind fool, Love, what dost thou to mine eyes
+That they behold and see not what they see?
+They know what beauty is, see where it lies,
+hear their sighs;
+But you have no more sense of the mind in
+your sight.
+Thus do I love thee with my lips! O thy
+tongue are well spoken,
+All things come now for me, but on this day
+that thou art sick,
+My heart has never given a word: My soul does
+keep silence when thine eye's still open.
+I say unto thee every thing which shall be taken
+away from thee,
+
+
+candidate score: -35.535
+When my love swears that she is made of truth
+I do believe her though I know she lies,
+That she might think me some untutored youth,
+And in those eyes to see any woman like him
+who doth not take care.
+So if you were a boy and went from town
+to town,
+Tell me how your heart grew weary when we met;
+But be it so good as knowing—be sure to speak!
+And tell me what thou hast seen (if he has
+heard)—"What an awful child would walk away with nothing more
+than old bones." The last words at once seem to
+strike fear into thy breast,
+This was the thing which spoke after all these years.—Now,
+
+
+candidate score: -16.407
+O, call not me to justify the wrong
+That thy unkindness lays upon my heart;
+Wound me not with thine eye but with thy tongue;
+And so I should have deserved thee.
+When thou wilt see how many great cities that lay
+near to thee dwell
+Is his kingdom no longer inferior to mine.
+Here there are none who find it agreeable;
+I leave them alone in all their buildings;
+Where they share communion and friendship,
+For if such peace were within those hallowed halls
+Of stone also, then what was man without arms?
+There is still in these days a thief which can
+steal from now to deliver;
+
+
+candidate score: -44.409
+Be wise as thou art cruel; do not press
+My tongue-tied patience with too much disdain,
+Lest sorrow lend me words, and words express
+my delight.
+But how I doth it be? What is that sound
+of thy voice,
+That in your eyes glisten like a stream?
+Or what shall I say to thee on account thereof?
+What am I saying, O man, even if thine ears
+were bowed:
+How long since have you known mine lips sweetly;
+And yet when the tears weep from their brows, the
+sight seems bitter!
+In so heartless a way can we judge our love's
+
+
+candidate score: -30.620
+In faith, I do not love thee with mine eyes,
+For they in thee a thousand errors note;
+But 'tis my heart that loves what they despise,
+And for those who have sinned thy sins,
+When they believe on my cause. The old poets are
+gone,
+These things can be explained by the words of Homer:
+(A) My Lord hath made me an empty vessel,
+Of which he alone knows as much beauty nor pain,
+That thou art only sweetest and most charming to his
+taste. Be this my soul's delight,
+Who then is so sure that when it has grown
+feeble? For behold, let no man fear God from me.
+Oh! how well must I learn—in such ignorance will my
+
+
+candidate score: -16.030
+Love is my sin, and thy dear virtue hate,
+Hate of my sin, grounded on sinful loving.
+O, but with mine compare thou thine own state,
+Thy good hand's not hurt; what does it mean? Why
+canth I love thee so much as this? The one
+loves me when I am no more. Then do the
+other like me at home:
+When they come to you in their true way,
+For if I had loved them myself from afar,
+They would be your friends, or leave us alone—
+But where are we still, that have such a longing
+for another?! O, let her tell! To make an enemy
+will only spoil herself and deceive,
+And give all men some false hope of salvation
+
+
+candidate score: -33.701
+Lo, as a careful huswife runs to catch
+One of her feathered creatures broke away,
+Sets down her babe, and makes all swift dispatch
+.
+On she woos for the first time an angel;
+Beware not lest he take off his own wings:
+The maiden leaves him on her breast till this moment,
+Stirs like lightning from withsthe eyes of love,
+And yet still remains one flesh in whose blood-stained skin;
+Her face is no longer tender or gentle;
+She seems less than young when she comes round to
+meet,
+As though at last some earthly spirit might pass!
+'Twas now that I found myself more sure,' says she,
+
+

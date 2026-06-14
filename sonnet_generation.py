@@ -587,6 +587,10 @@ def train(args):
 
   args = add_arguments(args)
   model = SonnetGPT(args)
+  if getattr(args, 'init_checkpoint_path', None):
+    saved = torch.load(args.init_checkpoint_path, map_location='cpu', weights_only=False)
+    model.load_state_dict(saved['model'])
+    print(f"initialize model from {args.init_checkpoint_path}")
   model = model.to(device)
 
   lr = args.lr
@@ -641,12 +645,13 @@ def train(args):
       else:
         epochs_without_improvement += 1
 
-    print('Generating a sample output sonnet...')
-    model.eval()
-    batch = held_out_sonnet_dataset[0]
-    encoding = model.tokenizer(batch[1], return_tensors='pt', padding=True, truncation=True).to(device)
-    output = model.generate(encoding['input_ids'], temperature=args.temperature, top_p=args.top_p)
-    print(f'{batch[1]}{output[1]}\n\n')
+    if not args.skip_epoch_sample:
+      print('Generating a sample output sonnet...')
+      model.eval()
+      batch = held_out_sonnet_dataset[0]
+      encoding = model.tokenizer(batch[1], return_tensors='pt', padding=True, truncation=True).to(device)
+      output = model.generate(encoding['input_ids'], temperature=args.temperature, top_p=args.top_p)
+      print(f'{batch[1]}{output[1]}\n\n')
 
     dev_chrf = None
     if args.selection_metric == 'dev_chrf' and args.eval_every > 0 and (epoch + 1) % args.eval_every == 0:
@@ -697,6 +702,9 @@ def generate_submission_sonnets(args):
     print(f'candidate score: {best_score:.3f}')
     print(full_sonnet)
 
+  output_dir = os.path.dirname(args.sonnet_out)
+  if output_dir:
+    os.makedirs(output_dir, exist_ok=True)
   with open(args.sonnet_out, "w+") as f:
     f.write(f"--Generated Sonnets--\n\n")
     for sonnet in generated_sonnets:
@@ -713,6 +721,7 @@ def get_args():
   parser.add_argument("--dev_gold_path", type=str, default="data/TRUE_sonnets_held_out_dev.txt")
   parser.add_argument("--sonnet_out", type=str, default="predictions/generated_sonnets.txt")
   parser.add_argument("--checkpoint_path", type=str, default=None)
+  parser.add_argument("--init_checkpoint_path", type=str, default=None)
 
   parser.add_argument("--seed", type=int, default=11711)
   parser.add_argument("--epochs", type=int, default=10)
@@ -745,6 +754,7 @@ def get_args():
   parser.add_argument("--eval_every", type=int, default=1)
   parser.add_argument("--patience", type=int, default=3)
   parser.add_argument("--selection_metric", choices=('loss', 'dev_chrf'), default='loss')
+  parser.add_argument("--skip_epoch_sample", action='store_true')
   parser.add_argument("--model_size", type=str, help="The model size as specified on hugging face.",
                       choices=['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl'], default='gpt2')
 

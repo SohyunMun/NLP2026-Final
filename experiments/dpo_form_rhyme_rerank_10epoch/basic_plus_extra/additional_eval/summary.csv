@@ -1,2 +1,0 @@
-file,count,chrF,sonnet_or_not_bot_accuracy,poemetric_form_accuracy,poemetric_form_partial,poemetric_theme_alignment,poemetric_lexical_diversity,poemetric_overall_quality,cmudict_available
-/home/msko021220/nlp2026-final-MSK/experiments/dpo_form_rhyme_rerank_10epoch/basic_plus_extra/predictions/dev_best_chrf.txt,12,42.33085170238524,0.0,0.0,3.3763392857142858,0.7149502238429577,4.7851368591381584,2.958808789565134,False

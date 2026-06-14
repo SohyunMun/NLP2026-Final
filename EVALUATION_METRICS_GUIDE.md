@@ -1,14 +1,14 @@
-# Sonnet Generation Evaluation Guide
+# Sonnet Generation Evaluation Metrics Guide
 
-이 문서는 sonnet generation 결과를 같은 기준으로 평가하기 위한 공통 스크립트 사용법이다.
+이 문서는 최종 sonnet generation 실험에서 사용한 공통 평가 지표와 실행 방법을 정리한 가이드이다.
 
-평가 스크립트:
+## 최종 평가 스크립트
 
 ```bash
-/home/msko021220/nlp2026-final-MSK/evaluate_sonnet_metrics.py
+/home/msko021220/nlp2026-final-MSK/evaluate_sonnet_poemetric.py
 ```
 
-GPU나 모델 로딩을 사용하지 않고, 생성 결과 텍스트 파일만 읽어서 평가한다.
+이 스크립트는 생성 결과 텍스트 파일만 읽어서 평가하며, GPU나 모델 로딩을 사용하지 않는다.
 
 ## 입력 파일 형식
 
@@ -26,84 +26,92 @@ second line
 ...
 ```
 
-prediction 번호가 gold/prompt 번호와 다르면 기본값 `--align auto`가 index 순서로 맞춘다. 현재 우리 실험처럼 prediction은 `0, 1, 2...`, dev gold는 `132, 133...`인 경우에도 그대로 사용 가능하다.
+prediction 번호와 prompt/gold 번호가 달라도 block 순서대로 정렬해 평가한다.
 
 ## Dev 평가 예시
 
-gold reference가 있는 dev set에서는 모든 지표가 계산된다.
+dev set에는 gold reference가 있으므로 `chrF`, `Sonnet-or-Not proxy`, `POEMetric proxy`를 모두 계산한다.
 
 ```bash
 cd /home/msko021220/nlp2026-final-MSK
 
-/home/msko021220/.conda/envs/busi2/bin/python evaluate_sonnet_metrics.py \
-  --name msk_line_rhyme_best_loss_dev \
-  --pred experiments/dpo_line_rhyme_rerank_10epoch/basic_plus_extra/predictions/dev_best_loss.txt \
-  --gold sonnet_data/strict_497/dev_gold_12.txt \
+/home/msko021220/.conda/envs/busi2/bin/python evaluate_sonnet_poemetric.py \
   --prompts sonnet_data/strict_497/dev_prompts_12.txt \
-  --train_file sonnet_data/strict_497/train_official_131_plus_extra_497_total_628.txt \
-  --dev_file sonnet_data/strict_497/dev_prompts_12.txt \
-  --test_file sonnet_data/strict_497/test_prompts_12.txt \
-  --out_dir experiments/unified_sonnet_eval/msk_line_rhyme_best_loss_dev
+  --gold sonnet_data/strict_497/dev_gold_12.txt \
+  --out_dir experiments/custom_eval/dev \
+  --run dapt_sft_lora_dpo_best_chrf=experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/dev_best_chrf.txt
 ```
 
 ## Test 평가 예시
 
-test set은 gold가 없으면 `--gold`를 빼고 실행한다. 이 경우 chrF, BLEU, ROUGE-L, token-F1은 비어 있고, 형식/다양성/반복/prompt/leakage 지표는 계산된다.
+test set에는 gold reference가 없으므로 `--gold`를 넣지 않는다. 이 경우 `chrF`는 비워지고, 생성물 자체로 계산할 수 있는 `Sonnet-or-Not proxy`와 `POEMetric proxy`만 계산한다.
 
 ```bash
 cd /home/msko021220/nlp2026-final-MSK
 
-/home/msko021220/.conda/envs/busi2/bin/python evaluate_sonnet_metrics.py \
-  --name msk_line_rhyme_best_loss_test \
-  --pred experiments/dpo_line_rhyme_rerank_10epoch/basic_plus_extra/predictions/test_best_loss.txt \
+/home/msko021220/.conda/envs/busi2/bin/python evaluate_sonnet_poemetric.py \
   --prompts sonnet_data/strict_497/test_prompts_12.txt \
-  --train_file sonnet_data/strict_497/train_official_131_plus_extra_497_total_628.txt \
-  --dev_file sonnet_data/strict_497/dev_prompts_12.txt \
-  --test_file sonnet_data/strict_497/test_prompts_12.txt \
-  --out_dir experiments/unified_sonnet_eval/msk_line_rhyme_best_loss_test
+  --out_dir experiments/custom_eval/test \
+  --run dapt_sft_lora_dpo_best_chrf=experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/test_best_chrf.txt
 ```
 
-## 출력 파일
+## 전체 six-way 평가 결과
 
-실행하면 `--out_dir` 아래에 네 파일이 생성된다.
+이미 계산된 최종 결과는 아래 파일에 정리되어 있다.
 
 | 파일 | 내용 |
 |---|---|
-| `{name}_per_sonnet_metrics.csv` | sonnet별 세부 지표 |
-| `{name}_summary_metrics.csv` | 모델별 요약 지표 1행 |
-| `{name}_summary_metrics.json` | 요약 지표 JSON |
-| `{name}_summary_metrics.md` | 사람이 읽기 쉬운 요약표 |
+| `experiments/sixway_ablation/SUMMARY.md` | dev/test 핵심 결과표와 해석 |
+| `experiments/sixway_ablation/poemetric_eval/dev/all_summary_metrics.csv` | dev 전체 요약 CSV |
+| `experiments/sixway_ablation/poemetric_eval/test/all_summary_metrics.csv` | test 전체 요약 CSV |
+| `reports/SONNET_GENERATION_PROJECT_REPORT_KO.md` | 데이터, 평가, 실험 세부 정보, 결과 해석 |
 
-## 사용하는 지표
+## 사용한 지표
 
 | 범주 | 지표 | 해석 |
 |---|---|---|
-| Reference similarity | chrF | character n-gram F-score. gold와 표면적으로 얼마나 비슷한지 측정. 높을수록 좋음 |
-| Reference similarity | BLEU | n-gram precision 기반 유사도. 높을수록 좋음 |
-| Reference similarity | ROUGE-L | longest common subsequence 기반 유사도. 높을수록 좋음 |
-| Reference similarity | token-F1 | token overlap의 precision/recall 조화평균. 높을수록 좋음 |
-| Sonnet form | exact 14 lines | 정확히 14행이면 1, 아니면 0. 평균은 14행 성공률 |
-| Sonnet form | line count score | 14행에 가까울수록 높은 점수 |
-| Sonnet form | line length score | 각 행이 대략 8-12 token이면 높은 점수 |
-| Sonnet form | Shakespearean rhyme pair score | ABAB CDCD EFEF GG pair가 맞는 정도 |
-| Sonnet form | final couplet rhyme | 마지막 두 행 GG rhyme이 맞는 정도 |
-| Diversity | MATTR | moving-average type-token ratio. 어휘 다양성. 높을수록 좋음 |
-| Diversity | distinct-1 / distinct-2 | corpus-level unique unigram/bigram 비율. 높을수록 좋음 |
-| Repetition | repetition rate | 반복 token 비율. 낮을수록 좋음 |
-| Prompt faithfulness | prompt preservation | 생성 결과의 첫 prompt lines가 입력 prompt와 같은지 확인 |
-| Theme | prompt-continuation theme overlap | prompt와 continuation의 핵심어/주제군 overlap |
-| POEMetric proxy | imagery / literary device lexicon score | imagery 단어, literary marker, alliteration 기반 proxy |
-| Leakage check | train/dev/test line or n-gram overlap | 생성 continuation이 train/dev/test source와 겹치는 정도. 낮을수록 좋음 |
+| Reference similarity | `chrF` | gold reference와 character n-gram 단위로 얼마나 비슷한지 측정. dev에서만 계산 |
+| Sonnet-or-Not proxy | `sonnet_or_not` | 14행, line length, rhyme pair, final couplet, form threshold를 모두 통과하면 1 |
+| POEMetric proxy | `poemetric_proxy` | form, lexical diversity, overall quality, theme overlap을 가중합한 rule-based proxy |
+| POEMetric component | `form_accuracy` | 14행 여부, 행 길이, Shakespearean rhyme pair, final couplet rhyme 반영 |
+| POEMetric component | `lexical_diversity` | MATTR과 distinct-2 기반 어휘 다양성 |
+| POEMetric component | `overall_quality` | form, lexical diversity, non-repetition, imagery/literary-device score 결합 |
+| POEMetric component | `theme_overlap` | prompt와 continuation 사이의 핵심어/주제 overlap |
 
-## 옵션 메모
+## 계산식
 
-- `--score_part full`: reference similarity와 diversity를 prompt 포함 전체 14행 기준으로 계산한다. 기존 실험 결과와 맞추려면 이 기본값을 사용한다.
-- `--score_part continuation`: prompt를 제외한 생성 continuation만 기준으로 계산한다. 순수 생성 성능을 더 엄격히 보고 싶을 때 사용한다.
-- `--prediction_mode full`: prediction 파일에 prompt lines까지 포함되어 있을 때 사용한다. 현재 우리 생성 결과의 기본 형식이다.
-- `--prediction_mode continuation`: prediction 파일이 continuation만 포함할 때 사용한다. 이 경우 prompt 파일을 붙여 full sonnet 형식 지표를 계산한다.
-- `--leakage_part continuation`: leakage는 기본적으로 prompt를 제외한 생성 continuation만 검사한다. prompt는 원래 입력으로 주어지기 때문에 leakage 계산에 넣지 않는 것이 안전하다.
-- `--leakage_source NAME=PATH`: train/dev/test 외 추가 corpus를 leakage source로 넣을 때 반복해서 사용할 수 있다.
+```text
+POEMetric proxy
+= 0.30 * form_accuracy
++ 0.25 * lexical_diversity
++ 0.30 * overall_quality
++ 0.15 * theme_overlap
+```
 
-## 주의점
+```text
+form_accuracy
+= 0.35 * exact_14_lines
++ 0.20 * line_length_score
++ 0.30 * shakespearean_rhyme_pair_score
++ 0.15 * final_couplet_rhyme
+```
 
-dev gold를 leakage source로 넣으면 정답과의 overlap이 leakage처럼 표시될 수 있다. 일반적인 leakage 점검에서는 train corpus, dev/test prompt, 추가 학습 데이터 후보 등을 넣고, 평가 대상 gold reference는 `--gold`로만 넣는 편이 좋다.
+```text
+lexical_diversity
+= 0.50 * MATTR
++ 0.50 * distinct_2
+```
+
+```text
+overall_quality
+= 0.35 * form_accuracy
++ 0.25 * lexical_diversity
++ 0.25 * non_repetition
++ 0.15 * imagery_literary_device_score
+```
+
+주의: 본 프로젝트의 `Sonnet-or-Not`과 `POEMetric`은 논문 공식 evaluator가 아니라, 같은 데이터와 같은 생성 결과를 일관되게 비교하기 위해 구현한 재현 가능한 proxy metric이다.
+
+## 보조 평가 스크립트
+
+`evaluate_sonnet_metrics.py`는 BLEU, ROUGE-L, token-F1, leakage check까지 포함하는 확장 평가용 스크립트이다. 최종 보고서의 핵심 결과는 `evaluate_sonnet_poemetric.py` 기준으로 정리했다.
