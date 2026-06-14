@@ -1,0 +1,169 @@
+split,row_index,sonnet_id,candidate_index,selected,rerank_score,POEMetric_proxy,sonnet_form_accuracy,exact_14_lines,line_count_score,line_length_score,shakespearean_rhyme_pair_score,final_couplet_rhyme,MATTR,distinct_2,lexical_diversity,repetition_rate,non_repetition,imagery_literary_device_score,prompt_continuation_theme_overlap,poemetric_overall_quality_proxy,sonnet_or_not_bot_pass,mbr_score,model_score,candidate_text
+dev,0,0,4,1,0.8727729855073673,0.6974024159663865,0.7357142857142858,1.0,1.0,0.75,0.2857142857142857,1.0,0.9914285714285714,1.0,0.9957142857142858,0.050420168067226934,0.9495798319327731,0.10250000000000001,0.0,0.7591985294117648,1.0,0.4887390168700317,0.0,"Thine eyes I love, and they, as pitying me,
+Knowing thy heart torment me with disdain,
+Have put on black, and loving mourners be,
+their comments's tears-parsish my cries.
+'Tis no excuse for them
+to insult mine; nor do
+either of these sufferings justify: but that which is due
+in pain should not affect at all.' 'Gentlemen,' replies John
+Peyton Campbell—he hath gone far beyond your level,—nearer than thou
+can judge! what a grief it must have been unto
+thee then.—I am sorry too late if this were the
+wrong course laid by such great men who once despised
+you:' Thou sackest so much thought upon us now!' There
+was none worse blow thrown there"
+dev,1,1,2,1,0.6623042230233728,0.6907567626735828,0.5428571428571428,1.0,1.0,0.75,0.14285714285714285,0.0,0.9504347826086956,1.0,0.9752173913043478,0.11864406779661019,0.8813559322033898,0.11893939393939394,0.55,0.6719842399678434,0.0,0.4911867475503075,0.0,"Beshrew that heart that makes my heart to groan
+For that deep wound it gives my friend and me.
+Is 't not enough to torture me alone,
+’s pain?' growling at its touch? “
+My grudging ass cries out
+of grief—in agony! —that sin's
+bitter cry deserves an answer!
+Where am I now wanting relief from the brink? Am
+O dear girl willing all this anguish till after long
+nights,—when they cease painful again? Then sigh: fear is but
+a mystery; was there something better then created in false
+soothed memory -a boy brought back by many tears whose
+beauty bred with lust another curse-drafted blessing ('tis green for
+ink!)--before thou didst see what thee"
+dev,2,2,3,1,0.5805619726194954,0.6243384238310709,0.5499999999999999,1.0,1.0,0.7857142857142857,0.14285714285714285,0.0,0.9747058823529412,1.0,0.9873529411764705,0.09401709401709402,0.905982905982906,0.09583333333333333,0.05625,0.6802089617898441,0.0,0.5162523716601782,0.0,"So, now I have confessed that he is thine
+And I myself am mortgaged to thy will,
+Myself I'll forfeit, so that other mine
+shall rest. Then my trust and thee's debt be chattel
+paid;
+Thrilling deeds for his use in me should fall out
+on no claim or expense:
+Now if then thou wouldst allow none of this gain
+nor let him do it as a friend hath done
+before (for whom all these doth come,)
+I can swear not again those true vows which make
+us such things look better! Oh the gods with pride
+how sweet our love degrades—let we see by what effect
+their false promises are made !„ The more humble you"
+dev,3,3,3,1,0.5889611961184313,0.6313627447095188,0.5499999999999999,1.0,1.0,0.7857142857142857,0.14285714285714285,0.0,0.9529032258064516,0.990909090909091,0.9719061583577713,0.09009009009009006,0.9099099099099099,0.16944444444444445,0.1125,0.6883706837335869,0.0,0.5059890908676676,0.0,"Whoever hath her wish, thou hast thy will,
+And will to boot, and will in overplus.
+More than enough am I that vex thee still,
+Thou shalt do more of this asskart's work;
+With all hushfarn'ring thine hand are bidders added-tender, *than most
+many lettings dost desire;
+That it with grace be done good deed may prove
+better for you:
+So help me not by any reason from woe -
+a word is my name said!—yet then forgive or at
+least make an end. For since she was mine first
+ransom brought down upon the world through sin gone —
+oh O goddess ! Thou hadst no heart but sweet
+praise where"
+dev,4,4,5,1,0.6221643841455442,0.6814625695348562,0.5,1.0,1.0,0.75,0.0,0.0,0.9504225352112676,0.9831932773109243,0.9668079062610959,0.10833333333333328,0.8916666666666667,0.3416666666666667,0.55,0.6908686432319406,0.0,0.48872484509970493,0.0,"If thy soul check thee that I come so near,
+Swear to thy blind soul that I was thy will,
+And will, thy soul knows, is admitted there.
+Thou therefore my faith be
+not reproachful of thine eyes;
+and thou art none more'st'led
+Upon me for sin than canst pardon any ill done.'
+Now this argument might look rather dull: 'But when a
+word comes,' says the Lord in his praise—a loud pause—""O
+blessed fool! what may it hold? Shall no part then
+make some light stand up on?' We all know full
+well why they were wronged by their misgivings themselves at
+first-rate men… To fear Thy truth let them prove every
+lie without shame -"
+dev,5,5,5,1,0.6813712845031161,0.7095407444668008,0.557142857142857,1.0,1.0,0.8214285714285714,0.14285714285714285,0.0,0.9501408450704225,1.0,0.9750704225352113,0.10833333333333328,0.8916666666666667,0.20416666666666666,0.6062500000000001,0.6923092723004695,0.0,0.5003832688684912,0.0,"Thou blind fool, Love, what dost thou to mine eyes
+That they behold and see not what they see?
+They know what beauty is, see where it lies,
+but none much perceiveth;
+Their ignorance renders their thoughts ill-informed.
+What false judgement of theirs dost make them think worth
+knowing:
+To thee art base a counterfeit the good which belongs
+most fathoms all'st! Their blindness hast no effect in themselves
+- for heaven can hardly deceive his sight—when he wilt
+scorn on that view,—how long does thine heart allow this
+same kind thing unto him even so great an abomination
+as thy poor selfage?! ! There did I myself live
+with envy till then my fair time being gone before"
+dev,6,6,5,1,0.7064551687777877,0.7055817242458271,0.5928571428571429,1.0,1.0,0.7857142857142857,0.2857142857142857,0.0,0.9350724637681159,0.9914529914529915,0.9632627276105536,0.11864406779661019,0.8813559322033898,0.08472222222222223,0.55,0.6813629982868191,0.0,0.5016571776091407,0.0,"When my love swears that she is made of truth
+I do believe her though I know she lies,
+That she might think me some untutored youth,
+doth tell
+Her things amiss; but now at last prove true what
+i have said.
+But when in spite [she writes] to false reproach countenance
+’s interest (which would only lead
+To a most odious inquisition)’t the best knows wherein it
+happens: and yet no matter how many sins fornicate contend
+or plead—let them make thee confess,—or else they shall lose
+thy heart from strife! Let him not then deceive you
+till he finds out who hath wit'sleth such riches as
+these manners afford.—How can those which"
+dev,7,7,2,1,0.6166201114311755,0.6728251064509262,0.4714285714285714,1.0,1.0,0.6071428571428571,0.0,0.0,0.9744262295081967,1.0,0.9872131147540983,0.0636363636363636,0.9363636363636364,0.185,0.55,0.6736441877794337,0.0,0.49346359225986963,0.0,"O, call not me to justify the wrong
+That thy unkindness lays upon my heart;
+Wound me not with thine eye but with thy tongue;
+Prote thee in vain a
+blasphemy of mine grosser mind;
+Thou sendst blame by thoughts
+on myself's works infelical deed;
+Describe all wherewith I offend these unfair words:
+Be still thou avenged and dead unto error! Such are
+some 'till tales invent themselves. Here is no pardon else
+than pure evil run amok.—If you love life so much
+that it blest—return full strength now,—dost pay praise be'ry end?’
+This time this follies shall reap their gift too wilt
+lay down before them"
+dev,8,8,1,1,0.5917748759156615,0.6350541619797524,0.5714285714285714,1.0,1.0,0.8928571428571429,0.14285714285714285,0.0,0.9738461538461538,1.0,0.9869230769230769,0.06299212598425197,0.937007874015748,0.0925,0.05625,0.6948577377347062,0.0,0.5277564998828425,0.0,"Be wise as thou art cruel; do not press
+My tongue-tied patience with too much disdain,
+Lest sorrow lend me words, and words express
+my point
+Too harsh a word's tone to make it sound unshear.
+Thou shalt call on errors which offend thee more than
+hurtful comments: for I know that when they are written
+down let no one say them again till now—yet what
+havest Thou ever done? So dost excuse mine time from
+all such thoughts! Take pity upon the idle state of
+virtue,—I will pray thy pleasure here be spent in doing
+wrong so long.—If every thought should die out without this
+then there shall never come nor cease these bad deeds
+whose cause is righteousness or false pride"
+dev,9,9,1,1,0.9320933964710904,0.7522095265561729,0.7571428571428571,1.0,1.0,0.8571428571428571,0.2857142857142857,1.0,0.9683783783783784,1.0,0.9841891891891892,0.08943089430894313,0.9105691056910569,0.3591666666666667,0.275,0.7925645737200615,1.0,0.5085191281379446,0.0,"In faith, I do not love thee with mine eyes,
+For they in thee a thousand errors note;
+But 'tis my heart that loves what they despise,
+and how many their wrongs
+I censures. Thou art thy friend to them so far
+as of correction
+They question about me.' But since then the truth is
+worth much more than hatred's end, it follows too: -'
+t thou be right there on earth? Then are you
+despised by all others for this?' Thereupon hate brings joy
+when such words die out upon memory or penance.* So
+why dost some call themselves those who believe but these
+things which men make into deeds ? O Muse! Wherefore
+at least let Death see your glory shine forth before"
+dev,10,10,1,1,0.6819919101028955,0.7093064608237661,0.5499999999999999,1.0,1.0,0.7857142857142857,0.14285714285714285,0.0,0.9543661971830986,0.9915966386554622,0.9729814179192804,0.08333333333333337,0.9166666666666666,0.2366666666666667,0.6062500000000001,0.7004120211464867,0.0,0.5138904769819652,0.0,"Love is my sin, and thy dear virtue hate,
+Hate of my sin, grounded on sinful loving.
+O, but with mine compare thou thine own state,
+its fault,
+Uncondemning condemnation, I'st proffered excuse;
+Thou art in me guilty: forgive it all that make
+thee loathth God."" But this was not so much an
+abuse to love as a correction—a way out! To use
+the pen against such sins had made no sense at
+first,—it seemed like something new were they forced upon men
+by their lusts or fears? In truth these insults bore
+us onward into heaven for ever again from whence we
+came forth before death itself began our eternal search (figuratively
+there being three spirits within)"
+dev,11,11,3,1,0.631222282653256,0.6508938492063492,0.5857142857142857,1.0,1.0,0.75,0.2857142857142857,0.0,0.9926984126984127,1.0,0.9963492063492063,0.0267857142857143,0.9732142857142857,0.1875,0.05625,0.725515873015873,0.0,0.4825498197317858,0.0,"Lo, as a careful huswife runs to catch
+One of her feathered creatures broke away,
+Sets down her babe, and makes all swift dispatch
+; she lays on the wrinkle-spray.
+Whack goes off at its front step with fierce glee
+or burst,—
+Like one distressed deer in advance comes pouncing near.
+But some time this second strays between it stifles not
+an eye;—thoroughly brings up again!
+What do I have done here that puts these out?
+Ah well say they may see them lose sight.—O gracious
+God thy love doth teach: come hither!"" says he gently
+upon his tongue.""Oh waitest thou wilt,"" cries your girl lovingly—""what
+we want"
