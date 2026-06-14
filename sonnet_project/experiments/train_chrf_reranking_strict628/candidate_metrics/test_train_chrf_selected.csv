@@ -1,0 +1,169 @@
+split,row_index,sonnet_id,candidate_index,selected,rerank_score,POEMetric_proxy,sonnet_form_accuracy,exact_14_lines,line_count_score,line_length_score,shakespearean_rhyme_pair_score,final_couplet_rhyme,MATTR,distinct_2,lexical_diversity,repetition_rate,non_repetition,imagery_literary_device_score,prompt_continuation_theme_overlap,poemetric_overall_quality_proxy,sonnet_or_not_bot_pass,mbr_score,model_score,candidate_text,predicted_chrf
+test,0,0,4,1,0.5969825083147622,0.6445099788264732,0.5642857142857142,1.0,1.0,0.8571428571428571,0.14285714285714285,0.0,0.950958904109589,1.0,0.9754794520547945,0.11475409836065575,0.8852459016393442,0.3483333333333334,0.1125,0.7149313384235346,0.0,0.5000293312241864,0.0,"Those lips that Love's own hand did make
+Breathed forth the sound that said ""I hate""
+To me that languished for her sake;
+from its touch sweet and sweet
+Her breast she breathed, delivered it to my throat. She
+spoke of love expressing words through tears or cheeks
+That raised a voice so low as those grating throats
+uttered on midsummer night! And when I read about how
+often they sung these hymns—but no more than there was
+once in heaven before,—then seemed this cry puerile: 'Love hath
+made thee sick,' yea'st thou be heard singing them out
+loud with laughter? Then may God not give us such
+joys.' The Lord loves his subjects well enough though their
+minds say",42.298195732638824
+test,1,1,1,1,0.5797354623847469,0.6296904554714318,0.5642857142857142,1.0,1.0,0.8571428571428571,0.14285714285714285,0.0,0.956986301369863,1.0,0.9784931506849315,0.06557377049180324,0.9344262295081968,0.2902777777777778,0.0,0.7192715117149487,0.0,0.49090914303034666,0.0,"Poor soul, the center of my sinful earth,
+Pressed with these rebel powers that thee array,
+Why dost thou pine within and suffer dearth,
+?"" cried I. ""Thou hast not raised me up to
+thy lofty object!""
+The cry was unanswerable; for it had no force from
+heaven or base cause—it held on steadfastly! The rest answered:
+Thou have a body which is divine in nature only
+but weak,—and this feeble God cannot stand upon his throne
+alone? This would answer all agonies so readily as mine
+own eyes beholdeth them wriggling beside each other's shoulders.—To what
+purpose do they complain against you then if there are
+none else among their ranks besides themselves such petty faults
+unto judge again?'",42.35099754036213
+test,2,2,0,1,0.5602007666256553,0.6062000142947723,0.5357142857142857,1.0,1.0,0.7142857142857143,0.14285714285714285,0.0,0.9609677419354838,0.990909090909091,0.9759384164222874,0.09009009009009006,0.9099099099099099,0.08472222222222223,0.0,0.6716704149163826,0.0,0.4713954203669853,0.0,"My love is as a fever, longing still
+For that which longer nurseth the disease,
+Feeding on that which doth preserve the ill,
+Painting its pain and wrangling it from the drain.
+The cure lies in an
+inflamed brain; but whereas care
+grows strong over our diseased glands
+the infection begins to swell round us: so we go
+thither continually till death has risen."" —Luther - Follies receding
+daily through song began by dearest friend (who died after
+one reading): ""Never seem I again seeing tears drop everywhere!
+There's nothing else for me’s sake there—and my life must
+die here at last!"" On note yesterday,—revelation deepened with prayers
+ever",41.26430166699828
+test,3,3,3,1,0.6410929044350818,0.6794353354978355,0.5714285714285714,1.0,1.0,0.8928571428571429,0.14285714285714285,0.0,0.9561038961038961,1.0,0.9780519480519481,0.08730158730158732,0.9126984126984127,0.26666666666666666,0.33125000000000004,0.7126875901875902,0.0,0.5091047517608005,0.0,"O me, what eyes hath love put in my head,
+Which have no correspondence with true sight!
+Or if they have, where is my judgment fled,
+That it has the purpose of drawing or thinking?*
+Grief's own work done,[or written into my brain's ink]?' I
+am not so angry; but these reasons should be: pain
+and sadness both contain such. But do you see that
+which Love gave to all men – your thoughts themselves
+are their sole source whence a pen might write-and tell
+him things still worse than fear could cure well ;
+whereas how can any one else give his letters away
+more willingly ? Therefore for we feel ourselves strong before
+our beauty comes within touch , as thou sayst !
+To thee too show",42.67156778534645
+test,4,4,0,1,0.5710427106708766,0.6188281537681385,0.5499999999999999,1.0,1.0,0.7857142857142857,0.14285714285714285,0.0,0.9688235294117648,0.9913793103448276,0.9801014198782962,0.10256410256410253,0.8974358974358975,0.2275,0.0,0.6960093293285483,0.0,0.514778633225244,0.0,"Canst thou, O cruel, say I love thee not
+When I against myself with thee partake?
+Do I not think on thee when I forgot
+thy good or bad reasons
+Thou am ill-treatful to me in my argument?
+O do so late as this insult offend: but then
+still should that be worse than slander;
+If by vice and praise of mine more disgrace had
+done it gain hold.
+Why let crime ever at least mend blame which wert
+made stain come upon us all - doth we envy
+you well for doing penance! That witless power did make
+scruples grow among ourselves ! But shame blesses our assent
+therefore soon along own fault line ; tell the gay",42.26504454900477
+test,5,5,0,1,0.5716111720667648,0.6171339204912734,0.557142857142857,1.0,1.0,0.8214285714285714,0.14285714285714285,0.0,0.9602941176470589,1.0,0.9801470588235295,0.07692307692307687,0.9230769230769231,0.0825,0.0,0.6831809954751131,0.0,0.49766919117369035,0.0,"O, from what power hast thou this powerful might
+With insufficiency my heart to sway?
+To make me give the lie to my true sight,
+and draw forth thy decrees?!*
+Thou dost confound mine very tenderest intellect with that fraud
+of thine;
+And yet am I able in whose hands thee art
+so bold: — Thus was it done. Thou shalt be
+contented when deceived by virtue's banquet.* Oh then why have
+many thoughts which you are most proud as princes did
+carry out them ? And has none but myself ever
+drawn away these things for refuge . These now let
+us look backward at history or memory ; we see
+our time watching backwards through old age - even though",42.16838189244003
+test,6,6,4,1,0.6330663744853335,0.6910356579780793,0.5214285714285714,1.0,1.0,0.8571428571428571,0.0,0.0,0.9813698630136987,0.9917355371900827,0.9865527001018907,0.08196721311475408,0.9180327868852459,0.175,0.55,0.6848963717467841,0.0,0.49106405067494646,0.0,"Love is too young to know what conscience is;
+Yet who knows not conscience is born of love?
+Then, gentle cheater, urge not my amiss,
+nor do I advocate 't' it's injury
+To be wrongful or sinful in its thinking?'
+Therefore this question cannot arise from the breast: for,'tis but
+that thought which all these ages have seen expressed and
+taught. Yet can any one else tell if more than
+those understood ought virtue grow out better then we now
+think so ? Can there even ever a time when
+hope thinks as guiltless an idea! Who doth doubting unkindly
+cherish loving friends whom he knew never changed me ’s
+mind“d fear worse thyself did ! How right was God
+thus mixed",41.93462655284079
+test,7,7,1,1,0.63970300269344,0.6805686355105707,0.5785714285714285,1.0,1.0,0.9285714285714286,0.14285714285714285,0.0,0.9698630136986301,1.0,0.9849315068493151,0.06557377049180324,0.9344262295081968,0.32916666666666666,0.275,0.7317144340893779,0.0,0.5313044697521547,0.0,"In loving thee thou know'st I am forsworn,
+But thou art twice forsworn, to me love swearing;
+In act thy bed-vow broke, and new faith torn
+up
+Thou hast done my word from the law:
+For in this present mine is not restored.
+Before thine own eyes shalt be added an infirmity declared—
+For wherefore havest before shown their strength? or wilt they
+add more of grace than praise ? tell them these
+words do appear clearer though worthily! Then show mercy doth
+it flow with such ease that men can weep as
+now,—those are all false hope sown by true charity !
+But let us look at ourselves once again into her
+good bosom ; yea even so shall we feel what",43.332978905741065
+test,8,8,2,1,0.6722470753792198,0.7040248015873016,0.5499999999999999,1.0,1.0,0.7857142857142857,0.14285714285714285,0.0,0.9603174603174603,1.0,0.9801587301587302,0.0803571428571429,0.9196428571428571,0.25,0.55,0.7049503968253968,0.0,0.47943853139391673,0.0,"Cupid laid by his brand and fell asleep.
+A maid of Dian's this advantage found,
+And his love-kindling fire did quickly steep
+heel her door; he brought into her bed,*
+Her blushing breast sheaped on the warm pillows it was
+made for,
+All hot poise inflicted an intolerable distress with a strong
+blow*,
+His locks hanging dear within dry barrier,—her eyes seeing him
+alone?--let me to tears hold my beauty high above wood!—the
+moan had escaped from John Clarelea many hours hence: whence
+is that I thought invention so wrought in eternity ?
+Dear dorested heartes ! v ’ee‡st thou live thy age
+well preserved home be?"" mad Henry",41.82996423929452
+test,9,9,1,1,0.5822120224728944,0.6393601021983677,0.5428571428571428,1.0,1.0,0.75,0.14285714285714285,0.0,0.9749253731343284,1.0,0.9874626865671642,0.06896551724137934,0.9310344827586207,0.638888888888889,0.0,0.7654576256647795,0.0,0.49278215595005737,0.0,"The little love-god, lying once asleep,
+Laid by his side his heart-inflaming brand,
+Whilst many nymphs that vowed chaste life to keep
+up drool-pushed him awake,
+Birthed in the breath of a needle he had been
+crowing
+His precious blood stream with syncing incantations; and while still
+on this ground lay half at ease like shadows! as
+for all thy prayers wilt I hold thee? oh alas
+— your day is long since gone—yet you are there.
+Let no pain or sigh stay beside me: never canthless
+let my strength sustain it's rest.—For thou hast made mine
+last peace,—let us be dead then!"" Then were silent upon
+her bright face,""I",42.1839943301795
+test,10,10,4,1,0.9675580775644098,0.7875944264069263,0.742142857142857,1.0,1.0,0.8571428571428571,0.38571428571428573,0.7,0.9724675324675325,0.992,0.9822337662337662,0.06349206349206349,0.9365079365079365,0.33472222222222225,0.55,0.7896437590187589,1.0,0.49959544378459053,0.0,"When my love swears that she is made of truth,
+I do believe her, though I know she lies,
+That she might think me some untutored youth,
+or fancied person;
+And yet true in a fair way am we: for
+as the woman's heart confesses to be strong, so too
+are thoughts quelled. (But what did lassus write these words?)—for
+such proof hath been mine at first come through faith
+and experience alone taught by men who have lived with
+women? For although you prove no skill other than thy
+good fortune myself may judge if all others will add
+it up again.—Alas! still your passion proves better on earth-like
+subjects,—i went from womb until now till thou seest nothing
+worth living",42.80375407575444
+test,11,11,5,1,0.6751162637056707,0.7058855779867257,0.5499999999999999,1.0,1.0,0.7857142857142857,0.14285714285714285,0.0,0.973125,1.0,0.9865625,0.07079646017699115,0.9292035398230089,0.22916666666666669,0.55,0.7058165099557522,0.0,0.5003893050078496,0.0,"Two loves I have, of comfort and despair,
+That like two spirits do suggest me still.
+My better angel is a man right fair,
+compassionate;
+His grief both mourns my loss to him with pain.')
+For the love's sake his cruel grieves mine: but it
+being well nigh so—
+I know that there never should be said more bad
+news from here.
+O God,—love hath this very good effect upon things! 'Tis
+true thy grace gives us safety too much!'--'tis not evil?'
+replies thou seest thine divine headstays onward again in such
+thoughts. It must give thee closure or rest on its
+own grave? So far as heaven dwelles doth all",42.22872781010439
