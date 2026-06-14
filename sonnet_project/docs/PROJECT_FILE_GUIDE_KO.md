@@ -6,6 +6,7 @@
 
 | 파일 | 역할 |
 |---|---|
+| `../task_scripts/README_KO.md` | 과제 흐름별 실행 스크립트 안내 |
 | `README_KO.md` | 프로젝트 빠른 안내 |
 | `reports/SONNET_GENERATION_PROJECT_REPORT_KO.md` | 데이터, 평가, 실험, 결과 해석을 포함한 최종 보고서 |
 | `experiments/sixway_ablation/SUMMARY.md` | 6개 실험의 dev/test 정량 결과 |

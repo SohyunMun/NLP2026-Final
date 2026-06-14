@@ -9,9 +9,18 @@
 - 최종 결과표: `sonnet_project/experiments/sixway_ablation/SUMMARY.md`
 - 데이터 설명: `sonnet_project/data/README.md`
 - 파일 안내: `sonnet_project/docs/PROJECT_FILE_GUIDE_KO.md`
+- 과제 흐름별 실행 스크립트: `task_scripts/README_KO.md`
 
 기본 과제 코드는 루트에 유지하고, sonnet generation 비교 실험에 필요한 데이터, 평가 스크립트, 실험 runner, 최종 결과는 `sonnet_project/` 아래에 정리했다.
 루트 `sonnet_generation.py`는 과제 starter code의 command option을 유지한 공식 baseline entry이고, 추가 실험용 확장 구현은 `sonnet_project/scripts/sonnet_generation_enhanced.py`에 분리했다.
+
+세 실행 흐름은 아래처럼 분리했다.
+
+| 구분 | 실행 스크립트 |
+|---|---|
+| GPT-2 코드 완성하기 | `task_scripts/01_run_gpt2_code_completion.sh` |
+| Sonnet generation 코드 완성하기 | `task_scripts/02_run_sonnet_generation_baseline.sh` |
+| Sonnet generation 코드/데이터 개선하기 | `task_scripts/03_run_sonnet_generation_improvements.sh` |
 
 ## PART-I:
 
