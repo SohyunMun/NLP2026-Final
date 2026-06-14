@@ -1,0 +1,109 @@
+{
+  "method": "MSK SFT checkpoint + form/rhyme/repetition-aware LoRA-DPO",
+  "use_line_rhyme_generation": false,
+  "line_rhyme_candidates": 2,
+  "sft_checkpoint": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_intermediate/best_10-1e-05-sonnet.pt",
+  "train_path": "/home/msko021220/nlp2026-final-MSK/sonnet_project/data/strict_497/train_official_131_plus_extra_497_total_628.txt",
+  "best_chrf_checkpoint": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/best_chrf_lora_dpo_form_rhyme.pt",
+  "best_loss_checkpoint": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/best_loss_lora_dpo_form_rhyme.pt",
+  "best_dev_chrf": 42.776817582445865,
+  "best_loss_dev_chrf": 42.24459005359969,
+  "best_chrf_epoch": 8,
+  "best_loss_epoch": 9,
+  "history": [
+    {
+      "epoch": 0,
+      "train_loss": 0.5235346746367385,
+      "val_loss": 0.42457153870070236,
+      "dev_chrf": 41.12165765054371,
+      "best_val_loss": 0.42457153870070236,
+      "best_dev_chrf": 41.12165765054371
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.43822807897286453,
+      "val_loss": 0.377651074306762,
+      "dev_chrf": 41.781243668658654,
+      "best_val_loss": 0.377651074306762,
+      "best_dev_chrf": 41.781243668658654
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.4119071587217304,
+      "val_loss": 0.3555144214249672,
+      "dev_chrf": 42.30951486846816,
+      "best_val_loss": 0.3555144214249672,
+      "best_dev_chrf": 42.30951486846816
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.38398263257717324,
+      "val_loss": 0.34706048857658467,
+      "dev_chrf": 42.49000098203858,
+      "best_val_loss": 0.34706048857658467,
+      "best_dev_chrf": 42.49000098203858
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.36439125988160737,
+      "val_loss": 0.340733510224109,
+      "dev_chrf": 42.49319769565898,
+      "best_val_loss": 0.340733510224109,
+      "best_dev_chrf": 42.49319769565898
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.3685126228080645,
+      "val_loss": 0.34037643940524853,
+      "dev_chrf": 42.38918334414617,
+      "best_val_loss": 0.34037643940524853,
+      "best_dev_chrf": 42.49319769565898
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.34712275876586746,
+      "val_loss": 0.32194532152820143,
+      "dev_chrf": 42.39605167013723,
+      "best_val_loss": 0.32194532152820143,
+      "best_dev_chrf": 42.49319769565898
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.3385370170592137,
+      "val_loss": 0.31917376641897444,
+      "dev_chrf": 41.998820829284675,
+      "best_val_loss": 0.31917376641897444,
+      "best_dev_chrf": 42.49319769565898
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.3383580372849466,
+      "val_loss": 0.3182942450363585,
+      "dev_chrf": 42.776817582445865,
+      "best_val_loss": 0.3182942450363585,
+      "best_dev_chrf": 42.776817582445865
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.3320864648543785,
+      "val_loss": 0.31190073062130746,
+      "dev_chrf": 42.24459005359969,
+      "best_val_loss": 0.31190073062130746,
+      "best_dev_chrf": 42.776817582445865
+    }
+  ],
+  "dev_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/dev_best_loss.txt",
+  "test_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/test_best_loss.txt",
+  "best_chrf_dev_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/dev_best_chrf.txt",
+  "best_chrf_test_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/test_best_chrf.txt",
+  "best_loss_dev_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/dev_best_loss.txt",
+  "best_loss_test_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/test_best_loss.txt",
+  "reject_counts": {
+    "mismatch": 628,
+    "repetition": 628,
+    "bad_rhyme": 628,
+    "bad_line_length": 628,
+    "repeated_endings": 628,
+    "short_form": 628
+  }
+}

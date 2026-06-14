@@ -1,0 +1,14 @@
+$ /home/msko021220/.conda/envs/busi2/bin/python /home/msko021220/nlp2026-final-MSK/sonnet_project/scripts/generate_sonnet_checkpoint.py --checkpoint /home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/base_basic/best_10-2e-05-sonnet.pt --prompt_path /home/msko021220/nlp2026-final-MSK/sonnet_project/data/strict_497/test_prompts_12.txt --output_path /home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/base_basic/predictions/test.txt --seed 21711 --num_candidates 1 --max_generation_tokens 120 --model_score_weight 0.0 --mbr_weight 0.0 --use_gpu
+
+[generate] test.txt id=0 score=-38.750
+[generate] test.txt id=1 score=-31.700
+[generate] test.txt id=2 score=-21.150
+[generate] test.txt id=3 score=-37.100
+[generate] test.txt id=4 score=-45.300
+[generate] test.txt id=5 score=-31.800
+[generate] test.txt id=6 score=-53.450
+[generate] test.txt id=7 score=-22.300
+[generate] test.txt id=8 score=-27.950
+[generate] test.txt id=9 score=-50.750
+[generate] test.txt id=10 score=-42.350
+[generate] test.txt id=11 score=-32.700

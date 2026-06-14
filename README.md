@@ -4,13 +4,13 @@
 
 이 브랜치의 최종 sonnet generation 실험 정리는 아래 파일에서 시작한다.
 
-- 프로젝트 빠른 안내: `PROJECT_README_KO.md`
-- 최종 보고서: `reports/SONNET_GENERATION_PROJECT_REPORT_KO.md`
-- 최종 결과표: `experiments/sixway_ablation/SUMMARY.md`
-- 데이터 설명: `sonnet_data/README.md`
-- 파일 안내: `docs/PROJECT_FILE_GUIDE_KO.md`
+- 프로젝트 빠른 안내: `sonnet_project/README_KO.md`
+- 최종 보고서: `sonnet_project/reports/SONNET_GENERATION_PROJECT_REPORT_KO.md`
+- 최종 결과표: `sonnet_project/experiments/sixway_ablation/SUMMARY.md`
+- 데이터 설명: `sonnet_project/data/README.md`
+- 파일 안내: `sonnet_project/docs/PROJECT_FILE_GUIDE_KO.md`
 
-기본 과제 코드는 유지하고, sonnet generation 비교 실험에 필요한 데이터, 평가 스크립트, 실험 runner, 최종 결과만 추가했다.
+기본 과제 코드는 루트에 유지하고, sonnet generation 비교 실험에 필요한 데이터, 평가 스크립트, 실험 runner, 최종 결과는 `sonnet_project/` 아래에 정리했다.
 
 ## PART-I:
 

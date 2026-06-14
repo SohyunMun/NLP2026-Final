@@ -1,246 +1,0 @@
-$ /home/msko021220/.conda/envs/busi2/bin/python /home/msko021220/nlp2026-final-MSK/sonnet_generation.py --epochs 10 --batch_size 8 --lr 2e-05 --weight_decay 0.01 --eval_every 1 --patience 10 --selection_metric loss --skip_epoch_sample --num_candidates 1 --dev_num_candidates 1 --max_generation_tokens 120 --model_score_weight 0.0 --mbr_weight 0.0 --prompt_loss_weight 1.0 --line_break_loss_weight 1.0 --sonnet_path /home/msko021220/nlp2026-final-MSK/sonnet_data/basic/train_131.txt --held_out_sonnet_path /home/msko021220/nlp2026-final-MSK/sonnet_data/strict_497/dev_prompts_12.txt --sonnet_out /home/msko021220/nlp2026-final-MSK/experiments/sixway_ablation/base_basic/predictions/dev.txt --model_size gpt2 --use_gpu --dev_sonnet_path /home/msko021220/nlp2026-final-MSK/sonnet_data/strict_497/dev_prompts_12.txt --dev_gold_path /home/msko021220/nlp2026-final-MSK/sonnet_data/strict_497/dev_gold_12.txt
-
-train-0:   0%|          | 0/17 [00:00<?, ?it/s]train-0:   6%|▌         | 1/17 [00:00<00:05,  2.76it/s]train-0:  12%|█▏        | 2/17 [00:00<00:03,  4.62it/s]train-0:  18%|█▊        | 3/17 [00:00<00:02,  5.89it/s]train-0:  24%|██▎       | 4/17 [00:00<00:01,  6.86it/s]train-0:  29%|██▉       | 5/17 [00:00<00:01,  7.41it/s]train-0:  35%|███▌      | 6/17 [00:00<00:01,  7.85it/s]train-0:  41%|████      | 7/17 [00:01<00:01,  8.26it/s]train-0:  47%|████▋     | 8/17 [00:01<00:01,  8.59it/s]train-0:  53%|█████▎    | 9/17 [00:01<00:00,  8.76it/s]train-0:  59%|█████▉    | 10/17 [00:01<00:00,  8.91it/s]train-0:  65%|██████▍   | 11/17 [00:01<00:00,  8.81it/s]train-0:  71%|███████   | 12/17 [00:01<00:00,  8.95it/s]train-0:  76%|███████▋  | 13/17 [00:01<00:00,  8.79it/s]train-0:  82%|████████▏ | 14/17 [00:01<00:00,  8.91it/s]train-0:  88%|████████▊ | 15/17 [00:01<00:00,  8.93it/s]train-0:  94%|█████████▍| 16/17 [00:02<00:00,  9.02it/s]train-0: 100%|██████████| 17/17 [00:02<00:00,  8.12it/s]
-Epoch 0: train loss :: 4.988.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 0: best train loss updated :: 4.988.
-train-1:   0%|          | 0/17 [00:00<?, ?it/s]train-1:   6%|▌         | 1/17 [00:00<00:01,  9.19it/s]train-1:  12%|█▏        | 2/17 [00:00<00:01,  9.23it/s]train-1:  18%|█▊        | 3/17 [00:00<00:01,  9.49it/s]train-1:  24%|██▎       | 4/17 [00:00<00:01,  9.54it/s]train-1:  29%|██▉       | 5/17 [00:00<00:01,  9.57it/s]train-1:  35%|███▌      | 6/17 [00:00<00:01,  9.55it/s]train-1:  41%|████      | 7/17 [00:00<00:01,  9.57it/s]train-1:  47%|████▋     | 8/17 [00:00<00:00,  9.68it/s]train-1:  53%|█████▎    | 9/17 [00:00<00:00,  9.76it/s]train-1:  59%|█████▉    | 10/17 [00:01<00:00,  9.57it/s]train-1:  65%|██████▍   | 11/17 [00:01<00:00,  9.45it/s]train-1:  71%|███████   | 12/17 [00:01<00:00,  9.45it/s]train-1:  76%|███████▋  | 13/17 [00:01<00:00,  9.39it/s]train-1:  82%|████████▏ | 14/17 [00:01<00:00,  9.52it/s]train-1:  88%|████████▊ | 15/17 [00:01<00:00,  9.52it/s]train-1:  94%|█████████▍| 16/17 [00:01<00:00,  9.35it/s]train-1: 100%|██████████| 17/17 [00:01<00:00,  9.75it/s]
-Epoch 1: train loss :: 4.651.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 1: best train loss updated :: 4.651.
-train-2:   0%|          | 0/17 [00:00<?, ?it/s]train-2:   6%|▌         | 1/17 [00:00<00:01,  8.90it/s]train-2:  12%|█▏        | 2/17 [00:00<00:01,  9.32it/s]train-2:  18%|█▊        | 3/17 [00:00<00:01,  9.42it/s]train-2:  24%|██▎       | 4/17 [00:00<00:01,  9.17it/s]train-2:  29%|██▉       | 5/17 [00:00<00:01,  9.24it/s]train-2:  35%|███▌      | 6/17 [00:00<00:01,  9.37it/s]train-2:  41%|████      | 7/17 [00:00<00:01,  9.44it/s]train-2:  47%|████▋     | 8/17 [00:00<00:00,  9.33it/s]train-2:  53%|█████▎    | 9/17 [00:00<00:00,  9.29it/s]train-2:  59%|█████▉    | 10/17 [00:01<00:00,  9.18it/s]train-2:  65%|██████▍   | 11/17 [00:01<00:00,  9.19it/s]train-2:  71%|███████   | 12/17 [00:01<00:00,  9.32it/s]train-2:  76%|███████▋  | 13/17 [00:01<00:00,  9.32it/s]train-2:  82%|████████▏ | 14/17 [00:01<00:00,  9.18it/s]train-2:  88%|████████▊ | 15/17 [00:01<00:00,  9.23it/s]train-2:  94%|█████████▍| 16/17 [00:01<00:00,  9.14it/s]train-2: 100%|██████████| 17/17 [00:01<00:00,  9.43it/s]
-Epoch 2: train loss :: 4.489.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 2: best train loss updated :: 4.489.
-train-3:   0%|          | 0/17 [00:00<?, ?it/s]train-3:   6%|▌         | 1/17 [00:00<00:01,  9.01it/s]train-3:  12%|█▏        | 2/17 [00:00<00:01,  8.95it/s]train-3:  18%|█▊        | 3/17 [00:00<00:01,  9.13it/s]train-3:  24%|██▎       | 4/17 [00:00<00:01,  9.22it/s]train-3:  29%|██▉       | 5/17 [00:00<00:01,  9.16it/s]train-3:  35%|███▌      | 6/17 [00:00<00:01,  9.21it/s]train-3:  41%|████      | 7/17 [00:00<00:01,  9.30it/s]train-3:  47%|████▋     | 8/17 [00:00<00:00,  9.15it/s]train-3:  53%|█████▎    | 9/17 [00:00<00:00,  9.13it/s]train-3:  59%|█████▉    | 10/17 [00:01<00:00,  9.10it/s]train-3:  65%|██████▍   | 11/17 [00:01<00:00,  9.28it/s]train-3:  71%|███████   | 12/17 [00:01<00:00,  9.31it/s]train-3:  76%|███████▋  | 13/17 [00:01<00:00,  9.30it/s]train-3:  82%|████████▏ | 14/17 [00:01<00:00,  9.42it/s]train-3:  88%|████████▊ | 15/17 [00:01<00:00,  9.52it/s]train-3: 100%|██████████| 17/17 [00:01<00:00, 10.56it/s]train-3: 100%|██████████| 17/17 [00:01<00:00,  9.54it/s]
-Epoch 3: train loss :: 4.378.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 3: best train loss updated :: 4.378.
-train-4:   0%|          | 0/17 [00:00<?, ?it/s]train-4:   6%|▌         | 1/17 [00:00<00:01,  8.93it/s]train-4:  12%|█▏        | 2/17 [00:00<00:01,  8.73it/s]train-4:  18%|█▊        | 3/17 [00:00<00:01,  8.85it/s]train-4:  24%|██▎       | 4/17 [00:00<00:01,  9.19it/s]train-4:  29%|██▉       | 5/17 [00:00<00:01,  9.23it/s]train-4:  35%|███▌      | 6/17 [00:00<00:01,  9.33it/s]train-4:  41%|████      | 7/17 [00:00<00:01,  9.32it/s]train-4:  47%|████▋     | 8/17 [00:00<00:00,  9.34it/s]train-4:  53%|█████▎    | 9/17 [00:00<00:00,  9.44it/s]train-4:  59%|█████▉    | 10/17 [00:01<00:00,  9.30it/s]train-4:  65%|██████▍   | 11/17 [00:01<00:00,  9.24it/s]train-4:  71%|███████   | 12/17 [00:01<00:00,  9.38it/s]train-4:  76%|███████▋  | 13/17 [00:01<00:00,  9.46it/s]train-4:  82%|████████▏ | 14/17 [00:01<00:00,  9.45it/s]train-4:  88%|████████▊ | 15/17 [00:01<00:00,  9.43it/s]train-4:  94%|█████████▍| 16/17 [00:01<00:00,  9.39it/s]train-4: 100%|██████████| 17/17 [00:01<00:00,  9.56it/s]
-Epoch 4: train loss :: 4.284.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 4: best train loss updated :: 4.284.
-train-5:   0%|          | 0/17 [00:00<?, ?it/s]train-5:   6%|▌         | 1/17 [00:00<00:01,  8.76it/s]train-5:  12%|█▏        | 2/17 [00:00<00:01,  9.01it/s]train-5:  18%|█▊        | 3/17 [00:00<00:01,  9.14it/s]train-5:  24%|██▎       | 4/17 [00:00<00:01,  9.34it/s]train-5:  29%|██▉       | 5/17 [00:00<00:01,  9.38it/s]train-5:  35%|███▌      | 6/17 [00:00<00:01,  9.22it/s]train-5:  41%|████      | 7/17 [00:00<00:01,  9.13it/s]train-5:  47%|████▋     | 8/17 [00:00<00:00,  9.36it/s]train-5:  53%|█████▎    | 9/17 [00:00<00:00,  9.28it/s]train-5:  59%|█████▉    | 10/17 [00:01<00:00,  9.25it/s]train-5:  65%|██████▍   | 11/17 [00:01<00:00,  9.36it/s]train-5:  71%|███████   | 12/17 [00:01<00:00,  9.36it/s]train-5:  76%|███████▋  | 13/17 [00:01<00:00,  9.25it/s]train-5:  82%|████████▏ | 14/17 [00:01<00:00,  9.35it/s]train-5:  88%|████████▊ | 15/17 [00:01<00:00,  9.38it/s]train-5:  94%|█████████▍| 16/17 [00:01<00:00,  9.34it/s]train-5: 100%|██████████| 17/17 [00:01<00:00,  9.49it/s]
-Epoch 5: train loss :: 4.249.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 5: best train loss updated :: 4.249.
-train-6:   0%|          | 0/17 [00:00<?, ?it/s]train-6:   6%|▌         | 1/17 [00:00<00:01,  8.43it/s]train-6:  12%|█▏        | 2/17 [00:00<00:01,  8.80it/s]train-6:  18%|█▊        | 3/17 [00:00<00:01,  9.09it/s]train-6:  24%|██▎       | 4/17 [00:00<00:01,  9.18it/s]train-6:  29%|██▉       | 5/17 [00:00<00:01,  9.33it/s]train-6:  35%|███▌      | 6/17 [00:00<00:01,  9.28it/s]train-6:  41%|████      | 7/17 [00:00<00:01,  9.39it/s]train-6:  47%|████▋     | 8/17 [00:00<00:00,  9.36it/s]train-6:  53%|█████▎    | 9/17 [00:00<00:00,  9.20it/s]train-6:  59%|█████▉    | 10/17 [00:01<00:00,  9.22it/s]train-6:  65%|██████▍   | 11/17 [00:01<00:00,  9.06it/s]train-6:  71%|███████   | 12/17 [00:01<00:00,  9.22it/s]train-6:  76%|███████▋  | 13/17 [00:01<00:00,  9.13it/s]train-6:  82%|████████▏ | 14/17 [00:01<00:00,  9.21it/s]train-6:  88%|████████▊ | 15/17 [00:01<00:00,  9.15it/s]train-6:  94%|█████████▍| 16/17 [00:01<00:00,  9.14it/s]train-6: 100%|██████████| 17/17 [00:01<00:00,  9.37it/s]
-Epoch 6: train loss :: 4.202.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 6: best train loss updated :: 4.202.
-train-7:   0%|          | 0/17 [00:00<?, ?it/s]train-7:   6%|▌         | 1/17 [00:00<00:01,  8.34it/s]train-7:  12%|█▏        | 2/17 [00:00<00:01,  8.89it/s]train-7:  18%|█▊        | 3/17 [00:00<00:01,  8.98it/s]train-7:  24%|██▎       | 4/17 [00:00<00:01,  9.12it/s]train-7:  29%|██▉       | 5/17 [00:00<00:01,  9.12it/s]train-7:  35%|███▌      | 6/17 [00:00<00:01,  9.30it/s]train-7:  41%|████      | 7/17 [00:00<00:01,  9.29it/s]train-7:  47%|████▋     | 8/17 [00:00<00:00,  9.35it/s]train-7:  53%|█████▎    | 9/17 [00:00<00:00,  9.49it/s]train-7:  59%|█████▉    | 10/17 [00:01<00:00,  9.43it/s]train-7:  65%|██████▍   | 11/17 [00:01<00:00,  9.40it/s]train-7:  71%|███████   | 12/17 [00:01<00:00,  9.50it/s]train-7:  76%|███████▋  | 13/17 [00:01<00:00,  9.36it/s]train-7:  82%|████████▏ | 14/17 [00:01<00:00,  9.27it/s]train-7:  88%|████████▊ | 15/17 [00:01<00:00,  9.41it/s]train-7:  94%|█████████▍| 16/17 [00:01<00:00,  9.38it/s]train-7: 100%|██████████| 17/17 [00:01<00:00,  9.56it/s]
-Epoch 7: train loss :: 4.178.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 7: best train loss updated :: 4.178.
-train-8:   0%|          | 0/17 [00:00<?, ?it/s]train-8:   6%|▌         | 1/17 [00:00<00:02,  7.31it/s]train-8:  12%|█▏        | 2/17 [00:00<00:01,  8.11it/s]train-8:  18%|█▊        | 3/17 [00:00<00:01,  8.74it/s]train-8:  24%|██▎       | 4/17 [00:00<00:01,  9.10it/s]train-8:  29%|██▉       | 5/17 [00:00<00:01,  9.22it/s]train-8:  35%|███▌      | 6/17 [00:00<00:01,  9.25it/s]train-8:  41%|████      | 7/17 [00:00<00:01,  9.16it/s]train-8:  47%|████▋     | 8/17 [00:00<00:00,  9.37it/s]train-8:  53%|█████▎    | 9/17 [00:00<00:00,  9.48it/s]train-8:  59%|█████▉    | 10/17 [00:01<00:00,  9.27it/s]train-8:  65%|██████▍   | 11/17 [00:01<00:00,  9.39it/s]train-8:  71%|███████   | 12/17 [00:01<00:00,  9.27it/s]train-8:  76%|███████▋  | 13/17 [00:01<00:00,  9.21it/s]train-8:  82%|████████▏ | 14/17 [00:01<00:00,  9.24it/s]train-8:  88%|████████▊ | 15/17 [00:01<00:00,  9.19it/s]train-8:  94%|█████████▍| 16/17 [00:01<00:00,  9.34it/s]train-8: 100%|██████████| 17/17 [00:01<00:00,  9.38it/s]
-Epoch 8: train loss :: 4.154.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 8: best train loss updated :: 4.154.
-train-9:   0%|          | 0/17 [00:00<?, ?it/s]train-9:   6%|▌         | 1/17 [00:00<00:01,  9.29it/s]train-9:  12%|█▏        | 2/17 [00:00<00:01,  9.25it/s]train-9:  18%|█▊        | 3/17 [00:00<00:01,  9.50it/s]train-9:  24%|██▎       | 4/17 [00:00<00:01,  9.30it/s]train-9:  29%|██▉       | 5/17 [00:00<00:01,  9.50it/s]train-9:  35%|███▌      | 6/17 [00:00<00:01,  9.60it/s]train-9:  41%|████      | 7/17 [00:00<00:01,  9.49it/s]train-9:  47%|████▋     | 8/17 [00:00<00:00,  9.44it/s]train-9:  53%|█████▎    | 9/17 [00:00<00:00,  9.26it/s]train-9:  59%|█████▉    | 10/17 [00:01<00:00,  9.29it/s]train-9:  65%|██████▍   | 11/17 [00:01<00:00,  9.22it/s]train-9:  71%|███████   | 12/17 [00:01<00:00,  9.24it/s]train-9:  76%|███████▋  | 13/17 [00:01<00:00,  9.28it/s]train-9:  82%|████████▏ | 14/17 [00:01<00:00,  9.23it/s]train-9:  88%|████████▊ | 15/17 [00:01<00:00,  9.35it/s]train-9:  94%|█████████▍| 16/17 [00:01<00:00,  9.36it/s]train-9: 100%|██████████| 17/17 [00:01<00:00,  9.54it/s]
-Epoch 9: train loss :: 4.150.
-save the model to best_10-2e-05-sonnet.pt
-Epoch 9: best train loss updated :: 4.150.
-candidate score: -20.550
-Thine eyes I love, and they, as pitying me,
-Knowing thy heart torment me with disdain,
-Have put on black, and loving mourners be,
-Who bear the shadow of mine fearful memorial.
-O thou then so sharp a snare in my eye;
-May not heaven-day commit any such fondness to blame,
-Which she hath at her finger his length set
-To keep thee from rekindling your affection.
-But this hour is no trifling injury:
-And yet now shouldst thou vex him by neglect,
-If he make more than one mock note for you,
-Nor come well contented only for others' use.
-That's why first sire shall speak that which deceives us
-still
-
-
-candidate score: -30.050
-Beshrew that heart that makes my heart to groan
-For that deep wound it gives my friend and me.
-Is 't not enough to torture me alone,
-How much worse do I crave or fear pain?
-I am so weak in love with all the world's
-head at once;
-And this patient cold cannot slow me from striving even
-half-way onward.
-Ah! If your hand can dig you out of thee
-how must I bow him homey, sweet old man!
-"No more desire than a fair maiden would lose his
-robe on her knees!"
---Cursed thou when thy womb is well witted.
-Alas, what griefs should despair but death for any such
-
-
-candidate score: -34.200
-So, now I have confessed that he is thine
-And I myself am mortgaged to thy will,
-Myself I'll forfeit, so that other mine
-may be put.
-Whilst thou art thus betrothed and you are buried in
-the seat
-I grieve thee, though not loved;
-For this hour of my birth bears witness,
-To an act so savage, cruel as it must kill
-me by such force.
-Now when didst Thou show Thy sight aught more blood
-than ever before?
-O on whom hastst done these things for yourself ?
-For there hath been no foul deed besides thy desire.
-
-
-candidate score: -41.650
-Whoever hath her wish, thou hast thy will,
-And will to boot, and will in overplus.
-More than enough am I that vex thee still,
-Yet this sweet being of mine is worthy so much
-praise.
-"No love for my friend may ever be worse,"
-Than a false excuse against myself;
-But when she cries out again to me he shall
-hear:
-Or every crime committed on account of his faults reigns
-unnumbered,
-So hard couldst Thou do him shame! "Mamma!" makth even
-not one frame appear more troubled,
-As all works are done with something else behind them.
-
-
-candidate score: -32.800
-If thy soul check thee that I come so near,
-Swear to thy blind soul that I was thy will,
-And will, thy soul knows, is admitted there.
-Thy self which thou art beholding bringeth forth tarry;
-But canst thou say in the sight of it nothing?
-When thou leave thyself alone with me, and hold my
-hand,
-Whilst speaking on mine proud heart says this word:
-Makest thou then your mind allow me thine breath?
-I am at peace by what may be thought more
-well than love or hate.
-When she makes a sweet wish for you all things
-are done fair,
-And when good weather brings new fine elements about,
-
-
-candidate score: -57.350
-Thou blind fool, Love, what dost thou to mine eyes
-That they behold and see not what they see?
-They know what beauty is, see where it lies,
-but do their sight best.
-But that which others call death's nature a thousand ages'
-residence;
-Shall each one of them take life with him when
-he dies
-And bring his good fortune back again in the dead
-tomb.
-To those things once so dear are reaped by loss
-alone;
-Doth all our new acquaintance be like this pale crown
-worn up till now?
-
-
-candidate score: -29.250
-When my love swears that she is made of truth
-I do believe her though I know she lies,
-That she might think me some untutored youth,
-So couldst they not use to tell a lie
-Yet their tongues teach what in thy eyes was thought
-most false.
-Thus did say mine beloved mistress fell dead;
-Such are all those who listen with closed mouths,
-To give such creeds for others' sins as from which
-nothing can be derived.
-But now alas! if you would keep silent
-In us your decease may devise no mirth but wretched
-tongue
-Wherece so many faults thou shalt find and read therein.
-
-
-candidate score: -22.750
-O, call not me to justify the wrong
-That thy unkindness lays upon my heart;
-Wound me not with thine eye but with thy tongue;
-Do you tell what thou wilt say for mine sake?
-Thy gift is like a sword against the world's flower:
-Make thee be light of hate all in darkness.
-Ah, now come forward your praise says , "tis done
-that I should never see it."
-So do others doth his name beg pardon .
-And yet are both worse than still there by this
-false friend's words ;
-Even so shalt they take notice of one another better
-than and more true themselves :
-Whose love then truth might give him virtue even longer!
-
-
-candidate score: -32.650
-Be wise as thou art cruel; do not press
-My tongue-tied patience with too much disdain,
-Lest sorrow lend me words, and words express
-Their great pain in aught else.
-Thou must know that love's loss is an expiation for
-evil.
-In every thing that can stain the course of life,
-O my dear friend, let it be endured by others--
-That some toil alone should die but thy sword didst
-preserve.
-I myself am worthier than this more undeserving foe.
-No child then has struck thee whom worse cruelty had
-doth set before thee.
-If any offend again on his name appear
-
-
-candidate score: -31.400
-In faith, I do not love thee with mine eyes,
-For they in thee a thousand errors note;
-But 'tis my heart that loves what they despise,
-And gives of myself to them from their hurt.
-But although these beauties are among many things seen,
-Mine hatred for thy goodness has taken on several occasions;
-Thus when thou art ill dost hear praise be sung;
-And after having despised all virtue and beauty alike,
-Then thine tongue submits you then even farther.
-So why shouldn't such tastes bring me pleasure?
-For it is through right malice which by nature bears
-down;
-All help the weak but those who give themselves up
-so well.
-
-
-candidate score: -47.050
-Love is my sin, and thy dear virtue hate,
-Hate of my sin, grounded on sinful loving.
-O, but with mine compare thou thine own state,
-By every murder's sweetness; give me a hard lesson to
-love thee.
-Thy pure good taste invokes envy, pain, grief, rage, inonance.
-If I should be bitter after your ill-luck,
-My strong sense gives you such injury that when death
-takes hold,
-A moment' consolation shines forth upon all pains, which make
-you sad again.
-In the joyful delight shall our deeds grow dainty, so
-much so that by his grace we must not live
-wearyly.
-
-
-candidate score: -35.700
-Lo, as a careful huswife runs to catch
-One of her feathered creatures broke away,
-Sets down her babe, and makes all swift dispatch
-.
-And there is no first since that time for fear's
-sake;
-Or nothing but love did my high-born mother steal?
-If she might have loved them alive or dead,
-Her goblet gave us thy caresses again after thee died!
-Sweet so sweet may the one give thine own reproach!
-She hath told me this it will not be done--
-And I know every thing which thou bestest giv'n some
-favor from mine heart,
-To make up my sorrows with what thou hast slav'd
-
-
