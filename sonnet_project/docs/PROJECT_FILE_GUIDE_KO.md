@@ -17,6 +17,7 @@
 | 파일 | 역할 |
 |---|---|
 | `scripts/run_sixway_sonnet_ablation.py` | 6개 실험 학습/생성/평가 통합 runner |
+| `scripts/sonnet_generation_enhanced.py` | 추가 실험용 sonnet generation 확장 구현 |
 | `scripts/evaluate_sonnet_poemetric.py` | chrF, Sonnet-or-Not proxy, POEMetric proxy 평가 |
 | `scripts/evaluate_sonnet_metrics.py` | BLEU, ROUGE-L, token-F1 등 더 넓은 metric 평가 |
 | `scripts/generate_sonnet_checkpoint.py` | 저장된 checkpoint로 dev/test prediction 생성 |
@@ -61,6 +62,7 @@ sonnet_project/
 │   └── SONNET_GENERATION_PROJECT_REPORT_KO.md
 └── scripts/
     ├── run_sixway_sonnet_ablation.py
+    ├── sonnet_generation_enhanced.py
     ├── evaluate_sonnet_poemetric.py
     ├── evaluate_sonnet_metrics.py
     ├── generate_sonnet_checkpoint.py

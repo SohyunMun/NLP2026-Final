@@ -27,7 +27,7 @@ for search_path in (SCRIPT_DIR, ROOT):
 from datasets import SonnetsDataset
 from optimizer import AdamW
 from run_msk_sft_lora_dpo import apply_lora_to_policy, chrf_score, generate_file, load_sft_model
-from sonnet_generation import prompt_token_lengths, seed_everything, weighted_lm_loss
+from sonnet_generation_enhanced import prompt_token_lengths, seed_everything, weighted_lm_loss
 
 
 def save_checkpoint(path: Path, model, optimizer, args, base_args, epoch: int, train_loss: float, dev_chrf: float) -> None:

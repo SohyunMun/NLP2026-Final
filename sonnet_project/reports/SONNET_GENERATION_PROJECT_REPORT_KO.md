@@ -330,7 +330,7 @@ nlp2026-final-MSK/
 ├── data/                         # 원래 과제 데이터
 ├── models/                       # 기본 GPT-2 구현
 ├── modules/                      # attention/layer 구현
-├── sonnet_generation.py          # 기본 sonnet generation entry
+├── sonnet_generation.py          # 과제 공식 CLI를 유지한 기본 sonnet generation entry
 └── sonnet_project/
     ├── README_KO.md
     ├── data/
@@ -355,6 +355,7 @@ nlp2026-final-MSK/
     ├── reports/
     │   └── SONNET_GENERATION_PROJECT_REPORT_KO.md
     └── scripts/
+        ├── sonnet_generation_enhanced.py
         ├── evaluate_sonnet_poemetric.py
         ├── evaluate_sonnet_metrics.py
         ├── run_sixway_sonnet_ablation.py

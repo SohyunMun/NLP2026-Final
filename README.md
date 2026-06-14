@@ -11,6 +11,7 @@
 - 파일 안내: `sonnet_project/docs/PROJECT_FILE_GUIDE_KO.md`
 
 기본 과제 코드는 루트에 유지하고, sonnet generation 비교 실험에 필요한 데이터, 평가 스크립트, 실험 runner, 최종 결과는 `sonnet_project/` 아래에 정리했다.
+루트 `sonnet_generation.py`는 과제 starter code의 command option을 유지한 공식 baseline entry이고, 추가 실험용 확장 구현은 `sonnet_project/scripts/sonnet_generation_enhanced.py`에 분리했다.
 
 ## PART-I:
 

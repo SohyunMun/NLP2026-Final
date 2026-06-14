@@ -51,7 +51,7 @@ from run_msk_sft_lora_dpo import (
     load_sft_model,
     save_checkpoint,
 )
-from sonnet_generation import (
+from sonnet_generation_enhanced import (
     generate_candidate_sonnet,
     mbr_centrality_score,
     model_sequence_score,

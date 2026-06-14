@@ -95,7 +95,7 @@ def run_sonnet_generation_stage(
     if force or not ckpt.exists() or not dev_pred.exists():
         cmd = [
             str(PYTHON),
-            str(ROOT / "sonnet_generation.py"),
+            str(SCRIPT_DIR / "sonnet_generation_enhanced.py"),
             "--epochs", str(epochs),
             "--batch_size", "8",
             "--lr", lr,

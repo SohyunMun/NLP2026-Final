@@ -37,7 +37,7 @@ for search_path in (SCRIPT_DIR, ROOT):
 
 from datasets import SonnetsDataset
 from optimizer import AdamW
-from sonnet_generation import (
+from sonnet_generation_enhanced import (
     SonnetGPT,
     add_arguments,
     nonempty_lines,

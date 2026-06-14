@@ -40,7 +40,7 @@ def main() -> None:
     import torch
 
     from run_msk_sft_lora_dpo import generate_file, load_sft_model
-    from sonnet_generation import seed_everything
+    from sonnet_generation_enhanced import seed_everything
 
     seed_everything(args.seed)
     device = torch.device("cuda" if args.use_gpu and torch.cuda.is_available() else "cpu")
