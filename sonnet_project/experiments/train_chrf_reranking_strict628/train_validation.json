@@ -1,7 +1,0 @@
-{
-  "validation_groups": 62,
-  "train_groups": 566,
-  "candidate_rmse": 1.4936751674478472,
-  "candidate_mae": 1.1859731062264183,
-  "mean_selected_candidate_chrf": 41.65823225466865
-}

@@ -10,6 +10,7 @@
 | `README_KO.md` | 프로젝트 빠른 안내 |
 | `reports/SONNET_GENERATION_PROJECT_REPORT_KO.md` | 데이터, 평가, 실험, 결과 해석을 포함한 최종 보고서 |
 | `experiments/sixway_ablation/SUMMARY.md` | 6개 실험의 dev/test 정량 결과 |
+| `experiments/dpo_reranking/SUMMARY.md` | POEMetric 기반 reranking 결과 |
 | `docs/EVALUATION_METRICS_GUIDE.md` | 최종 metric script 사용 가이드 |
 | `data/README.md` | 데이터 split과 strict 497 정제 설명 |
 
@@ -18,6 +19,7 @@
 | 파일 | 역할 |
 |---|---|
 | `scripts/run_sixway_sonnet_ablation.py` | 6개 실험 학습/생성/평가 통합 runner |
+| `scripts/run_dpo_reranking.py` | DPO checkpoint 기반 POEMetric reranking runner |
 | `scripts/sonnet_generation_enhanced.py` | 추가 실험용 sonnet generation 확장 구현 |
 | `scripts/evaluate_sonnet_poemetric.py` | chrF, Sonnet-or-Not proxy, POEMetric proxy 평가 |
 | `scripts/evaluate_sonnet_metrics.py` | BLEU, ROUGE-L, token-F1 등 더 넓은 metric 평가 |
@@ -38,6 +40,7 @@
 | `experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/` | DAPT -> SFT -> LoRA-DPO |
 | `experiments/sixway_ablation/poemetric_eval/dev/` | dev 평가 결과 |
 | `experiments/sixway_ablation/poemetric_eval/test/` | test 평가 결과 |
+| `experiments/dpo_reranking/` | DPO output에 POEMetric 기반 reranking을 적용한 결과 |
 
 ## Notes
 
@@ -58,11 +61,13 @@ sonnet_project/
 │   ├── EVALUATION_METRICS_GUIDE.md
 │   └── PROJECT_FILE_GUIDE_KO.md
 ├── experiments/
-│   └── sixway_ablation/
+│   ├── sixway_ablation/
+│   └── dpo_reranking/
 ├── reports/
 │   └── SONNET_GENERATION_PROJECT_REPORT_KO.md
 └── scripts/
     ├── run_sixway_sonnet_ablation.py
+    ├── run_dpo_reranking.py
     ├── sonnet_generation_enhanced.py
     ├── evaluate_sonnet_poemetric.py
     ├── evaluate_sonnet_metrics.py

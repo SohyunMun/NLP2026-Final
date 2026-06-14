@@ -8,16 +8,12 @@
 |---|---|
 | 최종 보고서 | `reports/SONNET_GENERATION_PROJECT_REPORT_KO.md` |
 | 최종 결과 요약 | `experiments/sixway_ablation/SUMMARY.md` |
-| DPO + reranking 결과 | `experiments/dpo_reranking/SUMMARY.md` |
-| train-chrF reranking 결과 | `experiments/train_chrf_reranking_strict628/SUMMARY.md` |
-| dev-only chrF reranking 분석 | `experiments/chrf_reranking_dev/SUMMARY.md` |
+| POEMetric reranking 결과 | `experiments/dpo_reranking/SUMMARY.md` |
 | dev 평가 CSV | `experiments/sixway_ablation/poemetric_eval/dev/all_summary_metrics.csv` |
 | test 평가 CSV | `experiments/sixway_ablation/poemetric_eval/test/all_summary_metrics.csv` |
 | 평가 스크립트 | `scripts/evaluate_sonnet_poemetric.py` |
 | six-way 실험 실행 스크립트 | `scripts/run_sixway_sonnet_ablation.py` |
-| DPO reranking 실행 스크립트 | `scripts/run_dpo_reranking.py` |
-| train-chrF reranking 실행 스크립트 | `scripts/run_train_chrf_reranking.py` |
-| dev-only chrF reranking 분석 스크립트 | `scripts/analyze_chrf_reranking_dev.py` |
+| POEMetric reranking 실행 스크립트 | `scripts/run_dpo_reranking.py` |
 | canonical sonnet 데이터 | `data/` |
 
 ## 폴더 구조
@@ -49,8 +45,6 @@ sonnet_project/
 추가 실험:
 
 - `POEMetric reranking`: best DPO checkpoint에서 prompt당 여러 후보를 생성한 뒤, gold reference 없이 form/rhyme/theme/repetition 기반 점수로 최종 후보 선택.
-- `train-chrF predictor reranking`: train gold만 사용해 후보의 chrF를 예측하는 ridge-regression reranker를 학습하고, dev/test에서는 gold reference 없이 후보 선택.
-- `dev-only chrF reranking`: dev 후보군에서 chrF oracle 및 leave-one-out chrF-tuned 분석 수행. test gold는 사용하지 않음.
 
 ## 평가 지표
 
@@ -61,12 +55,11 @@ sonnet_project/
 ## 최종 결론
 
 - dev chrF 최고 모델: `dapt_sft_lora_dpo_best_chrf` (`42.7768`)
-- dev/test POEMetric 최고 모델: `sft_plus_extra`
+- 학습 모델만 비교했을 때 dev/test POEMetric 최고 모델: `sft_plus_extra`
+- 후처리까지 포함했을 때 dev/test POEMetric 최고 결과: `POEMetric reranking`
 - DPO는 chrF와 form accuracy를 올렸지만 lexical diversity와 overall quality를 낮춰 POEMetric 전체에서는 SFT보다 불리했다.
 - Sonnet-or-Not pass는 대부분 0으로, 엄격한 rhyme/form constraint는 추가 개선이 필요하다.
-- DPO + reranking은 dev chrF를 약간 낮췄지만, dev POEMetric을 `0.5971`에서 `0.6359`로, test POEMetric을 `0.6105`에서 `0.6496`으로 높였다.
-- train-chrF predictor reranking은 train gold만으로 학습한 chrF 예측기를 사용했으며, dev chrF `42.1890`, dev POEMetric `0.5962`, test POEMetric `0.6267`을 보였다. 제출용으로 공정한 chrF 기반 reranking 방식이지만, 현재 결과는 POEMetric reranking보다 낮다.
-- dev-only chrF oracle은 chrF를 `43.1516`까지 올렸지만 gold reference를 직접 사용하므로 upper-bound로만 해석한다. Leave-one-out chrF-tuned는 `41.8480`으로, 현재 후보군에서는 chrF 기준을 안정적으로 일반화하기 어렵다는 결과를 보였다.
+- POEMetric reranking은 dev chrF를 약간 낮췄지만, dev POEMetric을 `0.5971`에서 `0.6359`로, test POEMetric을 `0.6105`에서 `0.6496`으로 높였다.
 
 ## 재현
 
@@ -77,28 +70,11 @@ cd <repository-root>
 python sonnet_project/scripts/run_sixway_sonnet_ablation.py --gpus 0,1,2,3
 ```
 
-DPO + reranking 실험을 다시 실행하려면 다음 명령을 사용한다.
+POEMetric reranking 실험을 다시 실행하려면 다음 명령을 사용한다.
 
 ```bash
 cd <repository-root>
 python sonnet_project/scripts/run_dpo_reranking.py --use_gpu --num_candidates 6 --decoding_strategies top_p,top_k --max_generation_tokens 120
-```
-
-train-chrF predictor reranking을 다시 실행하려면 strict 628개 train 후보를 생성한 뒤 재사용한다.
-
-```bash
-cd <repository-root>
-python sonnet_project/scripts/run_train_chrf_reranking.py \
-  --train_path sonnet_project/data/strict_497/train_official_131_plus_extra_497_total_628.txt \
-  --output_dir sonnet_project/experiments/train_chrf_reranking_strict628 \
-  --train_candidate_csvs sonnet_project/experiments/train_chrf_reranking_strict628/candidate_metrics/train_candidates_shard0of4.csv,sonnet_project/experiments/train_chrf_reranking_strict628/candidate_metrics/train_candidates_shard1of4.csv,sonnet_project/experiments/train_chrf_reranking_strict628/candidate_metrics/train_candidates_shard2of4.csv,sonnet_project/experiments/train_chrf_reranking_strict628/candidate_metrics/train_candidates_shard3of4.csv
-```
-
-dev-only chrF reranking 분석을 다시 실행하려면 다음 명령을 사용한다.
-
-```bash
-cd <repository-root>
-python sonnet_project/scripts/analyze_chrf_reranking_dev.py
 ```
 
 평가만 별도로 돌리려면 다음 형식을 사용한다.

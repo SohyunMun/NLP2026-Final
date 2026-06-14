@@ -1,6 +1,6 @@
-# DPO + Reranking Experiment
+# DPO + POEMetric Reranking Experiment
 
-이 실험은 새 모델을 학습하지 않고, 기존 best DPO policy에서 prompt당 여러 후보를 생성한 뒤 reference-free metric으로 최종 후보를 다시 선택한 후처리 실험이다.
+이 실험은 새 모델을 학습하지 않고, 기존 best DPO policy에서 prompt당 여러 후보를 생성한 뒤 POEMetric 중심 reference-free metric으로 최종 후보를 다시 선택한 후처리 실험이다.
 
 Gold reference는 reranking 과정에서 사용하지 않고, 최종 dev 평가에서만 `chrF` 계산에 사용했다. 따라서 같은 방식은 gold가 없는 test set에도 적용 가능하다.
 
@@ -55,7 +55,7 @@ Test set에는 gold reference가 없으므로 `chrF`는 계산하지 않았다.
 - Reranking은 dev `chrF`를 `42.7768`에서 `42.0672`로 약간 낮췄다.
 - 대신 dev/test 모두에서 `Sonnet-or-Not`, form accuracy, lexical diversity, overall quality, theme overlap, POEMetric이 상승했다.
 - 특히 test `POEMetric`은 `0.6105`에서 `0.6496`으로 상승했다.
-- 따라서 DPO + reranking은 reference similarity 최고점을 노리는 방식이라기보다, sonnet 형식과 reference-free poetic quality를 강화하는 후처리로 해석하는 것이 적절하다.
+- 따라서 POEMetric reranking은 reference similarity 최고점을 노리는 방식이라기보다, sonnet 형식과 reference-free poetic quality를 강화하는 후처리로 해석하는 것이 적절하다.
 
 ## Outputs
 
