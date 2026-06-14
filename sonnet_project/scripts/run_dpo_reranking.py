@@ -332,9 +332,9 @@ def generate_split(
 
 def write_summary(path: Path, args: argparse.Namespace, split_summaries: list[dict[str, object]]) -> None:
     lines = [
-        "# DPO + Reranking Experiment",
+        "# DPO + POEMetric Reranking Experiment",
         "",
-        "This experiment loads the best DPO policy and applies reference-free reranking.",
+        "This experiment loads the best DPO policy and applies POEMetric-centered reference-free reranking.",
         "Gold references are not used during candidate selection.",
         "",
         "## Model",
@@ -342,7 +342,7 @@ def write_summary(path: Path, args: argparse.Namespace, split_summaries: list[di
         f"- SFT base checkpoint: `{args.sft_checkpoint}`",
         f"- DPO checkpoint: `{args.dpo_checkpoint}`",
         "",
-        "## Reranking",
+        "## POEMetric Reranking",
         "",
         f"- candidates per prompt: `{args.num_candidates}`",
         f"- decoding strategies: `{args.decoding_strategies}`",
@@ -481,7 +481,7 @@ def main() -> None:
     )
 
     summary = {
-        "method": "DPO + reference-free reranking",
+        "method": "DPO + POEMetric reference-free reranking",
         "device": str(device),
         "args": vars(args),
         "splits": split_summaries,

@@ -12,7 +12,7 @@
 | dev 평가 CSV | `experiments/sixway_ablation/poemetric_eval/dev/all_summary_metrics.csv` |
 | test 평가 CSV | `experiments/sixway_ablation/poemetric_eval/test/all_summary_metrics.csv` |
 | 평가 스크립트 | `scripts/evaluate_sonnet_poemetric.py` |
-| six-way 실험 실행 스크립트 | `scripts/run_sixway_sonnet_ablation.py` |
+| 6개 학습 설정 실행 스크립트 | `scripts/run_sixway_sonnet_ablation.py` |
 | POEMetric reranking 실행 스크립트 | `scripts/run_dpo_reranking.py` |
 | canonical sonnet 데이터 | `data/` |
 
@@ -41,10 +41,7 @@ sonnet_project/
 4. DAPT + 추가 데이터
 5. SFT 또는 DAPT 중 dev chrF가 더 좋은 모델 + LoRA + 추가 데이터
 6. DAPT -> SFT checkpoint를 DPO policy/ref 초기값으로 사용 + LoRA-DPO + 추가 데이터
-
-추가 실험:
-
-- `POEMetric reranking`: best DPO checkpoint에서 prompt당 여러 후보를 생성한 뒤, gold reference 없이 form/rhyme/theme/repetition 기반 점수로 최종 후보 선택.
+7. POEMetric reranking: best DPO checkpoint에서 prompt당 여러 후보를 생성한 뒤, gold reference 없이 form/rhyme/theme/repetition 기반 점수로 최종 후보 선택
 
 ## 평가 지표
 
@@ -55,11 +52,10 @@ sonnet_project/
 ## 최종 결론
 
 - dev chrF 최고 모델: `dapt_sft_lora_dpo_best_chrf` (`42.7768`)
-- 학습 모델만 비교했을 때 dev/test POEMetric 최고 모델: `sft_plus_extra`
-- 후처리까지 포함했을 때 dev/test POEMetric 최고 결과: `POEMetric reranking`
+- dev/test POEMetric 최고 설정: `poemetric_reranking`
 - DPO는 chrF와 form accuracy를 올렸지만 lexical diversity와 overall quality를 낮춰 POEMetric 전체에서는 SFT보다 불리했다.
 - Sonnet-or-Not pass는 대부분 0으로, 엄격한 rhyme/form constraint는 추가 개선이 필요하다.
-- POEMetric reranking은 dev chrF를 약간 낮췄지만, dev POEMetric을 `0.5971`에서 `0.6359`로, test POEMetric을 `0.6105`에서 `0.6496`으로 높였다.
+- `poemetric_reranking`은 DPO single 대비 dev chrF를 약간 낮췄지만, dev POEMetric을 `0.5971`에서 `0.6359`로, test POEMetric을 `0.6105`에서 `0.6496`으로 높였다.
 
 ## 재현
 

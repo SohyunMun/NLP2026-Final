@@ -118,9 +118,9 @@ sonnet generation 실험에는 공식 train/dev/test split과 정제된 추가 s
 
 추가 데이터는 dev/test prompt 및 dev gold와의 line-level overlap, 공식 train과의 exact duplicate 가능성을 제거한 뒤 사용했다. 데이터 정제 기준은 `sonnet_project/data/docs/strict_497_manifest.md`에 정리했다.
 
-## 6. 비교한 학습 설정
+## 6. 비교한 실험 설정
 
-sonnet generation 개선을 위해 아래 여섯 가지 설정을 비교했다.
+sonnet generation 개선을 위해 아래 일곱 가지 설정을 비교했다. `poemetric_reranking`은 새 모델 학습은 아니지만, 최종 생성 후보를 선택하는 decoding/post-processing 방법이므로 다른 모델 설정과 같은 메인 결과표에 포함했다.
 
 | run | 설명 |
 |---|---|
@@ -130,10 +130,9 @@ sonnet generation 개선을 위해 아래 여섯 가지 설정을 비교했다.
 | `dapt_plus_extra` | sonnet corpus에 대한 domain-adaptive pretraining |
 | `selected_lora_plus_extra` | dev chrF 기준으로 선택한 checkpoint에서 LoRA-SFT |
 | `dapt_sft_lora_dpo_best_chrf` | DAPT -> SFT -> LoRA-DPO 순서로 학습한 best chrF 모델 |
+| `poemetric_reranking` | best DPO checkpoint에서 여러 후보를 생성한 뒤, gold reference 없이 POEMetric/form/rhyme/theme 기준으로 최종 후보 선택 |
 
-추가 후처리 실험으로는 `dapt_sft_lora_dpo_best_chrf` 모델에 대해 `POEMetric reranking`을 수행했다. 이 방식은 새 학습 없이 prompt당 여러 후보를 생성하고, gold reference 없이 form/rhyme/theme/repetition 중심 점수로 최종 후보를 선택한다.
-
-실험 실행 코드는 `sonnet_project/scripts/run_sixway_sonnet_ablation.py`에 정리되어 있다.
+6개 학습 설정의 실행 코드는 `sonnet_project/scripts/run_sixway_sonnet_ablation.py`에, 7번째 `poemetric_reranking` 설정은 `sonnet_project/scripts/run_dpo_reranking.py`에 정리되어 있다.
 
 ## 7. 평가 지표
 
@@ -172,15 +171,15 @@ dev set 평가 결과는 다음과 같다.
 | `dapt_plus_extra` | 41.1442 | 0.0000 | 0.5510 | 0.9332 | 0.5495 | 0.2450 | 0.6002 |
 | `selected_lora_plus_extra` | 41.7313 | 0.0000 | 0.5455 | 0.9422 | 0.5706 | 0.2785 | 0.6122 |
 | `dapt_sft_lora_dpo_best_chrf` | 42.7768 | 0.0000 | 0.5613 | 0.9194 | 0.5428 | 0.2403 | 0.5971 |
+| `poemetric_reranking` | 42.0672 | 0.1667 | 0.5804 | 0.9610 | 0.5731 | 0.3307 | 0.6359 |
 
 주요 해석:
 
 - `chrF` 기준 최고 모델은 `dapt_sft_lora_dpo_best_chrf`이다.
-- 학습 모델만 비교하면 `POEMetric` 기준으로는 `sft_plus_extra`가 가장 안정적인 결과를 보였다.
-- 후처리까지 포함하면 `POEMetric reranking`이 dev/test `POEMetric`에서 가장 좋은 결과를 보였다.
+- `POEMetric` 기준 최고 설정은 `poemetric_reranking`이다.
 - DPO는 reference similarity와 form score를 개선했지만, lexical diversity와 overall quality proxy는 낮아지는 경향을 보였다.
 - 엄격한 Sonnet-or-Not pass rate는 대부분 0에 가까웠기 때문에, rhyme과 line structure를 직접 제어하는 추가 개선이 필요하다.
-- 추가 실험인 `POEMetric reranking`은 dev `chrF`를 `42.7768`에서 `42.0672`로 약간 낮췄지만, dev `POEMetric`을 `0.5971`에서 `0.6359`로, test `POEMetric`을 `0.6105`에서 `0.6496`으로 높였다.
+- `poemetric_reranking`은 DPO single 대비 dev `chrF`를 `42.7768`에서 `42.0672`로 약간 낮췄지만, dev `POEMetric`을 `0.5971`에서 `0.6359`로, test `POEMetric`을 `0.6105`에서 `0.6496`으로 높였다.
 
 전체 dev/test 결과와 세부 해석은 `sonnet_project/experiments/sixway_ablation/SUMMARY.md`와 `sonnet_project/reports/SONNET_GENERATION_PROJECT_REPORT_KO.md`에 정리했다.
 

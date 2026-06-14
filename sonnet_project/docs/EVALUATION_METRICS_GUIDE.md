@@ -55,15 +55,16 @@ cd /home/msko021220/nlp2026-final-MSK
   --run dapt_sft_lora_dpo_best_chrf=sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/test_best_chrf.txt
 ```
 
-## 전체 six-way 평가 결과
+## 전체 메인 평가 결과
 
 이미 계산된 최종 결과는 아래 파일에 정리되어 있다.
 
 | 파일 | 내용 |
 |---|---|
-| `sonnet_project/experiments/sixway_ablation/SUMMARY.md` | dev/test 핵심 결과표와 해석 |
+| `sonnet_project/experiments/sixway_ablation/SUMMARY.md` | 7개 메인 설정의 dev/test 핵심 결과표와 해석 |
 | `sonnet_project/experiments/sixway_ablation/poemetric_eval/dev/all_summary_metrics.csv` | dev 전체 요약 CSV |
 | `sonnet_project/experiments/sixway_ablation/poemetric_eval/test/all_summary_metrics.csv` | test 전체 요약 CSV |
+| `sonnet_project/experiments/dpo_reranking/SUMMARY.md` | POEMetric reranking 세부 설정과 결과 |
 | `sonnet_project/reports/SONNET_GENERATION_PROJECT_REPORT_KO.md` | 데이터, 평가, 실험 세부 정보, 결과 해석 |
 
 ## 사용한 지표

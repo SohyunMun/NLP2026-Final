@@ -1,4 +1,4 @@
-# Six-Way Sonnet Ablation Summary
+# Main Sonnet Experiment Summary
 
 ## Data
 
@@ -18,6 +18,7 @@
 | `dapt_plus_extra` | DAPT-only checkpoint on official 131 + strict extra 497, evaluated directly | `/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_plus_extra/best_3-5e-06-sonnet.pt` |
 | `selected_lora_plus_extra` | LoRA-SFT from better non-DPO checkpoint: dapt_plus_extra | `/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/selected_lora_plus_extra/best_chrf_lora_sft.pt` |
 | `dapt_sft_lora_dpo_best_chrf` | DAPT -> SFT -> form/rhyme LoRA-DPO, best dev chrF checkpoint | `/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/best_chrf_lora_dpo_form_rhyme.pt` |
+| `poemetric_reranking` | reference-free POEMetric reranking on top of the best DPO checkpoint | `sonnet_project/experiments/dpo_reranking/predictions/` |
 
 ## Dev Evaluation
 
@@ -29,6 +30,7 @@
 | dapt_plus_extra | 41.1442 | 0.0000 | 0.5510 | 0.9332 | 0.5495 | 0.2450 | 0.6002 |
 | selected_lora_plus_extra | 41.7313 | 0.0000 | 0.5455 | 0.9422 | 0.5706 | 0.2785 | 0.6122 |
 | dapt_sft_lora_dpo_best_chrf | 42.7768 | 0.0000 | 0.5613 | 0.9194 | 0.5428 | 0.2403 | 0.5971 |
+| poemetric_reranking | 42.0672 | 0.1667 | 0.5804 | 0.9610 | 0.5731 | 0.3307 | 0.6359 |
 
 ## Test Evaluation
 
@@ -40,3 +42,4 @@
 | dapt_plus_extra |  | 0.0000 | 0.5431 | 0.9429 | 0.5592 | 0.1927 | 0.5953 |
 | selected_lora_plus_extra |  | 0.0000 | 0.5383 | 0.9468 | 0.5717 | 0.3073 | 0.6158 |
 | dapt_sft_lora_dpo_best_chrf |  | 0.0000 | 0.5571 | 0.9178 | 0.5455 | 0.3349 | 0.6105 |
+| poemetric_reranking |  | 0.1667 | 0.5871 | 0.9631 | 0.5922 | 0.3672 | 0.6496 |

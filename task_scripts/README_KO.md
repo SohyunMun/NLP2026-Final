@@ -39,7 +39,7 @@ bash task_scripts/02_run_sonnet_generation_baseline.sh --use_gpu
 bash task_scripts/03_run_sonnet_generation_improvements.sh
 ```
 
-이 스크립트는 `sonnet_project/scripts/run_sixway_sonnet_ablation.py`를 실행한다. 개선 실험은 루트 `sonnet_generation.py`가 아니라 `sonnet_project/scripts/sonnet_generation_enhanced.py`를 사용한다.
+이 스크립트는 `sonnet_project/scripts/run_sixway_sonnet_ablation.py`를 실행한 뒤, 7번째 메인 설정인 `POEMetric reranking`을 위해 `sonnet_project/scripts/run_dpo_reranking.py`도 실행한다. 개선 실험은 루트 `sonnet_generation.py`가 아니라 `sonnet_project/scripts/sonnet_generation_enhanced.py`를 사용한다.
 
 GPU 번호를 지정하려면 환경 변수로 넘긴다.
 

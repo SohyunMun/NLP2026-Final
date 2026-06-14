@@ -34,5 +34,11 @@
     "checkpoint": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/best_chrf_lora_dpo_form_rhyme.pt",
     "dev_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/dev_best_chrf.txt",
     "test_prediction": "/home/msko021220/nlp2026-final-MSK/sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/predictions/test_best_chrf.txt"
+  },
+  {
+    "name": "poemetric_reranking",
+    "checkpoint": "sonnet_project/experiments/sixway_ablation/dapt_sft_lora_dpo_best_chrf/best_chrf_lora_dpo_form_rhyme.pt + reference-free POEMetric reranking",
+    "dev_prediction": "sonnet_project/experiments/dpo_reranking/predictions/dev_reranked.txt",
+    "test_prediction": "sonnet_project/experiments/dpo_reranking/predictions/test_reranked.txt"
   }
 ]
